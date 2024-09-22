@@ -13,6 +13,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/assets/fonts/ONE PIECE.ttf"), 70);
+        Font.loadFont(getClass().getResourceAsStream("/assets/fonts/PressStart2P-Regular.ttf"), 70);
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainMenu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Image icon = new Image("file:src/main/resources/assets/icons/opf_icon.png");

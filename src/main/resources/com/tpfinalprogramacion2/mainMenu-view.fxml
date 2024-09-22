@@ -3,10 +3,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="root" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-image: url(&quot;file:C:/UTN/Programacion_2/tp-final-programacion-2/src/main/resources/assets/backgrounds/main_menu_background.jpg&quot;);" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="root" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-image: url('file:src/main/resources/assets/backgrounds/main_menu_background.jpg'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="70.0" />
@@ -20,24 +21,38 @@
       <RowConstraints vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <Text text="ONE PIECE" GridPane.columnIndex="1">
+      <VBox alignment="CENTER" GridPane.columnIndex="1">
+         <children>
+            <Text stroke="WHITE" strokeWidth="2.0" text="ONE PIECE" textAlignment="CENTER">
+               <font>
+                  <Font name="ONE PIECE" size="200.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="172.0" stroke="WHITE" text="KING OF JAVA" textAlignment="CENTER">
+               <font>
+                  <Font name="Press Start 2P Regular" size="50.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Text stroke="WHITE" strokeType="OUTSIDE" text="NEW GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
-            <Font name="ONE PIECE" size="100.0" />
+            <Font name="Press Start 2P Regular" size="30.0" />
          </font>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NEW GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Text layoutX="619.0" layoutY="395.0" stroke="WHITE" strokeType="OUTSIDE" text="LOAD GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
-            <Font name="ONE PIECE" size="50.0" />
+            <Font name="Press Start 2P Regular" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="619.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOAD GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Text layoutX="617.0" layoutY="515.0" stroke="WHITE" strokeType="OUTSIDE" text="EXIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
-            <Font name="ONE PIECE" size="50.0" />
+            <Font name="Press Start 2P Regular" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="617.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Text layoutX="566.0" layoutY="522.0" stroke="WHITE" strokeType="OUTSIDE" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
-            <Font name="ONE PIECE" size="50.0" />
+            <Font name="Press Start 2P Regular" size="30.0" />
          </font>
       </Text>
    </children>
