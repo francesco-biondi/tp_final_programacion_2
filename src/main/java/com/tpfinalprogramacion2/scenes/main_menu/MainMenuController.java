@@ -3,11 +3,16 @@ package com.tpfinalprogramacion2.scenes.main_menu;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 
 public class MainMenuController {
 
     private MainMenuState menuState;
+    private final Media sound = new Media(getClass().getResource("/assets/music/One_Piece_OST_Overtaken.mp3").toExternalForm());
+    private AudioClip  buttonSound = new AudioClip(getClass().getResource("/assets/sounds/button_click.mp3").toExternalForm());
 
     @FXML
     Text text_1, text_2, text_3, text_4;
@@ -15,6 +20,13 @@ public class MainMenuController {
     @FXML
     public void initialize() {
         mainMenu();
+
+
+        MediaPlayer backgroundMusic = new MediaPlayer(sound);
+
+        backgroundMusic.setVolume(0.15);
+        backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
+        backgroundMusic.play();
     }
 
     @FXML
@@ -36,7 +48,7 @@ public class MainMenuController {
     @FXML
     void clicked_text(MouseEvent event) {
         Text clickedText = (Text) event.getSource();
-
+        buttonSound.play();
         switch (clickedText.getId()) {
             case "text_1" -> handleText1Action();
             case "text_2" -> handleText2Action();
@@ -101,6 +113,5 @@ public class MainMenuController {
         text_4.setText("BACK");
         menuState = MainMenuState.LOAD_GAME;
     }
-
 
 }

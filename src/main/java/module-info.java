@@ -1,6 +1,7 @@
 module com.tpfinalprogramacion2 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
 
 
     opens com.tpfinalprogramacion2 to javafx.fxml;
