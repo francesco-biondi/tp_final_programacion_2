@@ -2,8 +2,9 @@ module com.tpfinalprogramacion2 {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
+    requires com.google.gson;
 
-
+    opens com.tpfinalprogramacion2.models to com.google.gson;
     opens com.tpfinalprogramacion2 to javafx.fxml;
     exports com.tpfinalprogramacion2;
     exports com.tpfinalprogramacion2.scenes.main_menu;
