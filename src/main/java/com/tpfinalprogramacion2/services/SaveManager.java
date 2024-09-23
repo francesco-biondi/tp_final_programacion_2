@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.tpfinalprogramacion2.models.Save;
 
 import java.io.*;
-import java.util.Scanner;
 
 public final class SaveManager {
 
@@ -17,18 +16,16 @@ public final class SaveManager {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public static void newGame(int slotIndex) {
-        if(!slotExists(slotIndex)) {
-            String saveName = newSaveName();
-            saveGame(new Save(saveName),slotIndex);
-        }
+    public static void newGame(String saveName, int slotIndex) {
+
+            saveGame(new Save(setSaveName(saveName)),slotIndex);
+
     }
 
     public static void saveGame(Save save, int slotIndex){
         try (FileWriter writer = new FileWriter(SLOT_PATHS[slotIndex])) {
             gson.toJson(save, writer);
         } catch (IOException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -37,7 +34,6 @@ public final class SaveManager {
         try (FileReader reader = new FileReader(SLOT_PATHS[slotIndex])) {
             return gson.fromJson(reader, Save.class);
         } catch (IOException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -46,11 +42,17 @@ public final class SaveManager {
         return new java.io.File(SLOT_PATHS[slotIndex]).exists();
     }
 
-    public static String newSaveName() {
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+    private static boolean isValidSaveName(String name) {
+        return name.matches("[A-Za-z0-9_ ]{3,10}");
     }
 
+    public static String setSaveName(String saveName) {
+        if(isValidSaveName(saveName)) {
+            return saveName;
+        } else {
+            throw new IllegalArgumentException("Invalid save name");
+        }
+    }
 
 }
 

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -7,53 +12,106 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="root" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-image: url('file:src/main/resources/assets/backgrounds/main_menu_background.jpg'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tpfinalprogramacion2.scenes.main_menu.MainMenuController">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="800.0" prefWidth="1280.0"
+          style="-fx-background-image: url('file:src/main/resources/assets/backgrounds/main_menu_background.jpg'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;"
+          xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.tpfinalprogramacion2.scenes.main_menu.MainMenuController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
-      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="70.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
+      <ColumnConstraints hgrow="SOMETIMES" percentWidth="35.0"/>
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="30.0"/>
+      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" percentWidth="35.0"/>
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints percentHeight="40.0" vgrow="SOMETIMES" />
-      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
-      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
-      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES" />
-      <RowConstraints vgrow="SOMETIMES" />
+      <RowConstraints percentHeight="40.0" vgrow="SOMETIMES"/>
+      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES"/>
+      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES"/>
+      <RowConstraints percentHeight="15.0" vgrow="SOMETIMES"/>
+      <RowConstraints valignment="BOTTOM" vgrow="SOMETIMES"/>
    </rowConstraints>
-   <children>
-      <VBox alignment="CENTER" GridPane.columnIndex="1">
-         <children>
-            <Text stroke="WHITE" strokeWidth="2.0" text="ONE PIECE" textAlignment="CENTER">
-               <font>
-                  <Font name="ONE PIECE" size="200.0" />
-               </font>
-            </Text>
-            <Text layoutX="10.0" layoutY="172.0" stroke="WHITE" strokeWidth="2.0" text="KING OF JAVA" textAlignment="CENTER">
-               <font>
-                  <Font name="Press Start 2P Regular" size="50.0" />
-               </font>
-            </Text>
-         </children>
-      </VBox>
-      <Text fx:id="text_1" onMouseClicked="#clicked_text" onMouseEntered="#selected_text" onMouseExited="#reset_text" stroke="WHITE" strokeType="OUTSIDE" text="NEW GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+   </padding>
+   <VBox alignment="CENTER" GridPane.columnIndex="1">
+      <Text stroke="WHITE" strokeWidth="2.0" text="ONE PIECE" textAlignment="CENTER">
          <font>
-            <Font name="Press Start 2P Regular" size="30.0" />
+            <Font name="ONE PIECE" size="200.0"/>
          </font>
       </Text>
-      <Text fx:id="text_2" layoutX="619.0" layoutY="395.0" onMouseClicked="#clicked_text" onMouseEntered="#selected_text" onMouseExited="#reset_text" stroke="WHITE" strokeType="OUTSIDE" text="LOAD GAME" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Text layoutX="10.0" layoutY="172.0" stroke="WHITE" strokeWidth="2.0" text="KING OF JAVA"
+            textAlignment="CENTER">
          <font>
-            <Font name="Press Start 2P Regular" size="30.0" />
+            <Font name="Press Start 2P Regular" size="50.0"/>
          </font>
       </Text>
-      <Text fx:id="text_3" layoutX="617.0" layoutY="515.0" onMouseClicked="#clicked_text" onMouseEntered="#selected_text" onMouseExited="#reset_text" stroke="WHITE" strokeType="OUTSIDE" text="EXIT" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
-         <font>
-            <Font name="Press Start 2P Regular" size="30.0" />
-         </font>
-      </Text>
-      <Text fx:id="text_4" layoutX="566.0" layoutY="522.0" onMouseClicked="#clicked_text" onMouseEntered="#selected_text" onMouseExited="#reset_text" stroke="WHITE" strokeType="OUTSIDE" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
-         <font>
-            <Font name="Press Start 2P Regular" size="30.0" />
-         </font>
-      </Text>
-   </children>
+   </VBox>
+   <TextField fx:id="text_field_0" alignment="CENTER" blendMode="MULTIPLY" disable="true" GridPane.columnIndex="1"
+              GridPane.rowIndex="1">
+      <GridPane.margin>
+         <Insets/>
+      </GridPane.margin>
+      <effect>
+         <ColorAdjust contrast="1.0"/>
+      </effect>
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+   </TextField>
+   <Text fx:id="text_0" onMouseClicked="#clicked_text" onMouseEntered="#handleHover" onMouseExited="#handleHover"
+         stroke="WHITE" strokeType="OUTSIDE" text="NEW GAME" textAlignment="CENTER" GridPane.columnIndex="1"
+         GridPane.rowIndex="1">
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+   </Text>
+   <TextField fx:id="text_field_1" alignment="CENTER" blendMode="MULTIPLY" disable="true" layoutX="402.0"
+              layoutY="349.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <effect>
+         <ColorAdjust contrast="1.0"/>
+      </effect>
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+      <GridPane.margin>
+         <Insets/>
+      </GridPane.margin>
+   </TextField>
+   <Text fx:id="text_1" layoutX="619.0" layoutY="395.0" onMouseClicked="#clicked_text" onMouseEntered="#handleHover"
+         onMouseExited="#handleHover" stroke="WHITE" strokeType="OUTSIDE" text="LOAD GAME" textAlignment="CENTER"
+         GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+   </Text>
+   <TextField fx:id="text_field_2" alignment="CENTER" blendMode="MULTIPLY" disable="true" layoutX="202.0"
+              layoutY="469.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <effect>
+         <ColorAdjust contrast="1.0"/>
+      </effect>
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+      <GridPane.margin>
+         <Insets/>
+      </GridPane.margin>
+   </TextField>
+   <Text fx:id="text_2" layoutX="617.0" layoutY="515.0" onMouseClicked="#clicked_text" onMouseEntered="#handleHover"
+         onMouseExited="#handleHover" stroke="WHITE" strokeType="OUTSIDE" text="EXIT" textAlignment="CENTER"
+         GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+   </Text>
+   <Text fx:id="text_3" layoutX="566.0" layoutY="522.0" onMouseClicked="#clicked_text" onMouseEntered="#handleHover"
+         onMouseExited="#handleHover" stroke="WHITE" strokeType="OUTSIDE" textAlignment="CENTER"
+         GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <font>
+         <Font name="Press Start 2P Regular" size="30.0"/>
+      </font>
+   </Text>
+   <ImageView fitHeight="62.0" fitWidth="70.0" onMouseClicked="#toggleMusic" onMouseEntered="#handleHover"
+              onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
+              GridPane.rowIndex="4">
+      <Image url="@../../assets/icons/musica.png"/>
+   </ImageView>
 </GridPane>
