@@ -3,6 +3,7 @@ package com.tpfinalprogramacion2;
 import com.tpfinalprogramacion2.models.resource.Resource;
 import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -16,15 +17,16 @@ public class App extends Application {
         Font.loadFont(getClass().getResourceAsStream(Resource.APP_FONT_PRESS_START), 70);
 
         configureStage(stage);
-        SceneManager.changeScene(Resource.VIEW_MAIN_MENU);
+
 
         stage.show();
     }
-    
+
     public void configureStage(Stage stage) {
-        SceneManager.setStage(stage);
-        Image icon = new Image(Resource.APP_ICON);
-        stage.getIcons().add(icon);
+        Scene scene = new Scene(SceneManager.getRoot(Resource.VIEW_MAIN_MENU));
+        stage.setScene(scene);
+        SceneManager.setMainScene(scene);
+        stage.getIcons().add(new Image(Resource.APP_ICON));
         stage.setTitle("One Piece");
         stage.setFullScreen(true);
     }
