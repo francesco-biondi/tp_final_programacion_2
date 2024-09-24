@@ -8,6 +8,7 @@ module com.tpfinalprogramacion2 {
     exports com.tpfinalprogramacion2;
     exports com.tpfinalprogramacion2.scenes.main_menu;
     opens com.tpfinalprogramacion2.scenes.main_menu to javafx.fxml;
+    opens com.tpfinalprogramacion2.scenes.battle to javafx.fxml;
     opens com.tpfinalprogramacion2.models.saves to com.google.gson;
     opens com.tpfinalprogramacion2.models.saves.dependencies to com.google.gson;
 }
