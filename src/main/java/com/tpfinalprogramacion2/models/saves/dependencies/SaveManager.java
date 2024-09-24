@@ -1,8 +1,8 @@
-package com.tpfinalprogramacion2.services;
+package com.tpfinalprogramacion2.models.saves.dependencies;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tpfinalprogramacion2.models.Save;
+import com.tpfinalprogramacion2.models.saves.Save;
 
 import java.io.*;
 

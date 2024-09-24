@@ -1,4 +1,4 @@
-package com.tpfinalprogramacion2.models;
+package com.tpfinalprogramacion2.models.saves;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

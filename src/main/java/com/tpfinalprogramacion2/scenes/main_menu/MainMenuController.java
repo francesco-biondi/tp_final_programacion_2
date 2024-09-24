@@ -1,6 +1,6 @@
 package com.tpfinalprogramacion2.scenes.main_menu;
 
-import com.tpfinalprogramacion2.services.SaveManager;
+import com.tpfinalprogramacion2.models.saves.dependencies.SaveManager;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
