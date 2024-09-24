@@ -113,7 +113,7 @@ public class MainMenuController {
 
     private void handleNewGameAction(int index) {
         if (index < slotTexts.length - 1) {
-            if (SaveManager.slotExists(index)) {
+            if (SaveManager.saveExists(index)) {
                 boolean confirmed = showConfirmationDialog();
                 if (confirmed) {
                     showTextField(index);
@@ -155,7 +155,7 @@ public class MainMenuController {
     private void updateSlotTexts(boolean isNewGame) {
         setTextsVisible();
         for (int i = 0; i < slotTexts.length - 1; i++) {
-            slotTexts[i].setText(SaveManager.slotExists(i) ? SaveManager.loadGame(i).toString() : (isNewGame ? "NEW GAME" : "Empty"));
+            slotTexts[i].setText(SaveManager.saveExists(i) ? SaveManager.loadGame(i).toString() : (isNewGame ? "NEW GAME" : "Empty"));
         }
         text_3.setText("BACK");
         menuState = isNewGame ? MainMenuState.NEW_GAME : MainMenuState.LOAD_GAME;
