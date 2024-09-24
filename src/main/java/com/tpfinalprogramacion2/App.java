@@ -1,5 +1,6 @@
 package com.tpfinalprogramacion2;
 
+import com.tpfinalprogramacion2.models.resource.Resource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,11 +13,11 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Font.loadFont(getClass().getResourceAsStream("/assets/fonts/ONE PIECE.ttf"), 100);
-        Font.loadFont(getClass().getResourceAsStream("/assets/fonts/PressStart2P-Regular.ttf"), 70);
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("mainMenu-view.fxml"));
+        Font.loadFont(getClass().getResourceAsStream(Resource.APP_FONT_ONE_PIECE), 100);
+        Font.loadFont(getClass().getResourceAsStream(Resource.APP_FONT_PRESS_START), 70);
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(Resource.APP_VIEW_MAIN_MENU));
         Scene scene = new Scene(fxmlLoader.load());
-        Image icon = new Image("file:src/main/resources/assets/icons/opf_icon.png");
+        Image icon = new Image(Resource.APP_ICON);
         stage.getIcons().add(icon);
         stage.setTitle("One Piece");
         stage.setFullScreen(true);

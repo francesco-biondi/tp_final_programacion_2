@@ -1,5 +1,6 @@
 package com.tpfinalprogramacion2.scenes.main_menu;
 
+import com.tpfinalprogramacion2.models.resource.Resource;
 import com.tpfinalprogramacion2.models.saves.dependencies.SaveManager;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -20,15 +21,10 @@ import java.util.Objects;
 
 public class MainMenuController {
 
-    private static final String BACKGROUND_MUSIC_PATH = "/assets/music/One_Piece_OST_Overtaken.mp3";
-    private static final String BUTTON_CLICK_SOUND_PATH = "/assets/sounds/punch.mp3";
-    private static final String MUSIC_ON_ICON_PATH = "file:src/main/resources/assets/icons/musica.png";
-    private static final String MUSIC_OFF_ICON_PATH = "file:src/main/resources/assets/icons/sin-musica.png";
-
     private MainMenuState menuState;
 
-    private final MediaPlayer backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(getClass().getResource(BACKGROUND_MUSIC_PATH)).toExternalForm()));
-    private final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(getClass().getResource(BUTTON_CLICK_SOUND_PATH)).toExternalForm());
+    private final MediaPlayer backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(getClass().getResource(Resource.MAIN_MENU_BACKGROUND_MUSIC_PATH)).toExternalForm()));
+    private final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(getClass().getResource(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH)).toExternalForm());
 
     @FXML
     private TextField text_field_0, text_field_1, text_field_2;
@@ -73,7 +69,7 @@ public class MainMenuController {
     private void toggleMusic(MouseEvent event) {
         ImageView musicIcon = (ImageView) event.getSource();
         boolean isMuted = backgroundMusic.isMute();
-        musicIcon.setImage(new Image(isMuted ? MUSIC_ON_ICON_PATH : MUSIC_OFF_ICON_PATH));
+        musicIcon.setImage(new Image(isMuted ? Resource.MAIN_MENU_MUSIC_ON_ICON_PATH : Resource.MAIN_MENU_MUSIC_OFF_ICON_PATH));
         backgroundMusic.setMute(!isMuted);
     }
 
