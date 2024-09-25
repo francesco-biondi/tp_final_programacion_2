@@ -1,11 +1,19 @@
 package com.tpfinalprogramacion2.models.characters;
 
-public class Nakama extends Character{
+import com.tpfinalprogramacion2.models.abilities.interfaces.I_Ability;
 
+public class Nakama extends Character implements I_Ability {
+
+    /**
+     * Atributos
+     */
     private double strength;
     private int level;
     private int attackSpeed;
 
+    /**
+     * Constructor
+     */
     public Nakama(String name, double bounty, String image, double strength, int level, int attackSpeed) {
         super(name, bounty, image);
         this.strength = strength;
@@ -13,6 +21,9 @@ public class Nakama extends Character{
         this.attackSpeed = attackSpeed;
     }
 
+    /**
+     * Getters y setters
+     */
     public double getStrength() {
         return strength;
     }
@@ -35,5 +46,20 @@ public class Nakama extends Character{
 
     public void setAttackSpeed(int attackSpeed) {
         this.attackSpeed = attackSpeed;
+    }
+
+    @Override
+    public double use() {
+        return 0;
+    }
+
+    @Override
+    public void cooldown() {
+
+    }
+
+    @Override
+    public void upgrade() {
+
     }
 }
