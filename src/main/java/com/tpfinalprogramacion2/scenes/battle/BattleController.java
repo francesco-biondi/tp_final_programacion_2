@@ -1,36 +1,37 @@
 package com.tpfinalprogramacion2.scenes.battle;
 
+import javafx.animation.Interpolator;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 
 public class BattleController {
 
     @FXML
-    private ImageView ability_bar_image;
+    private StackPane shopPane;
+
+    boolean isOpen = false;
+    TranslateTransition translateTransition;
 
     @FXML
-    private StackPane button_1;
+    public void initialize(){
+        translateTransition = new TranslateTransition(Duration.millis(600), shopPane);
+        shopPane.layoutBoundsProperty().addListener((obs, oldVal, newVal) -> {
+            shopPane.setTranslateX(-shopPane.getWidth());
+        });
+    }
 
-    @FXML
-    private StackPane button_2;
+    public void toggleStore(StackPane shopPane) {
 
-    @FXML
-    private StackPane button_3;
-
-    @FXML
-    private StackPane button_4;
-
-    @FXML
-    private ImageView enemyImage;
-
-    @FXML
-    private ProgressBar health_bar;
-
-    @FXML
-    private ImageView pistolImage;
+        translateTransition.setInterpolator(Interpolator.EASE_BOTH);
+        translateTransition.setFromX(isOpen ? 0 : -shopPane.getWidth());
+        translateTransition.setToX(isOpen ? -shopPane.getWidth() : 0);
+        translateTransition.play();
+        isOpen = !isOpen;
+    }
 
     @FXML
     void attack(MouseEvent event) {
@@ -39,7 +40,7 @@ public class BattleController {
 
     @FXML
     void button_pressed(MouseEvent event) {
-
+        toggleStore(shopPane);
     }
 
     @FXML
