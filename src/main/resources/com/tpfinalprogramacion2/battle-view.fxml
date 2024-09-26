@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -18,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-image: url('file:src/main/resources/assets/backgrounds/battle_background_01.jpg'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tpfinalprogramacion2.scenes.battle.BattleController">
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-image: url('file:src/main/resources/assets/backgrounds/battle_background_01.jpg'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: cover, auto;" stylesheets="@styles/battle-view.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tpfinalprogramacion2.scenes.battle.BattleController">
    <columnConstraints>
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="20.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="60.0" />
@@ -504,9 +506,26 @@
             </StackPane>
          </children>
       </GridPane>
-      <StackPane fx:id="shopPane" style="-fx-background-image: url('file:src/main/resources/assets/ui/ui_medium_wood_v.png'); -fx-background-position: center; -fx-background-repeat: no-repeat; -fx-background-size: contain, auto;" GridPane.rowIndex="1">
+      <StackPane fx:id="shopPane" cache="true" cacheHint="SPEED" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
+            <TabPane tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Abilities">
+                  <content>
+                    <AnchorPane>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Nakamas">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </StackPane>
    </children>

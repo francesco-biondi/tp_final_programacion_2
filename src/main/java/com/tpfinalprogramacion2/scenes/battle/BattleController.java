@@ -20,15 +20,15 @@ public class BattleController {
     public void initialize(){
         translateTransition = new TranslateTransition(Duration.millis(600), shopPane);
         shopPane.layoutBoundsProperty().addListener((obs, oldVal, newVal) -> {
-            shopPane.setTranslateX(-shopPane.getWidth());
+            shopPane.setTranslateX(-shopPane.getWidth()*1.5);
         });
     }
 
     public void toggleStore(StackPane shopPane) {
 
         translateTransition.setInterpolator(Interpolator.EASE_BOTH);
-        translateTransition.setFromX(isOpen ? 0 : -shopPane.getWidth());
-        translateTransition.setToX(isOpen ? -shopPane.getWidth() : 0);
+        translateTransition.setFromX(isOpen ? 0 : -shopPane.getWidth()*1.5);
+        translateTransition.setToX(isOpen ? -shopPane.getWidth()*1.5 : 0);
         translateTransition.play();
         isOpen = !isOpen;
     }
