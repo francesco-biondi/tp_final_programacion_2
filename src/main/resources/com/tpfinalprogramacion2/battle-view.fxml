@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -28,9 +30,9 @@
    <children>
       <VBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUGGY THE CLOWN" textAlignment="CENTER">
+            <Text stroke="WHITE" strokeType="OUTSIDE" text="BUGGY THE CLOWN" textAlignment="CENTER">
                <font>
-                  <Font name="Press Start 2P Regular" size="33.0"/>
+                  <Font name="Press Start 2P Regular" size="33.0" />
                </font>
             </Text>
             <ProgressBar fx:id="health_bar" prefHeight="25.0" prefWidth="720.0" progress="1.0">
@@ -50,10 +52,13 @@
                   <Insets bottom="-100.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="enemyImage" fitHeight="558.0" fitWidth="800.0" onMouseClicked="#attack" onMouseEntered="#fist_cursor" onMouseExited="#reset_cursor" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="enemyImage" cache="true" cacheHint="SCALE" fitHeight="558.0" fitWidth="800.0" onMouseClicked="#attack" onMouseEntered="#fist_cursor" onMouseExited="#reset_cursor" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../assets/enemies/3-buggy.png" />
                </image>
+               <effect>
+                  <InnerShadow blurType="TWO_PASS_BOX" />
+               </effect>
             </ImageView>
          </children>
       </StackPane>
@@ -63,6 +68,9 @@
                <image>
                   <Image url="@../../assets/ui/ui_medium_wood.png" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" />
+               </effect>
             </ImageView>
             <HBox alignment="CENTER" spacing="10.0">
                <children>
@@ -70,11 +78,17 @@
                      <image>
                         <Image url="@../../assets/icons/berry.png" />
                      </image>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
                   </ImageView>
                   <Text fill="#ffd146" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="0000">
                      <font>
                         <Font name="Unispace-Bold" size="36.0" />
                      </font>
+                     <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" />
+                     </effect>
                   </Text>
                </children>
                <opaqueInsets>
@@ -86,13 +100,25 @@
             </HBox>
          </children>
       </StackPane>
-      <HBox alignment="CENTER" spacing="30.0" GridPane.columnIndex="2">
+      <HBox alignment="CENTER" spacing="50.0" GridPane.columnIndex="2">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../assets/ui/ui_medium_wood.png" />
-               </image>
-            </ImageView>
+            <StackPane>
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="80.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/ui/ui_medium_wood.png" />
+                     </image>
+                     <effect>
+                        <DropShadow blurType="TWO_PASS_BOX" />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="57.0" fitWidth="64.0" layoutX="10.0" layoutY="35.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/icons/log_pose.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
             <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true">
                <image>
                   <Image url="@../../assets/ui/ui_medium_wood.png" />
@@ -100,6 +126,9 @@
                <HBox.margin>
                   <Insets />
                </HBox.margin>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" />
+               </effect>
             </ImageView>
          </children>
       </HBox>
@@ -109,6 +138,9 @@
                <image>
                   <Image url="@../../assets/ui/ui_small_wood.png" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" />
+               </effect>
             </ImageView>
             <HBox alignment="CENTER" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0">
                <children>
@@ -184,32 +216,115 @@
             </HBox>
          </children>
       </StackPane>
-      <VBox alignment="TOP_RIGHT" spacing="15.0" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="TOP">
-         <GridPane.margin>
-            <Insets right="20.0" top="20.0" />
-         </GridPane.margin>
+      <GridPane alignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
+            <ImageView depthTest="DISABLE" fitHeight="107.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../../assets/posters/Zoro27s_Wanted_Poster.jpg" />
+               </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </ImageView>
             <ImageView fitHeight="107.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Descargas/Zoro_s_Wanted_Poster.png" />
+                  <Image url="@../../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
             </ImageView>
-            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="143.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="38.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                <image>
-                  <Image url="@../../../../../../../../Descargas/Nami_s_Wanted_Poster.png" />
+                  <Image url="@../../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
             </ImageView>
-            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="143.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="38.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <image>
-                  <Image url="@../../../../../../../../Descargas/Zoro_s_Wanted_Poster.png" />
+                  <Image url="@../../assets/posters/Nami27s_Wanted_Poster.jpg" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
             </ImageView>
-            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="143.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="166.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                <image>
-                  <Image url="@../../../../../../../../Descargas/Zoro_s_Wanted_Poster.png" />
+                  <Image url="@../../assets/posters/Franky27s_Wanted_Poster.jpg" />
                </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="38.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../assets/posters/Usopp27s_Wanted_Poster.jpg" />
+               </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="166.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@../../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
+               </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="107.0" fitWidth="73.0" layoutX="38.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@../../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
+               </image>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX">
+                     <input>
+                        <ColorAdjust brightness="-0.07" contrast="-0.05" saturation="-0.05" />
+                     </input>
+                  </DropShadow>
+               </effect>
             </ImageView>
          </children>
-      </VBox>
+      </GridPane>
    </children>
 </GridPane>
