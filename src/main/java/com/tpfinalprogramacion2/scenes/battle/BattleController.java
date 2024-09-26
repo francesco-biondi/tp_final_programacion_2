@@ -3,6 +3,7 @@ package com.tpfinalprogramacion2.scenes.battle;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -11,7 +12,7 @@ import javafx.util.Duration;
 public class BattleController {
 
     @FXML
-    private StackPane shopPane;
+    private TabPane shopPane;
 
     boolean isOpen = false;
     TranslateTransition translateTransition;
@@ -24,7 +25,7 @@ public class BattleController {
         });
     }
 
-    public void toggleStore(StackPane shopPane) {
+    public void toggleStore(TabPane shopPane) {
 
         translateTransition.setInterpolator(Interpolator.EASE_BOTH);
         translateTransition.setFromX(isOpen ? 0 : -shopPane.getWidth()*1.5);

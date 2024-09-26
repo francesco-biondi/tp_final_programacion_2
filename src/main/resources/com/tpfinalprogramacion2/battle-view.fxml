@@ -506,28 +506,29 @@
             </StackPane>
          </children>
       </GridPane>
-      <StackPane fx:id="shopPane" cache="true" cacheHint="SPEED" GridPane.rowIndex="1">
-         <children>
-            <TabPane tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Abilities">
-                  <content>
-                    <AnchorPane>
-                           <effect>
-                              <ColorAdjust />
-                           </effect>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Nakamas">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </children>
-      </StackPane>
+      <TabPane fx:id="shopPane" cache="true" cacheHint="SPEED" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+         <tabs>
+            <Tab text="Abilities">
+               <content>
+                  <AnchorPane>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Abilities">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Nakamas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

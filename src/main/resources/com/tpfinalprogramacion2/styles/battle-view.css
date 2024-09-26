@@ -2,9 +2,10 @@
 .tab-pane {
 
     -fx-background-image: url("../../../assets/ui/ui_medium_wood_v.png");
-    -fx-background-position: top;
     -fx-background-size: contain, auto;
     -fx-background-repeat: no-repeat;
+    -fx-tab-min-height: 25px;
+    -fx-tab-min-width: 50px;
 }
 
 /* Estilo para las pestañas */
@@ -12,20 +13,29 @@
     -fx-background-radius: 10px 10px 0 0;
     -fx-background-color: #a2724a;
     -fx-border-color: #312a24;
-    -fx-border-width: 1px 1px 2px 1px;
-    -fx-border-radius: 10px 10px 0 0;
+    -fx-border-width: 1px 2px 2px 1px;
+    -fx-border-radius: 5px 5px 0 0;
 }
 
 /* Estilo para la pestaña seleccionada */
 .tab-pane .tab:selected {
     -fx-background-color: #daba91;
     -fx-background-radius: 10px 10px 0 0;
+    -fx-border-width: 1px 1px 2px 1px;
     -fx-border-color: #312a24 #312a24 #daba91 #312a24;
+}
+
+/* Eliminar el borde azul al seleccionar una pestaña (Tab) */
+.tab-pane .tab:selected:selected {
+    -fx-background-insets: 0;
+    -fx-focus-color: transparent;   /* Eliminar el color azul de enfoque */
+    -fx-faint-focus-color: transparent;  /* Eliminar borde suave de enfoque */
 }
 
 /* Estilo para el área de header */
 .tab-pane .tab-header-area {
-    -fx-padding: 10px 0 0 20px; /* Ajusta el valor según el espacio que quieras */
+    -fx-padding: 10px 20px 0 20px; /* Ajusta el valor según el espacio que quieras */
+
 }
 
 /* Eliminar fondo entre pestañas */
