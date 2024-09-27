@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Alvida",
+    "bounty": 5000.0,
+    "image": "@../../assets/posters/alvida.png",
+    "MAX_HEALTH": 5000.0,
+    "GOLD_BY_CLICK": 5
+  },
+  {
+    "name": "Buggy",
+    "bounty": 15000.0,
+    "image": "@../../assets/posters/buggy.png",
+    "MAX_HEALTH": 20000.0,
+    "GOLD_BY_CLICK": 15
+  },
+  {
+    "name": "Kuro",
+    "bounty": 16000.0,
+    "image": "@../../assets/posters/kuro.png",
+    "MAX_HEALTH": 31000.0,
+    "GOLD_BY_CLICK": 16
+  },
+  {
+    "name": "Arlong",
+    "bounty": 20000.0,
+    "image": "@../../assets/posters/arlong.png",
+    "MAX_HEALTH": 36000.0,
+    "GOLD_BY_CLICK": 20
+  },
+  {
+    "name": "Crocodile",
+    "bounty": 81000000.0,
+    "image": "@../../assets/posters/crocodile.png",
+    "MAX_HEALTH": 81020000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Caesar",
+    "bounty": 300000000.0,
+    "image": "@../../assets/posters/caesar.png",
+    "MAX_HEALTH": 381000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Gecko Moria",
+    "bounty": 320000000.0,
+    "image": "@../../assets/posters/gecko_moria.png",
+    "MAX_HEALTH": 620000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Don Flamingo",
+    "bounty": 340000000.0,
+    "image": "@../../assets/posters/doflamingo.png",
+    "MAX_HEALTH": 660000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Enel",
+    "bounty": 500000000.0,
+    "image": "@../../assets/posters/enel.png",
+    "MAX_HEALTH": 840000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Katakuri",
+    "bounty": 1057000000.0,
+    "image": "@../../assets/posters/katakuri.png",
+    "MAX_HEALTH": 1557000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Teach",
+    "bounty": 3996000000.0,
+    "image": "@../../assets/posters/teach.png",
+    "MAX_HEALTH": 5053000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Big Mom",
+    "bounty": 4388000000.0,
+    "image": "@../../assets/posters/big_mom.png",
+    "MAX_HEALTH": 8384000000.0,
+    "GOLD_BY_CLICK": 1
+  },
+  {
+    "name": "Kaido",
+    "bounty": 4611100000.0,
+    "image": "@../../assets/posters/kaido.png",
+    "MAX_HEALTH": 8999100000.0,
+    "GOLD_BY_CLICK": 1
+  }
+]
