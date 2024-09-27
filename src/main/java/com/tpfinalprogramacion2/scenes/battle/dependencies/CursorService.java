@@ -1,4 +1,4 @@
-package com.tpfinalprogramacion2.scenes.dependencies;
+package com.tpfinalprogramacion2.scenes.battle.dependencies;
 
 import com.tpfinalprogramacion2.models.resource.Resource;
 import javafx.scene.Cursor;

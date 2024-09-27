@@ -57,8 +57,8 @@
       </effect>
       <Image url="@../../assets/enemies/3-buggy.png" />
    </ImageView>
-   <StackPane fx:id="shopButton" onMouseClicked="#button_pressed">
-      <ImageView fitHeight="80.0" fitWidth="190.0" pickOnBounds="true">
+   <StackPane onMouseClicked="#button_pressed">
+      <ImageView fx:id="shopButton" fitHeight="80.0" fitWidth="190.0" onMouseClicked="#toggleShop" pickOnBounds="true">
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
@@ -88,7 +88,7 @@
       </HBox>
    </StackPane>
    <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2">
-      <ImageView fx:id="ability_bar_image" accessibleRole="MENU_BAR" fitHeight="116.0" fitWidth="751.0" nodeOrientation="INHERIT" pickOnBounds="true">
+      <ImageView accessibleRole="MENU_BAR" fitHeight="116.0" fitWidth="751.0" nodeOrientation="INHERIT" pickOnBounds="true">
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect>
@@ -408,7 +408,7 @@
          </ImageView>
       </StackPane>
    </GridPane>
-   <TabPane fx:id="shopPane" cache="true" cacheHint="SPEED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="400.0" tabMaxWidth="250.0" tabMinHeight="400.0" tabMinWidth="250.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+   <TabPane fx:id="shopPane" cache="true" cacheHint="SPEED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="250.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="450.0" tabMaxWidth="250.0" tabMinHeight="450.0" tabMinWidth="250.0" translateX="-400.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
       <effect>
          <DropShadow blurType="TWO_PASS_BOX" />
       </effect>
@@ -628,7 +628,7 @@
                      <effect>
                         <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                      </effect>
-                     <Image url="@../../assets/abilities/pistol.jpg" />
+                     <Image url="@../../assets/abilities/gear_5.jpg" />
                   </ImageView>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
                      <font>
@@ -964,7 +964,7 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane fx:id="ability_14111" accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
                                  <children>
                                     <ImageView fx:id="nakama_8" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
