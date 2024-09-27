@@ -10,19 +10,18 @@ public abstract class Ability implements I_Ability {
     protected AbilityType type;
     protected String descripcion;
     protected int level;
-    protected int maxLevel;
+    protected final int maxLevel = 10;
     protected double strength;
     protected int cooldownTime;
     protected boolean isAvailable;
     protected boolean isAnimating;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int maxLevel, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.name = name;
         this.type = type;
         this.descripcion = descripcion;
         this.level = level;
-        this.maxLevel = maxLevel;
         this.strength = strength;
         this.isAvailable = isAvailable;
         this.cooldownTime = cooldownTime;
@@ -31,7 +30,9 @@ public abstract class Ability implements I_Ability {
 
     @Override
     public void cooldown(){
+        this.isAvailable = false;
 
+        // SCHEDULER -> this.isAvailable = true
     }
 
     public double getBASE_STRENGTH() {
@@ -72,10 +73,6 @@ public abstract class Ability implements I_Ability {
 
     public int getMaxLevel() {
         return maxLevel;
-    }
-
-    public void setMaxLevel(int maxLevel) {
-        this.maxLevel = maxLevel;
     }
 
     public double getStrength() {

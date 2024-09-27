@@ -2,6 +2,7 @@ package com.tpfinalprogramacion2.models.abilities;
 
 import com.tpfinalprogramacion2.models.abilities.enums.AbilityType;
 import com.tpfinalprogramacion2.models.characters.Character;
+import com.tpfinalprogramacion2.models.exceptions.MaxLevelReachedException;
 
 public class Nakama extends Ability {
 
@@ -14,8 +15,8 @@ public class Nakama extends Ability {
     /**
      * Constructor
      */
-    public Nakama(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int maxLevel, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, String poster, String poster2) {
-        super(BASE_STRENGTH, name, type, descripcion, level, maxLevel, strength, isAvailable, cooldownTime, isAnimating);
+    public Nakama(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, String poster, String poster2) {
+        super(BASE_STRENGTH, name, type, descripcion, level, strength, isAvailable, cooldownTime, isAnimating);
         this.poster = poster;
         this.poster2 = poster2;
     }
@@ -40,19 +41,20 @@ public class Nakama extends Ability {
     }
 
     @Override
-    public void cooldown() {
-
-    }
-
-    @Override
     public double use(Character character) {
         return 0;
     }
 
 
     @Override
-    public void upgrade() {
-
+    public void upgrade(){
+        if(this.level < this.maxLevel){
+            this.level++;
+            this.strength += level * 1; // numero a determinar
+            // level = maxlevel cambiar poster
+        } else {
+            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
+        }
     }
 
     @Override
