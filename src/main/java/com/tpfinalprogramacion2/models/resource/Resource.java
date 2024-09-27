@@ -29,5 +29,5 @@ public class Resource {
      */
     public static final String normalButtonImagePath = "file:src/main/resources/assets/ui/button_normal.png";
     public static final String pressedButtonImagePath = "file:src/main/resources/assets/ui/button_pressed.png";
-    public static final String cursorImagePath = "file:src/main/resources/com/op_test/fist_cursor.png";
+    public static final String cursorImagePath = "file:src/main/resources/assets/abilities/fist_cursor.png";
 }

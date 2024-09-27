@@ -6,7 +6,7 @@ import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 
-public class CursorService {
+public class CursorManager {
 
     public static void setCursorToFist(Scene scene) {
         Image cursorImage = new Image(Resource.cursorImagePath);

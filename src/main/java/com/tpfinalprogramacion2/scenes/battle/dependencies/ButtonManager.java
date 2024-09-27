@@ -3,18 +3,16 @@ package com.tpfinalprogramacion2.scenes.battle.dependencies;
 
 import com.tpfinalprogramacion2.models.resource.Resource;
 import com.tpfinalprogramacion2.scenes.dependencies.SchedulerService;
-import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.util.concurrent.TimeUnit;
 
-public class ButtonService {
+public class ButtonManager {
 
     public static void updateButtonState(StackPane stackPane, int cooldown) {
         for (Node node : stackPane.getChildren()) {

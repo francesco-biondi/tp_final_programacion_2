@@ -1,7 +1,8 @@
 package com.tpfinalprogramacion2.scenes.battle;
 
-import com.tpfinalprogramacion2.scenes.battle.dependencies.ButtonService;
-import com.tpfinalprogramacion2.scenes.battle.dependencies.ShopService;
+import com.tpfinalprogramacion2.scenes.battle.dependencies.ButtonManager;
+import com.tpfinalprogramacion2.scenes.battle.dependencies.CursorManager;
+import com.tpfinalprogramacion2.scenes.battle.dependencies.ShopManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
@@ -13,39 +14,43 @@ public class BattleController {
     private TabPane shopPane;
 
     @FXML
+    private ImageView enemyImage;
+
+    @FXML
     public void initialize(){
-        ShopService.configureStore(shopPane);
+        ShopManager.configureStore(shopPane);
     }
 
     @FXML
     void toggleShop(MouseEvent event){
-        ShopService.toggleStore(shopPane);
+        ShopManager.toggleStore(shopPane);
     }
 
     @FXML
     void shopBuy(MouseEvent event){
-        ButtonService.updateButtonState((StackPane) event.getSource(), 1);
-        ShopService.buy();
+        ButtonManager.updateButtonState((StackPane) event.getSource(), 1);
+        ShopManager.buy();
     }
 
     @FXML
-    void attack(MouseEvent event) {
+    void hitEnemy(MouseEvent event) {
 
     }
 
     @FXML
     void button_pressed(MouseEvent event) {
-        ButtonService.updateButtonState((StackPane) event.getSource(), 1);
+        ButtonManager.updateButtonState((StackPane) event.getSource(), 1);
     }
 
     @FXML
-    void fist_cursor(MouseEvent event) {
-
-    }
-
-    @FXML
-    void reset_cursor(MouseEvent event) {
-
+    void handleCursor(MouseEvent event) {
+        ImageView enemy = (ImageView) event.getSource();
+        boolean isHovering = event.getEventType().equals(MouseEvent.MOUSE_ENTERED);
+        if (isHovering) {
+            CursorManager.setCursorToFist(enemy.getScene());
+        } else {
+            CursorManager.resetCursor(enemy.getScene());
+        };
     }
 
 }
