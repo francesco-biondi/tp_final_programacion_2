@@ -1,25 +1,19 @@
 package com.tpfinalprogramacion2.models.characters;
 
-import com.tpfinalprogramacion2.models.abilities.interfaces.I_Ability;
+import com.tpfinalprogramacion2.models.abilities.Ability;
 
-public class Nakama extends Character implements I_Ability {
+public class Nakama extends Ability {
 
     /**
      * Atributos
      */
-    private double strength;
-    private int level;
-    private int attackSpeed;
+    private String poster;
+    private String poster2;
 
     /**
      * Constructor
      */
-    public Nakama(String name, double bounty, String image, double strength, int level, int attackSpeed) {
-        super(name, bounty, image);
-        this.strength = strength;
-        this.level = level;
-        this.attackSpeed = attackSpeed;
-    }
+
 
     /**
      * Getters y setters
