@@ -3,12 +3,17 @@ package com.tpfinalprogramacion2.models.resource;
 public class Resource {
 
     /**
+     * Path a las vistas de las escenas
+     */
+    public static final String VIEW_MAIN_MENU = "mainMenu-view.fxml";
+    public static final String VIEW_BATTLE = "battle-view.fxml";
+
+    /**
      * Recursos para el uso general de la aplicacion
      */
     public static final String APP_FONT_ONE_PIECE = "/assets/fonts/ONE PIECE.ttf";
     public static final String APP_FONT_PRESS_START = "/assets/fonts/PressStart2P-Regular.ttf";
     public static final String APP_ICON = "file:src/main/resources/assets/icons/opf_icon.png";
-    public static final String APP_VIEW_MAIN_MENU = "mainMenu-view.fxml";
 
     /**
      * Recursos para la interfaz de usuario del menu principal

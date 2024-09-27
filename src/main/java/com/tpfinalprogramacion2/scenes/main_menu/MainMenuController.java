@@ -2,6 +2,7 @@ package com.tpfinalprogramacion2.scenes.main_menu;
 
 import com.tpfinalprogramacion2.models.resource.Resource;
 import com.tpfinalprogramacion2.models.saves.dependencies.SaveManager;
+import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -12,7 +13,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -23,7 +23,6 @@ public class MainMenuController {
 
     private MainMenuState menuState;
 
-    private final MediaPlayer backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(getClass().getResource(Resource.MAIN_MENU_BACKGROUND_MUSIC_PATH)).toExternalForm()));
     private final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(getClass().getResource(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH)).toExternalForm());
 
     @FXML
@@ -39,7 +38,7 @@ public class MainMenuController {
         slotTextFields = new TextField[]{text_field_0, text_field_1, text_field_2};
         slotTexts = new Text[]{text_0, text_1, text_2, text_3};
         initializeMainMenu();
-        configureBackgroundMusic();
+        SceneManager.setBackgroundMusic(new Media(Objects.requireNonNull(getClass().getResource(Resource.MAIN_MENU_BACKGROUND_MUSIC_PATH)).toExternalForm()),0.15);
         buttonSound.setVolume(0.1);
     }
 
@@ -68,9 +67,8 @@ public class MainMenuController {
     @FXML
     private void toggleMusic(MouseEvent event) {
         ImageView musicIcon = (ImageView) event.getSource();
-        boolean isMuted = backgroundMusic.isMute();
-        musicIcon.setImage(new Image(isMuted ? Resource.MAIN_MENU_MUSIC_ON_ICON_PATH : Resource.MAIN_MENU_MUSIC_OFF_ICON_PATH));
-        backgroundMusic.setMute(!isMuted);
+        musicIcon.setImage(new Image(SceneManager.getBackgroundMusic().isMute() ? Resource.MAIN_MENU_MUSIC_ON_ICON_PATH : Resource.MAIN_MENU_MUSIC_OFF_ICON_PATH));
+        SceneManager.toggleMusic();
     }
 
     private void handleTextFieldAction(KeyEvent event, int index) {
@@ -81,6 +79,7 @@ public class MainMenuController {
                 try {
                     SaveManager.newGame(saveName, index);
                     updateSlotTexts(true);
+                    SceneManager.changeScene(Resource.VIEW_BATTLE);
                 } catch (IllegalArgumentException e) {
                     currentTextField.clear();
                     showError(currentTextField);
@@ -128,12 +127,6 @@ public class MainMenuController {
         } else {
             initializeMainMenu();
         }
-    }
-
-    private void configureBackgroundMusic() {
-        backgroundMusic.setVolume(0.15);
-        backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
-        backgroundMusic.play();
     }
 
     @FXML

@@ -16,7 +16,7 @@ import java.io.*;
  *
  * <p>Esta clase no puede ser instanciada ya que es final y todos sus métodos son estáticos.
  */
-public final class SaveManager {
+public abstract class SaveManager {
 
     /**
      * Rutas predeterminadas de los archivos de guardado.
