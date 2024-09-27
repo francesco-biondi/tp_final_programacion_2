@@ -17,8 +17,6 @@ public class App extends Application {
         Font.loadFont(getClass().getResourceAsStream(Resource.APP_FONT_PRESS_START), 70);
 
         configureStage(stage);
-
-
         stage.show();
     }
 

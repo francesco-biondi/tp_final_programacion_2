@@ -57,7 +57,7 @@
       </effect>
       <Image url="@../../assets/enemies/3-buggy.png" />
    </ImageView>
-   <StackPane onMouseClicked="#button_pressed">
+   <StackPane>
       <ImageView fx:id="shopButton" fitHeight="80.0" fitWidth="190.0" onMouseClicked="#toggleShop" pickOnBounds="true">
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" />
@@ -480,18 +480,22 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
-                     <ImageView fx:id="ability_1" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
-                        <Image url="@../../assets/ui/button_normal.png" />
-                     </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                        <font>
-                           <Font name="Unispace-Bold" size="10.0" />
-                        </font>
-                        <StackPane.margin>
-                           <Insets bottom="4.0" />
-                        </StackPane.margin>
-                     </Text>
+                  <StackPane fx:id="ability_1" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
+                     <children>
+                        <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../assets/ui/button_normal.png" />
+                           </image>
+                        </ImageView>
+                        <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                           <font>
+                              <Font name="Unispace-Bold" size="10.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets bottom="4.0" />
+                           </StackPane.margin>
+                        </Text>
+                     </children>
                   </StackPane>
                </VBox>
                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
@@ -511,11 +515,11 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
-                     <ImageView fx:id="ability_2" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                  <StackPane fx:id="ability_2" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
+                     <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                         <Image url="@../../assets/ui/button_normal.png" />
                      </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                         <font>
                            <Font name="Unispace-Bold" size="10.0" />
                         </font>
@@ -542,11 +546,11 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="21.0">
-                     <ImageView fx:id="ability_3" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                  <StackPane fx:id="ability_3" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="21.0">
+                     <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                         <Image url="@../../assets/ui/button_normal.png" />
                      </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                         <font>
                            <Font name="Unispace-Bold" size="10.0" />
                         </font>
@@ -573,11 +577,11 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
-                     <ImageView fx:id="ability_4" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                  <StackPane fx:id="ability_4" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
+                     <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                         <Image url="@../../assets/ui/button_normal.png" />
                      </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                         <font>
                            <Font name="Unispace-Bold" size="10.0" />
                         </font>
@@ -604,11 +608,11 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
-                     <ImageView fx:id="ability_5" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                  <StackPane fx:id="ability_5" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
+                     <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                         <Image url="@../../assets/ui/button_normal.png" />
                      </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                         <font>
                            <Font name="Unispace-Bold" size="10.0" />
                         </font>
@@ -635,11 +639,11 @@
                         <Font name="Unispace-Regular" size="12.0" />
                      </font>
                   </Text>
-                  <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
-                     <ImageView fx:id="ability_6" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                  <StackPane fx:id="ability_6" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
+                     <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                         <Image url="@../../assets/ui/button_normal.png" />
                      </ImageView>
-                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                     <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                         <font>
                            <Font name="Unispace-Bold" size="10.0" />
                         </font>
@@ -691,14 +695,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_1" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_1" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -730,14 +734,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_2" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_2" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -769,14 +773,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="21.0">
+                              <StackPane fx:id="nakama_3" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="21.0">
                                  <children>
-                                    <ImageView fx:id="nakama_3" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -808,14 +812,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_4" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_4" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -847,14 +851,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_5" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_5" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -886,14 +890,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_6" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_6" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -925,14 +929,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_7" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_7" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>
@@ -964,14 +968,14 @@
                                     <Font name="Unispace-Regular" size="12.0" />
                                  </font>
                               </Text>
-                              <StackPane accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="18.0" prefWidth="60.0">
+                              <StackPane fx:id="nakama_8" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
                                  <children>
-                                    <ImageView fx:id="nakama_8" accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
+                                    <ImageView accessibleRole="BUTTON" fitHeight="18.0" fitWidth="60.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../../assets/ui/button_normal.png" />
                                        </image>
                                     </ImageView>
-                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
+                                    <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
                                        <font>
                                           <Font name="Unispace-Bold" size="10.0" />
                                        </font>

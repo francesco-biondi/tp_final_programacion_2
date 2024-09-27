@@ -3,6 +3,7 @@ module com.tpfinalprogramacion2 {
     requires javafx.fxml;
     requires javafx.media;
     requires com.google.gson;
+    requires java.desktop;
 
     opens com.tpfinalprogramacion2 to javafx.fxml;
     exports com.tpfinalprogramacion2;

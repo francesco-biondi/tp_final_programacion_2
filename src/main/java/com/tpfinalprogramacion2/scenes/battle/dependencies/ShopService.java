@@ -1,31 +1,42 @@
 package com.tpfinalprogramacion2.scenes.battle.dependencies;
 
-import javafx.animation.Interpolator;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
+import javafx.scene.CacheHint;
 import javafx.scene.control.TabPane;
 import javafx.util.Duration;
 
 public class ShopService {
 
-    public static boolean isOpen = false;
+    public static boolean isOpen = false, isAnimating = false;
     private static TranslateTransition translateTransition;
 
     public static void configureStore(TabPane shopPane) {
+
+        translateTransition = new TranslateTransition(Duration.millis(600), shopPane);
         shopPane.setCache(true);
         shopPane.setCacheShape(true);
-        translateTransition = new TranslateTransition(Duration.millis(600), shopPane);
+
     }
 
-    public static void toggleStore() {
-        translateTransition.setInterpolator(Interpolator.EASE_BOTH);
+    public static void toggleStore(TabPane shopPane) {
+        if(!isAnimating){
+            isAnimating = true;
+            double startX = isOpen ? 0 : -400;
+            double endX = isOpen ? -400 : 0;
 
-        double fromX = isOpen ? 0 : -400;
-        double toX = isOpen ? -400 : 0;
+            translateTransition.setFromX(startX);
+            translateTransition.setToX(endX);
 
-        translateTransition.setFromX(fromX);
-        translateTransition.setToX(toX);
-        translateTransition.play();
+            translateTransition.play();
 
-        isOpen = !isOpen;
+            translateTransition.setOnFinished(e -> {
+                isOpen = !isOpen;
+                isAnimating = false;
+            });
+        }
+    }
+
+    public static void buy(){
+
     }
 }

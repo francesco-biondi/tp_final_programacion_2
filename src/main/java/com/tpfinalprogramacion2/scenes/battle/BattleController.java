@@ -1,9 +1,11 @@
 package com.tpfinalprogramacion2.scenes.battle;
 
+import com.tpfinalprogramacion2.scenes.battle.dependencies.ButtonService;
 import com.tpfinalprogramacion2.scenes.battle.dependencies.ShopService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 
 public class BattleController {
 
@@ -17,7 +19,13 @@ public class BattleController {
 
     @FXML
     void toggleShop(MouseEvent event){
-        ShopService.toggleStore();
+        ShopService.toggleStore(shopPane);
+    }
+
+    @FXML
+    void shopBuy(MouseEvent event){
+        ButtonService.updateButtonState((StackPane) event.getSource(), 1);
+        ShopService.buy();
     }
 
     @FXML
@@ -27,7 +35,7 @@ public class BattleController {
 
     @FXML
     void button_pressed(MouseEvent event) {
-
+        ButtonService.updateButtonState((StackPane) event.getSource(), 1);
     }
 
     @FXML
