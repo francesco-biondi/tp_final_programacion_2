@@ -1,6 +1,7 @@
 package com.tpfinalprogramacion2.models.characters;
 
 import com.tpfinalprogramacion2.models.abilities.Ability;
+import com.tpfinalprogramacion2.models.abilities.Nakama;
 
 import java.util.ArrayList;
 
