@@ -23,4 +23,11 @@ public class Resource {
     public static final String MAIN_MENU_MUSIC_ON_ICON_PATH = "file:src/main/resources/assets/icons/musica.png";
     public static final String MAIN_MENU_MUSIC_OFF_ICON_PATH = "file:src/main/resources/assets/icons/sin-musica.png";
 
+
+    /**
+     * Recursos para la interfaz de usuario del combate
+     */
+    public static final String normalButtonImagePath = "file:src/main/resources/assets/common/button_normal.png";
+    public static final String pressedButtonImagePath = "file:src/main/resources/assets/common/button_pressed.png";
+    public static final String cursorImagePath = "file:src/main/resources/com/op_test/fist_cursor.png";
 }
