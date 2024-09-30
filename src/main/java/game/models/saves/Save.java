@@ -15,13 +15,16 @@ public class Save implements Serializable {
     private Player player;
     ArrayList<Enemy> enemies;
 
-    public Save(String saveName) {
+    public Save(String saveName, ArrayList<Enemy> enemies) {
         this.saveName = saveName;
         this.saveDate = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
+        this.enemies = enemies;
     }
 
     @Override
     public String toString() {
         return saveName + " - " + saveDate;
     }
+
+
 }

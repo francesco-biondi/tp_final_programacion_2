@@ -2,9 +2,14 @@ package game.models.saves.dependencies;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import game.models.characters.Enemy;
+import game.models.characters.Nakama;
 import game.models.saves.Save;
 
 import java.io.*;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 /**
  * La clase {@code SaveManager} es responsable de gestionar la creación, guardado y carga de los archivos de
@@ -41,7 +46,8 @@ public abstract class SaveManager {
      * @throws IllegalArgumentException si el nombre de guardado es inválido.
      */
     public static void newGame(String saveName, int slotIndex) {
-        saveGame(new Save(setSaveName(saveName)), slotIndex);
+        ArrayList<Enemy> enemies = loadFile("src/main/resources/gameData/Enemies.json", ENEMY_TYPE);
+        saveGame(new Save(setSaveName(saveName), enemies), slotIndex);
     }
 
     /**
@@ -107,6 +113,19 @@ public abstract class SaveManager {
             return saveName;
         } else {
             throw new IllegalArgumentException("Invalid save name");
+        }
+    }
+
+    public final static Type ENEMY_TYPE = new TypeToken<ArrayList<Enemy>>() {
+    }.getType();
+    public final static Type NAKAMA_TYPE = new TypeToken<ArrayList<Nakama>>() {
+    }.getType();
+
+    public static <T> ArrayList<T> loadFile(String filePath, Type type) {
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, type);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

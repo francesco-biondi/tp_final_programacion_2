@@ -1,5 +1,6 @@
 package game.scenes.main_menu;
 
+import game.models.saves.Save;
 import game.scenes.dependencies.EffectManager;
 import game.scenes.dependencies.Scenes;
 import game.scenes.dependencies.SoundManager;
@@ -109,6 +110,7 @@ public class MainMenuController {
     private void handleLoadGameAction(int index) {
         if (index < slotTexts.length - 1) {
             SaveManager.loadGame(index);
+            SceneManager.changeScene(Scenes.BATTLE);
         } else {
             initializeMainMenu();
         }
