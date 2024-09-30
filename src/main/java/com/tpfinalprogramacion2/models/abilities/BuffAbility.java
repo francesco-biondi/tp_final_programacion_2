@@ -6,13 +6,12 @@ import com.tpfinalprogramacion2.models.exceptions.*;
 
 public class BuffAbility extends Ability{
 
-    private int duration;
+    private int durationTime;
     private Ability buffedAbility;
 
-    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, int duration, Ability buffedAbility) {
+    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, int durationTime) {
         super(BASE_STRENGTH, name, type, descripcion, level, strength, isAvailable, cooldownTime, isAnimating);
-        this.duration = duration;
-        this.buffedAbility = buffedAbility;
+        this.durationTime = durationTime;
     }
 
     @Override
@@ -26,6 +25,10 @@ public class BuffAbility extends Ability{
 
     private void removeBuff(Ability buffedAb){
         buffedAb.setStrength(buffedAb.getStrength() / (1 + strength));
+    }
+
+    public void duration(){
+        // SCHEDULER
     }
 
     @Override
