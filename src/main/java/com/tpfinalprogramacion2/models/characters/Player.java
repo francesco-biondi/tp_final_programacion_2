@@ -18,4 +18,10 @@ public class Player extends Character{
         this.abilities = abilities;
         this.nakamas = nakamas;
     }
+
+    public void addAbility(Ability ability){
+        abilities.add(ability);
+    }
+
+    
 }
