@@ -1,14 +1,13 @@
 package game.scenes.main_menu;
 
+import game.scenes.dependencies.EffectManager;
 import game.scenes.dependencies.Scenes;
-import game.scenes.dependencies.SoundEffect;
+import game.scenes.dependencies.SoundManager;
 import game.services.Resource;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.dependencies.SceneManager;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -34,36 +33,27 @@ public class MainMenuController {
         slotTextFields = new TextField[]{text_field_0, text_field_1, text_field_2};
         slotTexts = new Text[]{text_0, text_1, text_2, text_3};
         initializeMainMenu();
-        SoundEffect.setBackgroundMusic(Resource.MAIN_MENU_BACKGROUND_MUSIC_PATH, 0.15);
+        SoundManager.setBackgroundMusic(Resource.MAIN_MENU_BACKGROUND_MUSIC_PATH, 0.15);
     }
 
 
     @FXML
     private void handleHover(MouseEvent event) {
-        Node node = (Node) event.getSource();
-        if (event.getTarget() instanceof Text) {
-            node = (Text) event.getTarget();
-        } else if (event.getTarget() instanceof ImageView) {
-            node = (ImageView) event.getTarget();
-        }
-        boolean isHovering = event.getEventType() == MouseEvent.MOUSE_ENTERED;
-        node.setScaleX(isHovering ? 1.3 : 1);
-        node.setScaleY(isHovering ? 1.3 : 1);
-        node.setEffect(isHovering ? new DropShadow() : null);
+        EffectManager.applyScaleEffect(event, 1.3);
     }
 
     @FXML
     private void clicked_text(MouseEvent event) {
         Text clickedText = (Text) event.getSource();
-        SoundEffect.playButtonSound(0.1);
+        SoundManager.playButtonSound(0.1);
         handleTextAction(Integer.parseInt(clickedText.getId().replace("text_", "")));
     }
 
     @FXML
     private void toggleMusic(MouseEvent event) {
         ImageView musicIcon = (ImageView) event.getSource();
-        SoundEffect.updateMusicIcon(musicIcon);
-        SoundEffect.toggleMusic();
+        SoundManager.updateMusicIcon(musicIcon);
+        SoundManager.toggleMusic();
     }
 
     private void handleTextFieldAction(KeyEvent event, int index) {

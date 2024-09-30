@@ -1,5 +1,8 @@
 package game.scenes.map;
 
+import game.scenes.dependencies.EffectManager;
+import game.scenes.dependencies.SceneManager;
+import game.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
@@ -17,6 +20,16 @@ public class MapController {
     @FXML
     void initialize() {
         configureMap();
+    }
+
+    @FXML
+    void handleHover(MouseEvent event) {
+        EffectManager.applyGlowEffect(event);
+    }
+
+    @FXML
+    void selectLevel(MouseEvent event) {
+        SceneManager.changeScene(Scenes.BATTLE);
     }
 
     void configureMap() {

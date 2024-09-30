@@ -9,13 +9,13 @@ import javafx.scene.media.MediaPlayer;
 
 import java.util.Objects;
 
-public class SoundEffect {
+public class SoundManager {
     private static MediaPlayer backgroundMusic;
-    private static final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(SoundEffect.class.getResource(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH)).toExternalForm());
+    private static final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(SoundManager.class.getResource(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH)).toExternalForm());
     private static boolean isMute = false;
 
     public static void setBackgroundMusic(String path, double volume) {
-        backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(SoundEffect.class.getResource(path)).toExternalForm()));
+        backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(SoundManager.class.getResource(path)).toExternalForm()));
         backgroundMusic.setVolume(volume);
         backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMusic.play();
