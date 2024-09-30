@@ -1,6 +1,7 @@
 package com.tpfinalprogramacion2.models.characters;
 
 import com.tpfinalprogramacion2.models.abilities.Ability;
+import com.tpfinalprogramacion2.models.abilities.Nakama;
 
 import java.util.ArrayList;
 
@@ -16,5 +17,17 @@ public class Player extends Character{
         this.gold = gold;
         this.abilities = abilities;
         this.nakamas = nakamas;
+    }
+
+    public void addAbility(Ability ability){
+        abilities.add(ability);
+    }
+
+    public Ability getAbility(int i){
+        return abilities.get(i);
+    }
+
+    public void removeAbility(Ability ability){
+        abilities.remove(ability);
     }
 }
