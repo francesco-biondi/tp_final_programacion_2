@@ -15,4 +15,5 @@ module com.tpfinalprogramacion2 {
     opens com.tpfinalprogramacion2.models.characters to com.google.gson;
     opens com.tpfinalprogramacion2.models.abilities to com.google.gson;
     exports com.tpfinalprogramacion2.models.abilities.enums to com.google.gson;
+    exports com.tpfinalprogramacion2.scenes.map to javafx.fxml;
 }

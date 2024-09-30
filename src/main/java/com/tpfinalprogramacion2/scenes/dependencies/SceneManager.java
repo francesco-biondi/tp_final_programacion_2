@@ -23,7 +23,7 @@ public abstract class SceneManager {
     public static void changeScene(Scenes scene) {
         String fxmlView = switch (scene){
             case MAIN_MENU -> Resource.VIEW_MAIN_MENU;
-            case MAP -> null;
+            case MAP -> Resource.VIEW_MAP;
             case BATTLE -> Resource.VIEW_BATTLE;
         };
         Parent root = getRoot(fxmlView);

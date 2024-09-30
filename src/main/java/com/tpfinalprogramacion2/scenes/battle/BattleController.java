@@ -6,6 +6,7 @@ import com.tpfinalprogramacion2.scenes.battle.dependencies.ShopManager;
 import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
 import com.tpfinalprogramacion2.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -58,7 +59,7 @@ public class BattleController {
 
     @FXML
     void toggleMap(MouseEvent event) {
-
+        SceneManager.changeScene(Scenes.MAP);
     }
 
     @FXML
