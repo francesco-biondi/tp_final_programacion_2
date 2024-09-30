@@ -23,5 +23,7 @@ public class Player extends Character{
         abilities.add(ability);
     }
 
-    
+    public Ability getAbility(int i){
+        return abilities.get(i);
+    }
 }
