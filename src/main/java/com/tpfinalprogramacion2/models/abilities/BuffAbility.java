@@ -24,6 +24,10 @@ public class BuffAbility extends Ability{
         buffedAb.setStrength(buffedAb.getStrength() * (1 + strength));
     }
 
+    private void removeBuff(Ability buffedAb){
+        buffedAb.setStrength(buffedAb.getStrength() / (1 + strength));
+    }
+
     @Override
     public void upgrade() {
         if(this.level <= this.maxLevel){
