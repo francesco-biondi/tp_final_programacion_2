@@ -1,6 +1,6 @@
 package com.tpfinalprogramacion2.scenes.battle.dependencies;
 
-import com.tpfinalprogramacion2.models.resource.Resource;
+import com.tpfinalprogramacion2.services.Resource;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
 import javafx.scene.Scene;

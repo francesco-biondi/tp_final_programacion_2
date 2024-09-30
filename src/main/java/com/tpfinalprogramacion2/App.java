@@ -1,6 +1,6 @@
 package com.tpfinalprogramacion2;
 
-import com.tpfinalprogramacion2.models.resource.Resource;
+import com.tpfinalprogramacion2.services.Resource;
 import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
 import javafx.application.Application;
 import javafx.scene.Scene;

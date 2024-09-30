@@ -3,8 +3,11 @@ package com.tpfinalprogramacion2.scenes.battle;
 import com.tpfinalprogramacion2.scenes.battle.dependencies.ButtonManager;
 import com.tpfinalprogramacion2.scenes.battle.dependencies.CursorManager;
 import com.tpfinalprogramacion2.scenes.battle.dependencies.ShopManager;
+import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
+import com.tpfinalprogramacion2.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 
@@ -51,6 +54,16 @@ public class BattleController {
         } else {
             CursorManager.resetCursor(enemy.getScene());
         };
+    }
+
+    @FXML
+    void toggleMap(MouseEvent event) {
+
+    }
+
+    @FXML
+    void mainMenu(MouseEvent event) {
+        SceneManager.changeScene(Scenes.MAIN_MENU);
     }
 
 }

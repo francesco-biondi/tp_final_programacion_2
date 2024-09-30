@@ -1,8 +1,8 @@
 package com.tpfinalprogramacion2.scenes.battle.dependencies;
 
 
-import com.tpfinalprogramacion2.models.resource.Resource;
-import com.tpfinalprogramacion2.scenes.dependencies.SchedulerService;
+import com.tpfinalprogramacion2.services.Resource;
+import com.tpfinalprogramacion2.services.SchedulerService;
 import javafx.scene.Node;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;

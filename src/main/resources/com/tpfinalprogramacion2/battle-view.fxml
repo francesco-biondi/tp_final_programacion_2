@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -161,13 +160,13 @@
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
-         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+         <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#toggleMap" pickOnBounds="true">
             <effect>
                <DropShadow blurType="TWO_PASS_BOX" />
             </effect>
             <Image url="@../../assets/ui/ui_medium_wood.png" />
          </ImageView>
-         <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="10.0" layoutY="35.0" pickOnBounds="true">
+         <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="10.0" layoutY="35.0" mouseTransparent="true" pickOnBounds="true">
             <effect>
                <DropShadow blurType="ONE_PASS_BOX" />
             </effect>
@@ -175,21 +174,21 @@
          </ImageView>
       </StackPane>
       <StackPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
-         <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true">
+         <ImageView fitHeight="80.0" fitWidth="80.0" onMouseClicked="#mainMenu" pickOnBounds="true">
             <effect>
                <DropShadow blurType="TWO_PASS_BOX" />
             </effect>
             <Image url="@../../assets/ui/ui_medium_wood.png" />
          </ImageView>
-         <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="10.0" layoutY="35.0" pickOnBounds="true">
+         <ImageView fitHeight="58.0" fitWidth="54.0" layoutX="10.0" layoutY="35.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../assets/icons/close_icon.png" />
             <effect>
-               <ColorAdjust brightness="-0.47" hue="0.16" saturation="0.31">
+               <ColorAdjust brightness="-0.17" contrast="-0.26" saturation="-0.37">
                   <input>
-                     <Glow />
+                     <DropShadow blurType="ONE_PASS_BOX" />
                   </input>
                </ColorAdjust>
             </effect>
-            <Image url="@../../assets/icons/menu_icon.png" />
          </ImageView>
       </StackPane>
    </GridPane>

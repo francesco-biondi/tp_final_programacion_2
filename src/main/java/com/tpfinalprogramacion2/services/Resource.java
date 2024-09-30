@@ -1,4 +1,4 @@
-package com.tpfinalprogramacion2.models.resource;
+package com.tpfinalprogramacion2.services;
 
 public class Resource {
 

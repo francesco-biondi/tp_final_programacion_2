@@ -1,15 +1,13 @@
 package com.tpfinalprogramacion2.scenes.dependencies;
 
 import com.tpfinalprogramacion2.App;
-import com.tpfinalprogramacion2.models.resource.Resource;
+import com.tpfinalprogramacion2.services.Resource;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -17,13 +15,17 @@ import java.io.IOException;
 
 public abstract class SceneManager {
     private static Scene scene;
-    private static MediaPlayer backgroundMusic;
 
     public static void setMainScene(Scene scene) {
         SceneManager.scene = scene;
     }
 
-    public static void changeScene(String fxmlView) {
+    public static void changeScene(Scenes scene) {
+        String fxmlView = switch (scene){
+            case MAIN_MENU -> Resource.VIEW_MAIN_MENU;
+            case MAP -> null;
+            case BATTLE -> Resource.VIEW_BATTLE;
+        };
         Parent root = getRoot(fxmlView);
         applyFadeTransition(root);
     }
@@ -51,21 +53,6 @@ public abstract class SceneManager {
         });
 
         fadeOut.play();
-    }
-
-    public static void setBackgroundMusic(Media media, double volume) {
-        backgroundMusic = new MediaPlayer(media);
-        backgroundMusic.setVolume(volume);
-        backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
-        backgroundMusic.play();
-    }
-
-    public static MediaPlayer getBackgroundMusic() {
-        return backgroundMusic;
-    }
-
-    public static void toggleMusic() {
-        backgroundMusic.setMute(!backgroundMusic.isMute());
     }
 
 }
