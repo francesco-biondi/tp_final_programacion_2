@@ -26,4 +26,8 @@ public class Player extends Character{
     public Ability getAbility(int i){
         return abilities.get(i);
     }
+
+    public void removeAbility(Ability ability){
+        abilities.remove(ability);
+    }
 }
