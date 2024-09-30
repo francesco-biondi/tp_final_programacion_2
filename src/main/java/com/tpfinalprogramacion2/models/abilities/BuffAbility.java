@@ -2,6 +2,7 @@ package com.tpfinalprogramacion2.models.abilities;
 
 import com.tpfinalprogramacion2.models.abilities.enums.AbilityType;
 import com.tpfinalprogramacion2.models.characters.Character;
+import com.tpfinalprogramacion2.models.characters.Player;
 import com.tpfinalprogramacion2.models.exceptions.*;
 
 public class BuffAbility extends Ability{
@@ -16,7 +17,24 @@ public class BuffAbility extends Ability{
 
     @Override
     public double use(Character character) {
-        return 0;
+        if(this.isAvailable){
+            if(character instanceof Player player){
+                this.buffedAbility = player.getAbility(0);
+                // NO SE si es aplicado siempre el buff solo al ataque basico
+                // Si es asi, se puede ya asignar en el constructor
+                // Si no, hay que ver como se trae la habilidad que acciona para aplicarle el buff
+
+                applyBuff(buffedAbility);
+                duration();
+                cooldown();
+                removeBuff(buffedAbility);
+                return strength;
+            } else {
+                throw new IllegalArgumentException("Character must be an instance of player.");
+            }
+        } else {
+            throw new AbilityNotAvailableException("Ability is not available.");
+        }
     }
 
     private void applyBuff(Ability buffedAb){
