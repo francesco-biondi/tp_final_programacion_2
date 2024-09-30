@@ -1,6 +1,6 @@
 package com.tpfinalprogramacion2;
 
-import com.tpfinalprogramacion2.models.resource.Resource;
+import com.tpfinalprogramacion2.services.Resource;
 import com.tpfinalprogramacion2.scenes.dependencies.SceneManager;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,8 +17,6 @@ public class App extends Application {
         Font.loadFont(getClass().getResourceAsStream(Resource.APP_FONT_PRESS_START), 70);
 
         configureStage(stage);
-
-
         stage.show();
     }
 
