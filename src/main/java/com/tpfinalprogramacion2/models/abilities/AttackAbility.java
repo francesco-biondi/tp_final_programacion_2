@@ -3,7 +3,7 @@ package com.tpfinalprogramacion2.models.abilities;
 import com.tpfinalprogramacion2.models.abilities.enums.AbilityType;
 import com.tpfinalprogramacion2.models.characters.Character;
 import com.tpfinalprogramacion2.models.characters.Enemy;
-import com.tpfinalprogramacion2.models.exceptions.MaxLevelReachedException;
+import com.tpfinalprogramacion2.models.exceptions.*;
 
 public class AttackAbility extends Ability {
 
@@ -22,7 +22,7 @@ public class AttackAbility extends Ability {
                 throw new IllegalStateException("Character must be an enemy.");
             }
         } else {
-            throw new IllegalStateException("This ability is not available.");
+            throw new AbilityNotAvailableException("This ability is not available.");
         }
     }
 

@@ -2,7 +2,7 @@ package com.tpfinalprogramacion2.models.abilities;
 
 import com.tpfinalprogramacion2.models.abilities.enums.AbilityType;
 import com.tpfinalprogramacion2.models.characters.Character;
-import com.tpfinalprogramacion2.models.exceptions.MaxLevelReachedException;
+import com.tpfinalprogramacion2.models.exceptions.*;
 
 public class BuffAbility extends Ability{
 
@@ -20,9 +20,8 @@ public class BuffAbility extends Ability{
         return 0;
     }
 
-    @Override
-    public void cooldown() {
-
+    private void applyBuff(Ability buffedAb){
+        buffedAb.setStrength(buffedAb.getStrength() * (1 + strength));
     }
 
     @Override
