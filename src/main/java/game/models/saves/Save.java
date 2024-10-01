@@ -26,5 +26,15 @@ public class Save implements Serializable {
         return saveName + " - " + saveDate;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
 
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
+
+    public Enemy getEnemy(int index) {
+        return enemies.get(index);
+    }
 }

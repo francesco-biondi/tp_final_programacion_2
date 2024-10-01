@@ -15,11 +15,11 @@
    <children>
       <Group fx:id="levels" layoutX="25.0" layoutY="60.0" AnchorPane.bottomAnchor="201.990234375" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="51.5" AnchorPane.topAnchor="60.0">
          <children>
-            <Group fx:id="lvl1" layoutX="1051.0" layoutY="-4.0">
+            <Group layoutX="1051.0" layoutY="-4.0">
                <children>
                   <StackPane prefHeight="161.0" prefWidth="181.0">
                      <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="lvl0" fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/posters/alvida.png" />
                            </image>

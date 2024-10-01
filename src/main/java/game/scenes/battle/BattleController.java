@@ -1,17 +1,28 @@
 package game.scenes.battle;
 
+import game.models.characters.Enemy;
 import game.scenes.battle.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.battle.dependencies.ShopManager;
+import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 public class BattleController {
+
+    @FXML
+    private Text enemyName;
+
+    @FXML
+    private ProgressBar healthBar;
 
     @FXML
     private TabPane shopPane;
@@ -21,6 +32,8 @@ public class BattleController {
 
     @FXML
     public void initialize(){
+
+        updateEnemy(GameManager.enemy.get());
         ShopManager.configureStore(shopPane);
     }
 
@@ -64,6 +77,11 @@ public class BattleController {
     @FXML
     void mainMenu(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAIN_MENU);
+    }
+
+    void updateEnemy(Enemy enemy){
+        enemyImage.setImage(new Image(enemy.getImage()));
+        enemyName.setText(enemy.getName());
     }
 
 }

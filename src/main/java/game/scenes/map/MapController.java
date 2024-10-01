@@ -1,10 +1,12 @@
 package game.scenes.map;
 
 import game.scenes.dependencies.EffectManager;
+import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Scale;
@@ -29,6 +31,9 @@ public class MapController {
 
     @FXML
     void selectLevel(MouseEvent event) {
+        ImageView level = (ImageView) event.getSource();
+        GameManager.setEnemy((Integer.parseInt(level.getId().replace("lvl", ""))));
+        System.out.println(GameManager.enemy);
         SceneManager.changeScene(Scenes.BATTLE);
     }
 

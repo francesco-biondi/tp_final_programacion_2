@@ -35,7 +35,7 @@
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <VBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1">
-      <Text fx:id="enemyName" stroke="WHITE" strokeType="OUTSIDE" text="BUGGY THE CLOWN" textAlignment="CENTER">
+      <Text fx:id="enemyName" stroke="WHITE" strokeType="OUTSIDE" textAlignment="CENTER">
          <font>
             <Font name="Press Start 2P Regular" size="33.0" />
          </font>
@@ -51,7 +51,7 @@
       </ProgressBar>
    </VBox>
    <ImageView fx:id="enemyImage" cache="true" cacheHint="SCALE" fitHeight="478.0" fitWidth="541.0" onMouseClicked="#hitEnemy" onMouseEntered="#handleCursor" onMouseExited="#handleCursor" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-      <Image url="@../assets/enemies/3-buggy.png" />
+
    </ImageView>
    <StackPane>
       <ImageView fx:id="shopButton" fitHeight="80.0" fitWidth="190.0" onMouseClicked="#toggleShop" pickOnBounds="true">

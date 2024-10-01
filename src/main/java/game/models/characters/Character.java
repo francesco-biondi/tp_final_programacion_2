@@ -4,12 +4,20 @@ public class Character {
 
     protected String name;
     protected double bounty;
-    protected String image;
+    protected String posterImage;
 
     public Character(String name, double bounty, String image) {
         this.name = name;
         this.bounty = bounty;
-        this.image = image;
+        this.posterImage = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                ", bounty=" + bounty +
+                '}';
     }
 
     public String getName() {
@@ -28,11 +36,11 @@ public class Character {
         this.bounty = bounty;
     }
 
-    public String getImage() {
-        return image;
+    public String getPosterImage() {
+        return posterImage;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setPosterImage(String posterImage) {
+        this.posterImage = posterImage;
     }
 }

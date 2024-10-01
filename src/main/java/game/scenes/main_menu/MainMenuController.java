@@ -1,12 +1,8 @@
 package game.scenes.main_menu;
 
-import game.models.saves.Save;
-import game.scenes.dependencies.EffectManager;
-import game.scenes.dependencies.Scenes;
-import game.scenes.dependencies.SoundManager;
+import game.scenes.dependencies.*;
 import game.services.Resource;
 import game.models.saves.dependencies.SaveManager;
-import game.scenes.dependencies.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -64,8 +60,9 @@ public class MainMenuController {
                 String saveName = currentTextField.getText().trim();
                 try {
                     SaveManager.newGame(saveName, index);
+                    GameManager.setCurrentSave(SaveManager.loadGame(index));
                     updateSlotTexts(true);
-                    SceneManager.changeScene(Scenes.BATTLE);
+                    SceneManager.changeScene(Scenes.MAP);
                 } catch (IllegalArgumentException e) {
                     currentTextField.clear();
                     showError(currentTextField);
@@ -109,8 +106,8 @@ public class MainMenuController {
 
     private void handleLoadGameAction(int index) {
         if (index < slotTexts.length - 1) {
-            SaveManager.loadGame(index);
-            SceneManager.changeScene(Scenes.BATTLE);
+            GameManager.setCurrentSave(SaveManager.loadGame(index));
+            SceneManager.changeScene(Scenes.MAP);
         } else {
             initializeMainMenu();
         }
