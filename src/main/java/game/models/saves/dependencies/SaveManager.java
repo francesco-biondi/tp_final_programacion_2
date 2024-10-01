@@ -24,16 +24,6 @@ import java.util.ArrayList;
 public abstract class SaveManager {
 
     /**
-     * Rutas predeterminadas de los archivos de guardado.
-     * Cada índice del array representa un slot de guardado.
-     */
-    private static final String[] SLOT_PATHS = {
-            "src/main/resources/saves/save1.json",
-            "src/main/resources/saves/save2.json",
-            "src/main/resources/saves/save3.json"
-    };
-
-    /**
      * Instancia de Gson configurada con formateo de impresión amigable (pretty-printing).
      */
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -46,19 +36,17 @@ public abstract class SaveManager {
      * @throws IllegalArgumentException si el nombre de guardado es inválido.
      */
     public static void newGame(String saveName, int slotIndex) {
-        ArrayList<Enemy> enemies = loadFile("src/main/resources/gameData/Enemies.json", ENEMY_TYPE);
-        saveGame(new Save(setSaveName(saveName), enemies), slotIndex);
+        saveGame(new Save(setSaveName(saveName), slotIndex));
     }
 
     /**
      * Guarda el estado del juego en un archivo JSON en el slot de guardado especificado.
      *
      * @param save      Objeto {@link Save} que representa el estado actual del juego.
-     * @param slotIndex Índice del slot de guardado (0 a 2).
      * @throws RuntimeException si ocurre un error de entrada/salida durante el guardado.
      */
-    public static void saveGame(Save save, int slotIndex) {
-        try (FileWriter writer = new FileWriter(SLOT_PATHS[slotIndex])) {
+    public static void saveGame(Save save) {
+        try (FileWriter writer = new FileWriter(save.getSavePath())) {
             gson.toJson(save, writer);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -73,7 +61,7 @@ public abstract class SaveManager {
      * @throws RuntimeException si ocurre un error de entrada/salida durante la carga.
      */
     public static Save loadGame(int slotIndex) {
-        try (FileReader reader = new FileReader(SLOT_PATHS[slotIndex])) {
+        try (FileReader reader = new FileReader(Save.getSavePath(slotIndex))) {
             return gson.fromJson(reader, Save.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -87,7 +75,7 @@ public abstract class SaveManager {
      * @return {@code true} si el archivo de guardado existe, {@code false} en caso contrario.
      */
     public static boolean saveExists(int slotIndex) {
-        return new java.io.File(SLOT_PATHS[slotIndex]).exists();
+        return new java.io.File(Save.getSavePath(slotIndex)).exists();
     }
 
     /**
@@ -115,11 +103,6 @@ public abstract class SaveManager {
             throw new IllegalArgumentException("Invalid save name");
         }
     }
-
-    public final static Type ENEMY_TYPE = new TypeToken<ArrayList<Enemy>>() {
-    }.getType();
-    public final static Type NAKAMA_TYPE = new TypeToken<ArrayList<Nakama>>() {
-    }.getType();
 
     public static <T> ArrayList<T> loadFile(String filePath, Type type) {
         try (FileReader reader = new FileReader(filePath)) {

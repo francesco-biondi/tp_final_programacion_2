@@ -33,7 +33,6 @@ public class MapController {
     void selectLevel(MouseEvent event) {
         ImageView level = (ImageView) event.getSource();
         GameManager.setEnemy((Integer.parseInt(level.getId().replace("lvl", ""))));
-        System.out.println(GameManager.enemy);
         SceneManager.changeScene(Scenes.BATTLE);
     }
 

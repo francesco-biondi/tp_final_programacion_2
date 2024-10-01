@@ -15,12 +15,12 @@ public class SoundManager {
     private static boolean isMute = false;
 
     public static void setBackgroundMusic(String path, double volume) {
+        if (backgroundMusic != null) backgroundMusic.stop();
         backgroundMusic = new MediaPlayer(new Media(Objects.requireNonNull(SoundManager.class.getResource(path)).toExternalForm()));
         backgroundMusic.setVolume(volume);
         backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMusic.play();
         backgroundMusic.setMute(isMute);
-
     }
 
     public static MediaPlayer getBackgroundMusic() {

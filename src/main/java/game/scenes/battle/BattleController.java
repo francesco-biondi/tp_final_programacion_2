@@ -1,6 +1,7 @@
 package game.scenes.battle;
 
 import game.models.characters.Enemy;
+import game.models.saves.dependencies.SaveManager;
 import game.scenes.battle.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.battle.dependencies.ShopManager;
@@ -33,7 +34,8 @@ public class BattleController {
     @FXML
     public void initialize(){
 
-        updateEnemy(GameManager.enemy.get());
+        updateEnemy(GameManager.currentEnemy);
+        healthBar.setProgress(GameManager.currentEnemy.getHealth()/GameManager.currentEnemy.MAX_HEALTH);
         ShopManager.configureStore(shopPane);
     }
 
@@ -50,7 +52,8 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-
+        GameManager.currentEnemy.setHealth(GameManager.currentEnemy.getHealth() - 10);
+        healthBar.setProgress(GameManager.currentEnemy.getHealth()/GameManager.currentEnemy.MAX_HEALTH);
     }
 
     @FXML
@@ -77,6 +80,7 @@ public class BattleController {
     @FXML
     void mainMenu(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAIN_MENU);
+        SaveManager.saveGame(GameManager.getCurrentSave());
     }
 
     void updateEnemy(Enemy enemy){

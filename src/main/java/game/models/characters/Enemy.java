@@ -1,6 +1,7 @@
 package game.models.characters;
 
-import javafx.scene.image.Image;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 
 public class Enemy extends Character{
 

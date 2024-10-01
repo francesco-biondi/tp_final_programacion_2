@@ -15,6 +15,7 @@ public class Resource {
     public static final String APP_FONT_ONE_PIECE = "/assets/fonts/ONE PIECE.ttf";
     public static final String APP_FONT_PRESS_START = "/assets/fonts/PressStart2P-Regular.ttf";
     public static final String APP_ICON = "file:src/main/resources/assets/icons/opf_icon.png";
+    public static final String ENEMIES = "src/main/resources/gameData/Enemies.json";
 
     /**
      * Recursos para la interfaz de usuario del menu principal
