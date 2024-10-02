@@ -9,6 +9,7 @@ public class Enemy extends Character{
     public final int GOLD_BY_CLICK;
     private final String image;
     private double health;
+    private transient DoubleProperty healthProperty;
     private boolean defeated = false;
     private boolean unlocked = false;
 
@@ -16,6 +17,7 @@ public class Enemy extends Character{
         super(name, bounty, posterImage);
         this.MAX_HEALTH = MAX_HEALTH;
         this.health = MAX_HEALTH;
+        this.healthProperty = new SimpleDoubleProperty(MAX_HEALTH);
         this.GOLD_BY_CLICK = GOLD_BY_CLICK;
         this.image = image;
     }
@@ -38,6 +40,7 @@ public class Enemy extends Character{
 
     public void setHealth(double health) {
         this.health = health;
+        this.healthProperty.set(health);
     }
 
     public boolean isDefeated() {
@@ -56,12 +59,8 @@ public class Enemy extends Character{
         this.unlocked = unlocked;
     }
 
-    @Override
-    public String toString() {
-        return "Enemy{" +
-                "bounty=" + bounty +
-                ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                '}';
+    public DoubleProperty healthProperty() {
+        return healthProperty == null ? healthProperty = new SimpleDoubleProperty(health) : healthProperty;
     }
+
 }

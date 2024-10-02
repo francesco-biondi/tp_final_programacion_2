@@ -35,7 +35,6 @@ public class BattleController {
     public void initialize(){
 
         updateEnemy(GameManager.currentEnemy);
-        healthBar.setProgress(GameManager.currentEnemy.getHealth()/GameManager.currentEnemy.MAX_HEALTH);
         ShopManager.configureStore(shopPane);
     }
 
@@ -53,7 +52,6 @@ public class BattleController {
     @FXML
     void hitEnemy(MouseEvent event) {
         GameManager.currentEnemy.setHealth(GameManager.currentEnemy.getHealth() - 10);
-        healthBar.setProgress(GameManager.currentEnemy.getHealth()/GameManager.currentEnemy.MAX_HEALTH);
     }
 
     @FXML
@@ -84,6 +82,7 @@ public class BattleController {
     }
 
     void updateEnemy(Enemy enemy){
+        healthBar.progressProperty().bind(GameManager.currentEnemy.healthProperty().divide(GameManager.currentEnemy.getMAX_HEALTH()));
         enemyImage.setImage(new Image(enemy.getImage()));
         enemyName.setText(enemy.getName());
     }
