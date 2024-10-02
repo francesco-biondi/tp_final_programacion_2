@@ -14,8 +14,12 @@ import java.io.IOException;
 public abstract class SceneManager {
     private static Scene scene;
 
-    public static void setMainScene(Scene scene) {
+    public static void setScene(Scene scene) {
         SceneManager.scene = scene;
+    }
+
+    public static Scene getScene() {
+        return scene;
     }
 
     public static void changeScene(Scenes scene) {

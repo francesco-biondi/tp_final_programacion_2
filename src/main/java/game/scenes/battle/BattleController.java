@@ -64,9 +64,9 @@ public class BattleController {
         ImageView enemy = (ImageView) event.getSource();
         boolean isHovering = event.getEventType().equals(MouseEvent.MOUSE_ENTERED);
         if (isHovering) {
-            CursorManager.setCursorToFist(enemy.getScene());
+            CursorManager.setCursorToFist();
         } else {
-            CursorManager.resetCursor(enemy.getScene());
+            CursorManager.resetCursor();
         };
     }
 

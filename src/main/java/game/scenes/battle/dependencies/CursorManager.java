@@ -1,5 +1,6 @@
 package game.scenes.battle.dependencies;
 
+import game.scenes.dependencies.SceneManager;
 import game.services.Resource;
 import javafx.scene.Cursor;
 import javafx.scene.ImageCursor;
@@ -8,13 +9,13 @@ import javafx.scene.image.Image;
 
 public class CursorManager {
 
-    public static void setCursorToFist(Scene scene) {
+    public static void setCursorToFist() {
         Image cursorImage = new Image(Resource.cursorImagePath);
         ImageCursor customCursor = new ImageCursor(cursorImage, cursorImage.getWidth() / 2, cursorImage.getHeight() / 2);
-        scene.setCursor(customCursor);
+        SceneManager.getScene().setCursor(customCursor);
     }
 
-    public static void resetCursor(Scene scene) {
-        scene.setCursor(Cursor.DEFAULT);
+    public static void resetCursor() {
+        SceneManager.getScene().setCursor(Cursor.DEFAULT);
     }
 }

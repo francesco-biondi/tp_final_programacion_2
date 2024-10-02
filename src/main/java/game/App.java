@@ -23,7 +23,7 @@ public class App extends Application {
     public void configureStage(Stage stage) {
         Scene scene = new Scene(SceneManager.getRoot(Resource.VIEW_MAIN_MENU));
         stage.setScene(scene);
-        SceneManager.setMainScene(scene);
+        SceneManager.setScene(scene);
         stage.getIcons().add(new Image(Resource.APP_ICON));
         stage.setTitle("One Piece");
         stage.setFullScreen(true);

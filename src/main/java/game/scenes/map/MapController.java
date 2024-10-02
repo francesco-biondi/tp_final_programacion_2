@@ -29,13 +29,14 @@ public class MapController {
 
     @FXML
     void handleHover(MouseEvent event) {
-        EffectManager.applyGlowEffect(event);
+        EffectManager.applyScaleEffect(event, 1.1);
     }
 
     @FXML
     void selectLevel(MouseEvent event) {
         ImageView level = (ImageView) event.getSource();
         GameManager.setEnemy((Integer.parseInt(level.getId().replace("lvl", ""))));
+        if (GameManager.currentEnemy.isDefeated()) GameManager.currentEnemy.setHealth(GameManager.currentEnemy.MAX_HEALTH);
         SceneManager.changeScene(Scenes.BATTLE);
     }
 
