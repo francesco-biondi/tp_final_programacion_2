@@ -18,10 +18,18 @@ public class GameManager {
 
     public static void setEnemy(int index){
         currentEnemy = getCurrentSave().getEnemy(index);
+
+        currentEnemy.healthProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.intValue() <= 0 && !currentEnemy.isDefeated()) {
+                currentEnemy.setDefeated(true);
+                unlockNextEnemy(currentEnemy.getId());
+            }
+        });
     }
 
-    public static void unlockEnemy(int index){
-        currentSave.getEnemy(index).setUnlocked(true);
+    public static void unlockNextEnemy(int index){
+        currentSave.getEnemy(index + 1).setUnlocked(true);
+        System.out.println(currentSave.getEnemy(index + 1).getName() + currentSave.getEnemy(index + 1).isUnlocked());
     }
 
 

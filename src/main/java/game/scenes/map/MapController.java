@@ -6,9 +6,11 @@ import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 
 public class MapController {
@@ -17,10 +19,11 @@ public class MapController {
     private AnchorPane root;
 
     @FXML
-    private Group levels;
+    private Pane map;
 
     @FXML
     void initialize() {
+        displayLevels();
         configureMap();
     }
 
@@ -41,7 +44,17 @@ public class MapController {
         scale.xProperty().bind(root.widthProperty().divide(1280));
         scale.yProperty().bind(root.heightProperty().divide(800));
 
-        levels.getTransforms().add(scale);
+        map.getTransforms().add(scale);
+    }
+
+    void displayLevels() {
+        int i = 0;
+        for(Node node : map.getChildren()) {
+            if(node instanceof Group level) {
+                level.visibleProperty().bind(GameManager.getCurrentSave().getEnemy(i).unlockedProperty());
+                level.getChildren().get(1).visibleProperty().bind(GameManager.getCurrentSave().getEnemy(i++).defeatedProperty());
+            }
+        }
     }
 
 }

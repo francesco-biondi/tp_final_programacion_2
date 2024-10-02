@@ -1,311 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.CubicCurve?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="root" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@styles/map-view.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.scenes.map.MapController">
    <children>
-      <Group fx:id="levels" layoutX="25.0" layoutY="60.0" AnchorPane.bottomAnchor="201.990234375" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="51.5" AnchorPane.topAnchor="60.0">
+      <Pane fx:id="map" layoutX="14.0" layoutY="63.0" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Group layoutX="1051.0" layoutY="-4.0">
+            <Group layoutX="1055.0" layoutY="56.0">
                <children>
-                  <StackPane prefHeight="161.0" prefWidth="181.0">
-                     <children>
-                        <ImageView fx:id="lvl0" fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/alvida.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl0" fitHeight="136.0" fitWidth="83.0" layoutX="49.0" layoutY="22.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/alvida.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="32.0" layoutY="22.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Group>
-            <Group fx:id="lvl2" layoutX="925.0" layoutY="51.0" visible="false">
+            <Group layoutX="947.0" layoutY="105.0">
                <children>
-                  <StackPane layoutX="30.0" layoutY="-13.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/buggy.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-                  <CubicCurve id="path" controlX1="-9.0" controlX2="190.0" controlY1="53.0" controlY2="60.0" endX="139.0" endY="-77.0" layoutX="71.0" layoutY="163.0" startX="31.0" startY="-58.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+                  <ImageView fx:id="lvl1" fitHeight="136.0" fitWidth="83.0" layoutX="47.0" layoutY="-13.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/buggy.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="30.0" layoutY="-12.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
+                  <CubicCurve id="path" controlX1="31.0" controlX2="193.975341796875" controlY1="36.0" controlY2="48.0" endX="135.975341796875" endY="-70.0" layoutX="71.0" layoutY="163.0" startX="41.975341796875" startY="-51.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl3" layoutX="823.0" layoutY="66.0" visible="false">
+            <Group layoutX="845.0" layoutY="120.0">
                <children>
-                  <StackPane layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/kuro.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-                  <CubicCurve id="path" controlX1="-38.0" controlX2="132.0" controlY1="2.0" controlY2="14.0" endX="111.0" endY="-99.0" layoutX="54.0" layoutY="193.0" startX="2.5" startY="-66.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+                  <ImageView fx:id="lvl2" fitHeight="136.0" fitWidth="83.0" layoutX="17.0" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/kuro.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
+                  <CubicCurve id="path" controlX1="-18.024658203125" controlX2="132.0" controlY1="8.0" controlY2="14.0" endX="111.0" endY="-99.0" layoutX="54.0" layoutY="193.0" startX="-18.024658203125" startY="-58.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl4" layoutX="662.0" layoutY="122.0" visible="false">
+            <Group layoutX="684.0" layoutY="176.0">
                <children>
-                  <StackPane layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/arlong.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl3" fitHeight="136.0" fitWidth="83.0" layoutX="17.0" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/arlong.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="112.0" controlX2="-32.5" controlY1="-54.0" controlY2="-154.5" endX="73.5" endY="-154.5" layoutX="100.5" layoutY="166.5" startX="6.0" startY="-54.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl5" layoutX="579.1528930664062" layoutY="247.5" visible="false">
+            <Group layoutX="601.0" layoutY="302.0">
                <children>
-                  <StackPane layoutX="132.84100341796875" layoutY="109.5" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/crocodile.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl4" fitHeight="136.0" fitWidth="83.0" layoutX="149.84100341796875" layoutY="109.5" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/crocodile.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="132.84100341796875" layoutY="110.5" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="68.84100341796875" controlX2="-162.15899658203125" controlY1="58.5" controlY2="49.0" endX="62.84100341796875" endY="-114.5" layoutX="44.0" layoutY="120.0" startX="101.84100341796875" startY="58.5" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl6" layoutX="810.5" layoutY="297.0" visible="false">
+            <Group layoutX="833.0" layoutY="351.0">
                <children>
-                  <StackPane layoutX="57.5" layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/enel.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl5" fitHeight="136.0" fitWidth="83.0" layoutX="74.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/enel.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.5" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="157.0" controlX2="292.5" controlY1="-5.0" controlY2="56.5" endX="197.5" endY="56.5" layoutX="-190.0" layoutY="70.5" startX="255.5" startY="-5.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl7" layoutX="970.0" layoutY="356.0" visible="false">
+            <Group layoutX="992.0" layoutY="410.0">
                <children>
-                  <StackPane layoutX="116.5" layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/gecko_moria.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl6" fitHeight="136.0" fitWidth="83.0" layoutX="133.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/gecko_moria.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="116.5" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="503.0" controlX2="289.0" controlY1="-16.0" controlY2="66.0" endX="463.0" endY="51.0" layoutX="-324.0" layoutY="20.0" startX="334.0" startY="-16.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl8" layoutY="356.0" visible="false">
+            <Group layoutX="22.0" layoutY="410.0">
                <children>
-                  <StackPane layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/caesar.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl7" fitHeight="136.0" fitWidth="83.0" layoutX="17.0" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/caesar.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Group>
-            <Group fx:id="lvl9" layoutX="81.0" layoutY="331.0" visible="false">
+            <Group layoutX="103.0" layoutY="385.0">
                <children>
-                  <StackPane layoutX="35.5" layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/doflamingo.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl8" fitHeight="136.0" fitWidth="83.0" layoutX="52.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/doflamingo.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="35.5" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="127.0" controlX2="379.0" controlY1="-12.5" controlY2="-6.0" endX="359.5" endY="-96.0" layoutX="-262.0" layoutY="225.5" startX="196.697265625" startY="-96.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl10" layoutX="137.7724609375" layoutY="242.08697509765625" visible="false">
+            <Group layoutX="160.0" layoutY="296.0">
                <children>
-                  <StackPane layoutX="72.3397216796875" layoutY="59.50537109375" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/big_mom.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-                  <CubicCurve id="path" controlX1="276.0" controlX2="408.3397216796875" controlY1="-38.0" controlY2="-105.49462890625" endX="425.0" endY="-5.49462890625" layoutX="-305.0" layoutY="65.0" startX="304.6602783203125" startY="35.50537109375" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+                  <ImageView fx:id="lvl9" fitHeight="136.0" fitWidth="83.0" layoutX="89.3397216796875" layoutY="59.50537109375" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/big_mom.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="72.3397216796875" layoutY="60.50537109375" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
+                  <CubicCurve id="path" controlX1="276.0" controlX2="446.0" controlY1="-38.0" controlY2="-102.0" endX="446.0" endY="-13.0" layoutX="-305.0" layoutY="65.0" startX="309.0" startY="21.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl11" layoutX="223.70166015625" layoutY="356.0" visible="false">
+            <Group layoutX="246.0" layoutY="410.0">
                <children>
-                  <StackPane layoutX="92.649169921875" layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/kaido.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
-                  <CubicCurve id="path" controlX1="431.0" controlX2="168.0" controlY1="119.0" controlY2="-70.0" endX="412.0" endY="-60.0" layoutX="-304.0" layoutY="153.5" startX="360.0" startY="-92.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+                  <ImageView fx:id="lvl10" fitHeight="136.0" fitWidth="83.0" layoutX="109.649169921875" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/kaido.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="92.649169921875" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
+                  <CubicCurve id="path" controlX1="412.0" controlX2="168.0" controlY1="112.5" controlY2="-70.0" endX="412.0" endY="-60.0" layoutX="-304.0" layoutY="153.5" startX="371.0" startY="-86.5" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group fx:id="lvl12" layoutX="420.0" layoutY="346.0" visible="false">
+            <Group layoutX="442.0" layoutY="400.0">
                <children>
-                  <StackPane layoutX="36.5" layoutY="9.0" prefHeight="118.0" prefWidth="62.0">
-                     <children>
-                        <ImageView fitHeight="136.0" fitWidth="83.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/posters/teach.png" />
-                           </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </ImageView>
-                        <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="57.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
-                           <image>
-                              <Image url="@../assets/posters/x.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </StackPane>
+                  <ImageView fx:id="lvl11" fitHeight="136.0" fitWidth="83.0" layoutX="53.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/posters/teach.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="36.5" layoutY="10.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
                   <CubicCurve id="path" controlX1="596.0" controlX2="596.0" controlY1="126.0" controlY2="126.0" endX="625.0" endY="107.0" layoutX="-566.0" layoutY="-36.0" startX="571.0" startY="133.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <StackPane layoutY="536.0" prefHeight="147.0" prefWidth="150.0">
-               <children>
-                  <ImageView fitHeight="178.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
-                     <effect>
-                        <DropShadow blurType="TWO_PASS_BOX" />
-                     </effect>
-                     <image>
-                        <Image url="@../assets/posters/player.png" />
-                     </image>
-                  </ImageView>
-                  <Text fx:id="playerName" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYER NAME" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
-                     <StackPane.margin>
-                        <Insets bottom="30.0" />
-                     </StackPane.margin>
-                     <font>
-                        <Font name="Unispace-Bold" size="12.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="playerBounty" fontSmoothingType="LCD" layoutX="33.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1,000,000" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
-                     <font>
-                        <Font name="Unispace-Bold" size="12.0" />
-                     </font>
-                     <StackPane.margin>
-                        <Insets bottom="12.0" />
-                     </StackPane.margin>
-                  </Text>
-               </children>
-            </StackPane>
          </children>
-      </Group>
+      </Pane>
    </children>
 </AnchorPane>

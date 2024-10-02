@@ -51,7 +51,7 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-        GameManager.currentEnemy.setHealth(GameManager.currentEnemy.getHealth() - 10);
+        GameManager.currentEnemy.setHealth(GameManager.currentEnemy.getHealth() - 500);
     }
 
     @FXML
@@ -82,7 +82,7 @@ public class BattleController {
     }
 
     void updateEnemy(Enemy enemy){
-        healthBar.progressProperty().bind(GameManager.currentEnemy.healthProperty().divide(GameManager.currentEnemy.getMAX_HEALTH()));
+        healthBar.progressProperty().bind(GameManager.currentEnemy.healthProperty().divide(GameManager.currentEnemy.MAX_HEALTH));
         enemyImage.setImage(new Image(enemy.getImage()));
         enemyName.setText(enemy.getName());
     }
