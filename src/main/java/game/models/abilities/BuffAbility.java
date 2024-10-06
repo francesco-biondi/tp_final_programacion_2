@@ -4,6 +4,9 @@ import game.models.abilities.enums.AbilityType;
 import game.models.characters.Character;
 import game.models.characters.Player;
 import game.models.exceptions.*;
+import game.services.SchedulerService;
+
+import java.util.concurrent.TimeUnit;
 
 import static game.models.abilities.enums.AbilityNames.PUNCH;
 
@@ -27,9 +30,8 @@ public class BuffAbility extends Ability{
                 // Si no, hay que ver como se trae la habilidad que acciona para aplicarle el buff
 
                 applyBuff(buffedAbility);
-                duration();
+                duration(buffedAbility);
                 cooldown();
-                removeBuff(buffedAbility);
                 return strength;
             } else {
                 throw new IllegalArgumentException("Character must be an instance of player.");
@@ -47,13 +49,15 @@ public class BuffAbility extends Ability{
         buffedAb.setStrength(buffedAb.getStrength() / (1 + strength));
     }
 
-    public void duration(){
-        // SCHEDULER
+    public void duration(Ability buffedAb){
+        SchedulerService.getScheduler().schedule(() -> {
+            removeBuff(buffedAb);
+        }, durationTime, TimeUnit.SECONDS);
     }
 
     @Override
     public void upgrade() {
-        if(this.level <= this.maxLevel){
+        if(this.level < this.maxLevel){
             this.level++;
             this.strength += 1; // numero a determinar
         } else {

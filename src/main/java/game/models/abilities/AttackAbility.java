@@ -28,7 +28,7 @@ public class AttackAbility extends Ability {
 
     @Override
     public void upgrade(){
-        if(this.level <= this.maxLevel){
+        if(this.level < this.maxLevel){
             this.level++;
             this.strength += level * 1; // numero a determinar
         } else {
