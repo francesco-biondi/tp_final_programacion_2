@@ -2,8 +2,10 @@ package game.models.abilities.enums;
 
 public enum AbilityNames {
     PUNCH,
-    GUM_GUM_PISTOL,
-    GUM_GUM_WHIP,
+    PISTOL,
+    ELEPHANT,
+    KING_KONG,
     GEAR_2,
-    GEAR_3
+    GEAR_3,
+    GEAR_4
 }
