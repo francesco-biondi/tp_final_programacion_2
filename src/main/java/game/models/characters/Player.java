@@ -45,9 +45,9 @@ public class Player extends Character{
         return gold;
     }
 
-    public void setGold(int gold) {
-        this.gold = gold;
-        this.goldProperty.set(gold);
+    public void setGold(int amount) {
+        this.gold += amount;
+        this.goldProperty.set(this.gold);
     }
 
     public IntegerProperty goldProperty() {
