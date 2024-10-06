@@ -2,6 +2,9 @@ package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
+import game.services.SchedulerService;
+
+import java.util.concurrent.TimeUnit;
 
 public abstract class Ability implements I_Ability {
 
@@ -31,8 +34,9 @@ public abstract class Ability implements I_Ability {
     @Override
     public void cooldown(){
         this.isAvailable = false;
-
-        // SCHEDULER -> this.isAvailable = true
+        SchedulerService.getScheduler().schedule(() -> {
+            this.isAvailable = true;
+        }, this.cooldownTime, TimeUnit.SECONDS);
     }
 
     public double getBASE_STRENGTH() {
