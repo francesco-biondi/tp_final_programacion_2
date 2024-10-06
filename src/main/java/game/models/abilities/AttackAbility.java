@@ -1,7 +1,6 @@
 package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
-import game.models.abilities.enums.AbilityType;
 import game.models.characters.Character;
 import game.models.characters.Enemy;
 import game.models.exceptions.*;

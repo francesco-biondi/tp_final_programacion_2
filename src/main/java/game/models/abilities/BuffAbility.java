@@ -1,10 +1,11 @@
 package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
-import game.models.abilities.enums.AbilityType;
 import game.models.characters.Character;
 import game.models.characters.Player;
 import game.models.exceptions.*;
+
+import static game.models.abilities.enums.AbilityNames.PUNCH;
 
 public class BuffAbility extends Ability{
 
@@ -20,7 +21,7 @@ public class BuffAbility extends Ability{
     public double use(Character character) {
         if(this.isAvailable){
             if(character instanceof Player player){
-                this.buffedAbility = player.getAbility(0);
+                this.buffedAbility = player.getAbility(PUNCH);
                 // NO SE si es aplicado siempre el buff solo al ataque basico
                 // Si es asi, se puede ya asignar en el constructor
                 // Si no, hay que ver como se trae la habilidad que acciona para aplicarle el buff
