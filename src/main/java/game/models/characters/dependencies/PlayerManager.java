@@ -6,6 +6,8 @@ import game.models.abilities.BuffAbility;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
 
+import static game.models.abilities.enums.AbilityNames.PUNCH;
+
 public class PlayerManager {
 
     public static void addGoldByClick(Player player, Enemy enemy){
@@ -21,5 +23,9 @@ public class PlayerManager {
         }
     }
 
-    
+    public static void basicAttack(Player player, Enemy enemy){
+        Ability basic = player.getAbility(PUNCH);
+
+        applyAbility(player, enemy, basic);
+    }
 }
