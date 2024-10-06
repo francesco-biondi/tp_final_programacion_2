@@ -41,6 +41,14 @@ public class Player extends Character{
         return abilities.get(abilityName);
     }
 
+    public ArrayList<Nakama> getNakamas() {
+        return nakamas;
+    }
+
+    public void setNakamas(ArrayList<Nakama> nakamas) {
+        this.nakamas = nakamas;
+    }
+
     public int getGold() {
         return gold;
     }

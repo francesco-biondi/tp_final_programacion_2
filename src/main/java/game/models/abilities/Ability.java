@@ -14,17 +14,19 @@ public abstract class Ability implements I_Ability {
     protected String descripcion;
     protected int level;
     protected final int maxLevel = 10;
+    protected int price;
     protected double strength;
     protected int cooldownTime;
     protected boolean isAvailable;
     protected boolean isAnimating;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.name = name;
         this.type = type;
         this.descripcion = descripcion;
         this.level = level;
+        this.price = price;
         this.strength = strength;
         this.isAvailable = isAvailable;
         this.cooldownTime = cooldownTime;
@@ -49,6 +51,14 @@ public abstract class Ability implements I_Ability {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public AbilityType getType() {

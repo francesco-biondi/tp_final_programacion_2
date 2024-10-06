@@ -3,6 +3,7 @@ package game.models.characters.dependencies;
 import game.models.abilities.Ability;
 import game.models.abilities.AttackAbility;
 import game.models.abilities.BuffAbility;
+import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
 
@@ -27,6 +28,12 @@ public class PlayerManager {
         Ability basic = player.getAbility(PUNCH);
 
         applyAbility(player, enemy, basic);
+    }
+
+    public static void stopAllNakamas(Player player){
+        for (Nakama nakama : player.getNakamas()) {
+            nakama.stopUse();
+        }
     }
 
     // NO TERMINADA
