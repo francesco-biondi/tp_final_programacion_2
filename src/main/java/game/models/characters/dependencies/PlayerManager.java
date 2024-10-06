@@ -28,4 +28,15 @@ public class PlayerManager {
 
         applyAbility(player, enemy, basic);
     }
+
+    // NO TERMINADA
+//    private static AbilityNames getAbilityNameFromButton() { // NO SE QUE PARAMETROS LE LLEGA DE LA SCENE
+//        return switch () {
+//            case "button_1" -> PUNCH; // NO SE SI VAN A SEGUIR LLAMANDOSE button_n O SE LLAMARAN CON EL NOMBRE DE LA HABILIDAD
+//            case "button_2" -> GUM_GUM_PISTOL;
+//            case "button_3" -> GUM_GUM_WHIP;
+//            case "button_4" -> GEAR_2;
+//
+//        };
+//    }
 }
