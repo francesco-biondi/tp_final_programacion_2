@@ -18,9 +18,9 @@ public class PlayerManager {
 
     private static void applyAbility(Player player, Enemy enemy, Ability ability){
         if(ability instanceof AttackAbility){
-            double damage = ability.use(enemy);
+            ability.use(enemy);
         } else if(ability instanceof BuffAbility){
-            double buffDamage = ability.use(player);
+            ability.use(player);
         }
     }
 
