@@ -24,9 +24,8 @@ public class Player extends Character{
     Map<AbilityNames, Ability> abilities;
     ArrayList<Nakama> nakamas;
 
-    public Player(String name, double bounty, String image, int gold) {
-        super(name, bounty, image);
-        this.gold = gold;
+    public Player(String name) {
+        this.name = name;
         this.abilities = SaveManager.loadFileMap(ABILITIES, new TypeToken<Map<AbilityNames, Ability>>(){}.getType());
         this.nakamas = SaveManager.loadFile(NAKAMAS, new TypeToken<ArrayList<Ability>>(){}.getType());
     }

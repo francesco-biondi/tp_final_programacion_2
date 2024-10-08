@@ -4,6 +4,7 @@
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "descripcion": "Ataque básico con el puño.",
+    "image": "file:src/main/resources/assets/abilities/pistol.jpg",
     "level": 0,
     "strength": 10,
     "cooldownTime": 1,
@@ -11,10 +12,11 @@
     "isAnimating": true
   },
   "PISTOL": {
-    "name": "Gum-Gum-Pistol",
+    "name": "PISTOL",
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "descripcion": "Un ataque rápido con el puño estirado.",
+    "image": "file:src/main/resources/assets/abilities/pistol.jpg",
     "level": 0,
     "strength": 20,
     "cooldownTime": 2,
@@ -22,10 +24,11 @@
     "isAnimating": true
   },
   "ELEPHANT": {
-    "name": "Gum-Gum-Elephant-Gun",
+    "name": "ELEPHANT",
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "descripcion": "Un golpe masivo con la fuerza de un elefante.",
+    "image": "file:src/main/resources/assets/abilities/elephant_gun.jpg",
     "level": 0,
     "strength": 50,
     "cooldownTime": 5,
@@ -33,10 +36,11 @@
     "isAnimating": true
   },
   "KING_KONG": {
-    "name": "Gum-Gum-King-Kong-Gun",
+    "name": "KING KONG",
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "descripcion": "El golpe más poderoso, con devastadora fuerza.",
+    "image": "file:src/main/resources/assets/abilities/king_kon.jpg",
     "level": 0,
     "strength": 100,
     "cooldownTime": 10,
@@ -44,10 +48,11 @@
     "isAnimating": true
   },
   "GEAR_2": {
-    "name": "GEAR_2",
+    "name": "GEAR 2",
     "BASE_STRENGTH": 10,
     "type": "BUFF",
     "descripcion": "Aumenta la velocidad y la fuerza.",
+    "image": "file:src/main/resources/assets/abilities/gear_2.jpg",
     "level": 0,
     "strength": 30,
     "cooldownTime": 5,
@@ -55,11 +60,12 @@
     "isAnimating": true,
     "durationTime": 15
   },
-  "GEAR_3": {
-    "name": "GEAR_3",
+  "GEAR_4": {
+    "name": "GEAR 4",
     "BASE_STRENGTH": 10,
     "type": "BUFF",
     "descripcion": "Inflar los huesos para un aumento masivo de fuerza.",
+    "image": "file:src/main/resources/assets/abilities/gear_4.jpg",
     "level": 0,
     "strength": 60,
     "cooldownTime": 8,
@@ -67,11 +73,12 @@
     "isAnimating": true,
     "durationTime": 10
   },
-  "GEAR_4": {
-    "name": "GEAR_4",
+  "GEAR_5": {
+    "name": "GEAR 5",
     "BASE_STRENGTH": 10,
     "type": "BUFF",
     "descripcion": "Transformación extrema que combina fuerza y resistencia.",
+    "image": "file:src/main/resources/assets/abilities/gear_5.jpg",
     "level": 0,
     "strength": 120,
     "cooldownTime": 15,

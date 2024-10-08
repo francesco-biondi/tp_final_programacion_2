@@ -2,16 +2,20 @@ package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
+import game.models.characters.Character;
 import game.services.SchedulerService;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class Ability implements I_Ability {
+public class Ability implements I_Ability {
 
     protected final double BASE_STRENGTH;
     protected String name;
     protected AbilityType type;
     protected String descripcion;
+    protected final String image;
     protected int level;
     protected final int maxLevel = 10;
     protected int price;
@@ -20,11 +24,16 @@ public abstract class Ability implements I_Ability {
     protected boolean isAvailable;
     protected boolean isAnimating;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    protected transient StringProperty nameProperty;
+    protected transient StringProperty levelProperty;
+    protected transient StringProperty priceProperty;
+
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.name = name;
         this.type = type;
         this.descripcion = descripcion;
+        this.image = image;
         this.level = level;
         this.price = price;
         this.strength = strength;
@@ -34,11 +43,38 @@ public abstract class Ability implements I_Ability {
     }
 
     @Override
+    public double use(Character character) {
+        return 0;
+    }
+
+    @Override
     public void cooldown(){
         this.isAvailable = false;
         SchedulerService.getScheduler().schedule(() -> {
             this.isAvailable = true;
         }, this.cooldownTime, TimeUnit.SECONDS);
+    }
+
+    @Override
+    public void upgrade() {
+
+    }
+
+    @Override
+    public void animation() {
+
+    }
+
+    public StringProperty levelProperty() {
+        return levelProperty == null ? levelProperty  = new SimpleStringProperty(Integer.toString(level)) : levelProperty;
+    }
+
+    public StringProperty nameProperty() {
+        return nameProperty == null ? nameProperty  = new SimpleStringProperty(name) : nameProperty;
+    }
+
+    public StringProperty priceProperty() {
+        return priceProperty == null ? priceProperty  = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
     }
 
     public double getBASE_STRENGTH() {
@@ -51,6 +87,7 @@ public abstract class Ability implements I_Ability {
 
     public void setName(String name) {
         this.name = name;
+        this.nameProperty.set(name);
     }
 
     public int getPrice() {
@@ -59,6 +96,11 @@ public abstract class Ability implements I_Ability {
 
     public void setPrice(int price) {
         this.price = price;
+        this.priceProperty.set(Integer.toString(this.price));
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public AbilityType getType() {
@@ -83,6 +125,7 @@ public abstract class Ability implements I_Ability {
 
     public void setLevel(int level) {
         this.level = level;
+        this.levelProperty.set(Integer.toString(level));
     }
 
     public int getMaxLevel() {

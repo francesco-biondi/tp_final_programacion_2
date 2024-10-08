@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import game.components.AbilityPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
@@ -447,209 +448,26 @@
             </Tab>
             <Tab text="ABILITIES">
                <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
-                  <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0">
+                  <GridPane fx:id="abilityGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                            minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0">
                      <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints vgrow="SOMETIMES" />
-                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints vgrow="SOMETIMES"/>
+                        <RowConstraints vgrow="SOMETIMES"/>
                      </rowConstraints>
                      <padding>
-                        <Insets right="5.0" />
+                        <Insets right="5.0"/>
                      </padding>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PISTOL" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/pistol.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_1" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                           <children>
-                              <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                 <image>
-                                    <Image url="@../assets/ui/button_normal.png" />
-                                 </image>
-                              </ImageView>
-                              <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                 <font>
-                                    <Font name="Unispace-Bold" size="10.0" />
-                                 </font>
-                                 <StackPane.margin>
-                                    <Insets bottom="4.0" />
-                                 </StackPane.margin>
-                              </Text>
-                           </children>
-                        </StackPane>
-                     </VBox>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GEAR 2" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/gear_2.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_2" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                              <Image url="@../assets/ui/button_normal.png" />
-                           </ImageView>
-                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                              <font>
-                                 <Font name="Unispace-Bold" size="10.0" />
-                              </font>
-                              <StackPane.margin>
-                                 <Insets bottom="4.0" />
-                              </StackPane.margin>
-                           </Text>
-                        </StackPane>
-                     </VBox>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ELEPHANT" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/elephant_gun.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_3" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="21.0">
-                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                              <Image url="@../assets/ui/button_normal.png" />
-                           </ImageView>
-                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                              <font>
-                                 <Font name="Unispace-Bold" size="10.0" />
-                              </font>
-                              <StackPane.margin>
-                                 <Insets bottom="4.0" />
-                              </StackPane.margin>
-                           </Text>
-                        </StackPane>
-                     </VBox>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="KING KON" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/king_kon.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_4" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                              <Image url="@../assets/ui/button_normal.png" />
-                           </ImageView>
-                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                              <font>
-                                 <Font name="Unispace-Bold" size="10.0" />
-                              </font>
-                              <StackPane.margin>
-                                 <Insets bottom="4.0" />
-                              </StackPane.margin>
-                           </Text>
-                        </StackPane>
-                     </VBox>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="2">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GEAR 4" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/gear_4.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_5" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                              <Image url="@../assets/ui/button_normal.png" />
-                           </ImageView>
-                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                              <font>
-                                 <Font name="Unispace-Bold" size="10.0" />
-                              </font>
-                              <StackPane.margin>
-                                 <Insets bottom="4.0" />
-                              </StackPane.margin>
-                           </Text>
-                        </StackPane>
-                     </VBox>
-                     <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GEAR 5" textAlignment="CENTER" wrappingWidth="100.0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                           </effect>
-                           <Image url="@../assets/abilities/gear_5.jpg" />
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                           <font>
-                              <Font name="Unispace-Bold" size="12.0" />
-                           </font>
-                        </Text>
-                        <StackPane fx:id="ability_6" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                              <Image url="@../assets/ui/button_normal.png" />
-                           </ImageView>
-                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                              <font>
-                                 <Font name="Unispace-Bold" size="10.0" />
-                              </font>
-                              <StackPane.margin>
-                                 <Insets bottom="4.0" />
-                              </StackPane.margin>
-                           </Text>
-                        </StackPane>
-                     </VBox>
+                     <AbilityPane fx:id="PISTOL"/>
+                     <AbilityPane fx:id="GEAR_2" GridPane.columnIndex="1"/>
+                     <AbilityPane fx:id="ELEPHANT" GridPane.rowIndex="1"/>
+                     <AbilityPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                     <AbilityPane fx:id="KING_KONG" GridPane.rowIndex="2"/>
+                     <AbilityPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                   </GridPane>
                </ScrollPane>
             </Tab>

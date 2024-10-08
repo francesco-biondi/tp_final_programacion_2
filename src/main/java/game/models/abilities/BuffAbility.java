@@ -15,8 +15,8 @@ public class BuffAbility extends Ability{
     private int durationTime;
     private Ability buffedAbility;
 
-    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, int durationTime) {
-        super(BASE_STRENGTH, name, type, descripcion, level, price, strength, isAvailable, cooldownTime, isAnimating);
+    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, int durationTime) {
+        super(BASE_STRENGTH, name, type, descripcion, image, level, price, strength, isAvailable, cooldownTime, isAnimating);
         this.durationTime = durationTime;
     }
 

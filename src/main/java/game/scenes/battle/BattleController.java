@@ -1,5 +1,7 @@
 package game.scenes.battle;
 
+import game.components.AbilityPane;
+import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.battle.dependencies.ButtonManager;
@@ -8,13 +10,11 @@ import game.scenes.battle.dependencies.ShopManager;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
-import game.services.SchedulerService;
-import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
@@ -22,10 +22,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-import javafx.scene.transform.Scale;
-import javafx.stage.Stage;
-
-import java.util.concurrent.TimeUnit;
 
 public class BattleController {
 
@@ -36,7 +32,7 @@ public class BattleController {
     private StackPane root;
 
     @FXML
-    private GridPane battle;
+    private GridPane battle, abilityGrid;
 
     @FXML
     private ProgressBar healthBar;
@@ -56,6 +52,10 @@ public class BattleController {
         ShopManager.configureStore(shopPane);
         configureBattle();
 
+        for(Node child : abilityGrid.getChildren()){
+            AbilityPane abilityPane = (AbilityPane) child;
+            abilityPane.setAbilityData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(abilityPane.getId())));
+        }
     }
 
     void configureBattle() {
