@@ -40,17 +40,22 @@ public abstract class SceneManager {
         }
     }
 
-    private static void applyFadeTransition(Parent root) {
+    private static void applyFadeTransition(Parent newRoot) {
 
-        FadeTransition fadeOut = new FadeTransition(Duration.millis(400), scene.getRoot());
+        Parent currentRoot = scene.getRoot();
+
+        FadeTransition fadeOut = new FadeTransition(Duration.millis(500), currentRoot);
         fadeOut.setFromValue(1.0);
         fadeOut.setToValue(0.0);
 
+        newRoot.setOpacity(0.0);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(500), newRoot);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+
+
         fadeOut.setOnFinished(event -> {
-            scene.setRoot(root);
-            FadeTransition fadeIn = new FadeTransition(Duration.millis(400), root);
-            fadeIn.setFromValue(0.0);
-            fadeIn.setToValue(1.0);
+            scene.setRoot(newRoot);
             fadeIn.play();
         });
 

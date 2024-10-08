@@ -13,14 +13,17 @@ public class Enemy extends Character{
     public final int GOLD_BY_CLICK;
     private final String image;
     private double health;
-    private transient DoubleProperty healthProperty;
-    private boolean defeated = false;
-    private transient BooleanProperty defeatedProperty;
     private boolean unlocked = false;
+    private boolean defeated = false;
+
+    private transient DoubleProperty healthProperty;
+    private transient BooleanProperty defeatedProperty;
     private transient BooleanProperty unlockedProperty;
 
-    public Enemy(String name, double bounty, String posterImage, int id, String image, double MAX_HEALTH, int GOLD_BY_CLICK) {
-        super(name, bounty, posterImage);
+    public Enemy(String name, int bounty, String posterImage, int id, String image, double MAX_HEALTH, int GOLD_BY_CLICK) {
+        this.name = name;
+        this.bounty = bounty;
+        this.posterImage = posterImage;
         this.id = id;
         this.MAX_HEALTH = MAX_HEALTH;
         this.health = MAX_HEALTH;

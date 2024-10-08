@@ -2,24 +2,21 @@ package game.models.characters;
 
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
 
 public class Player extends Character{
 
     private int gold = 0;
-    private transient IntegerProperty goldProperty;
+    private transient StringProperty goldProperty;
 
     ArrayList<Ability> abilities = new ArrayList<>();
     ArrayList<Nakama> nakamas = new ArrayList<>();
 
-    public Player(String name, double bounty, String image, int gold, ArrayList<Ability> abilities, ArrayList<Nakama> nakamas) {
-        super(name, bounty, image);
-        this.gold = gold;
-        this.abilities = abilities;
-        this.nakamas = nakamas;
+    public Player(String name) {
+        this.name = name;
     }
 
     public void addAbility(Ability ability){
@@ -40,10 +37,10 @@ public class Player extends Character{
 
     public void setGold(int gold) {
         this.gold = gold;
-        this.goldProperty.set(gold);
+        this.goldProperty.set(Integer.toString(gold));
     }
 
-    public IntegerProperty goldProperty() {
-        return goldProperty == null ? goldProperty  = new SimpleIntegerProperty(gold) : goldProperty;
+    public StringProperty goldProperty() {
+        return goldProperty == null ? goldProperty  = new SimpleStringProperty(Integer.toString(gold)) : goldProperty;
     }
 }

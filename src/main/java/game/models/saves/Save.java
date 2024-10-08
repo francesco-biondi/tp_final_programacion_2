@@ -25,6 +25,7 @@ public class Save implements Serializable {
         this.saveDate = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
         this.enemies = SaveManager.loadFile(Resource.ENEMIES, new TypeToken<ArrayList<Enemy>>(){}.getType());
         this.savePath = getSavePath(slotIndex);
+        this.player = new Player(saveName);
     }
 
     @Override

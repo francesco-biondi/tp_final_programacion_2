@@ -36,7 +36,7 @@ public class MapController {
     void selectLevel(MouseEvent event) {
         ImageView level = (ImageView) event.getSource();
         GameManager.setEnemy((Integer.parseInt(level.getId().replace("lvl", ""))));
-        if (GameManager.currentEnemy.isDefeated()) GameManager.currentEnemy.setHealth(GameManager.currentEnemy.MAX_HEALTH);
+        if (GameManager.getCurrentEnemy().isDefeated()) GameManager.getCurrentEnemy().setHealth(GameManager.getCurrentEnemy().MAX_HEALTH);
         SceneManager.changeScene(Scenes.BATTLE);
     }
 
