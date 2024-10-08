@@ -40,6 +40,10 @@ public class Enemy extends Character{
         return health;
     }
 
+    public int getGOLD_BY_CLICK() {
+        return GOLD_BY_CLICK;
+    }
+
     public void setHealth(double health) {
         this.health = health;
         this.healthProperty.set(health);

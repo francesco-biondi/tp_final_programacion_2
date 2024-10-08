@@ -7,6 +7,7 @@ import game.models.saves.Save;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * La clase {@code SaveManager} es responsable de gestionar la creación, guardado y carga de los archivos de
@@ -109,5 +110,12 @@ public abstract class SaveManager {
         }
     }
 
+    public static <K, V> Map<K, V> loadFileMap(String filePath, Type type) {
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, type);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 

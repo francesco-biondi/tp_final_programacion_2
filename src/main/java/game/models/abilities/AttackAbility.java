@@ -1,15 +1,14 @@
 package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
-import game.models.abilities.enums.AbilityType;
 import game.models.characters.Character;
 import game.models.characters.Enemy;
 import game.models.exceptions.*;
 
 public class AttackAbility extends Ability {
 
-    public AttackAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
-        super(BASE_STRENGTH, name, type, descripcion, level, strength, isAvailable, cooldownTime, isAnimating);
+    public AttackAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+        super(BASE_STRENGTH, name, type, descripcion, level, price, strength, isAvailable, cooldownTime, isAnimating);
     }
 
     @Override
@@ -29,7 +28,7 @@ public class AttackAbility extends Ability {
 
     @Override
     public void upgrade(){
-        if(this.level <= this.maxLevel){
+        if(this.level < this.maxLevel){
             this.level++;
             this.strength += level * 1; // numero a determinar
         } else {
