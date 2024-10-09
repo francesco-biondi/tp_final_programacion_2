@@ -53,16 +53,6 @@ public class BattleController {
         ShopManager.configureStore(shopPane);
         configureBattle();
 
-        for(Node child : abilityGrid.getChildren()){
-            AbilityPane abilityPane = (AbilityPane) child;
-            abilityPane.setAbilityData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(abilityPane.getId())));
-        }
-        for(Node child : nakamaGrid.getChildren()){
-            if(child instanceof AbilityPane){
-                AbilityPane abilityPane = (AbilityPane) child;
-                abilityPane.setAbilityData(GameManager.getCurrentPlayer().getNakama(Integer.parseInt(abilityPane.getId().replace("nakama", ""))));
-            }
-        }
     }
 
     void configureBattle() {

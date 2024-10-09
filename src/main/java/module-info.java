@@ -21,4 +21,5 @@ module game {
 
     exports game;
     exports game.models.abilities.enums;
+    exports game.scenes.components;
 }
