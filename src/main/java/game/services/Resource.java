@@ -5,9 +5,9 @@ public class Resource {
     /**
      * Path a las vistas de las escenas
      */
-    public static final String VIEW_MAIN_MENU = "mainMenu-view.fxml";
-    public static final String VIEW_BATTLE = "battle-view.fxml";
-    public static final String VIEW_MAP = "map-view.fxml";
+    public static final String VIEW_MAIN_MENU = "scenes/mainMenu-view.fxml";
+    public static final String VIEW_BATTLE = "scenes/battle-view.fxml";
+    public static final String VIEW_MAP = "scenes/map-view.fxml";
 
     /**
      * Recursos para el uso general de la aplicacion

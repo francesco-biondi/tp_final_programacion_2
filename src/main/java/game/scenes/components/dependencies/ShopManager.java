@@ -1,7 +1,5 @@
-package game.scenes.battle.dependencies;
+package game.scenes.components.dependencies;
 
-import game.scenes.battle.BattleController;
-import game.scenes.dependencies.GameManager;
 import javafx.animation.*;
 import javafx.scene.control.TabPane;
 import javafx.util.Duration;

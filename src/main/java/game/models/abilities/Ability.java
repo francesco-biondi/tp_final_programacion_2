@@ -14,7 +14,7 @@ public class Ability implements I_Ability {
     protected final double BASE_STRENGTH;
     protected String name;
     protected AbilityType type;
-    protected String descripcion;
+    protected String description;
     protected final String image;
     protected int level;
     protected final int maxLevel = 10;
@@ -28,11 +28,11 @@ public class Ability implements I_Ability {
     protected transient StringProperty levelProperty;
     protected transient StringProperty priceProperty;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.name = name;
         this.type = type;
-        this.descripcion = descripcion;
+        this.description = description;
         this.image = image;
         this.level = level;
         this.price = price;
@@ -111,12 +111,12 @@ public class Ability implements I_Ability {
         this.type = type;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getLevel() {

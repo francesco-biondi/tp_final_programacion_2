@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.components.AbilityPane?>
+<?import game.scenes.components.AbilityPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
@@ -55,7 +55,7 @@
          </VBox>
          <ImageView fx:id="enemyImage" cache="true" cacheHint="SCALE" fitHeight="478.0" fitWidth="541.0" onMouseClicked="#hitEnemy" onMouseEntered="#handleCursor" onMouseExited="#handleCursor" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <image>
-               <Image url="@../assets/enemies/1-alvida.png" />
+               <Image url="@../../assets/enemies/1-alvida.png" />
             </image>
          </ImageView>
          <StackPane>
@@ -63,7 +63,7 @@
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" />
                </effect>
-               <Image url="@../assets/ui/ui_medium_wood.png" />
+               <Image url="@../../assets/ui/ui_medium_wood.png" />
             </ImageView>
             <HBox alignment="CENTER" mouseTransparent="true" spacing="10.0">
                <opaqueInsets>
@@ -76,7 +76,7 @@
                   <effect>
                      <DropShadow blurType="ONE_PASS_BOX" />
                   </effect>
-                  <Image url="@../assets/icons/berry.png" />
+                  <Image url="@../../assets/icons/berry.png" />
                </ImageView>
                <Text fx:id="gold" fill="#ffd146" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="0000">
                   <font>
@@ -93,12 +93,12 @@
                <effect>
                   <DropShadow blurType="TWO_PASS_BOX" />
                </effect>
-               <Image url="@../assets/ui/ui_small_wood.png" />
+               <Image url="@../../assets/ui/ui_small_wood.png" />
             </ImageView>
             <HBox alignment="CENTER" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="20.0">
                <StackPane fx:id="button_1" accessibleRole="BUTTON" onMouseClicked="#button_pressed" prefHeight="0.0" prefWidth="145.0">
                   <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../assets/ui/button_normal.png" />
+                     <Image url="@../../assets/ui/button_normal.png" />
                   </ImageView>
                   <Text boundsType="VISUAL" fill="WHITE" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.8" text="Gum-Gum Pistol" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="136.86399841308594">
                      <font>
@@ -111,7 +111,7 @@
                </StackPane>
                <StackPane fx:id="button_2" layoutX="298.0" layoutY="10.0" onMouseClicked="#button_pressed" prefHeight="0.0" prefWidth="145.0">
                   <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../assets/ui/button_normal.png" />
+                     <Image url="@../../assets/ui/button_normal.png" />
                   </ImageView>
                   <Text boundsType="VISUAL" disable="true" fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.8" text="Gear 2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="136.86399841308594">
                      <font>
@@ -124,7 +124,7 @@
                </StackPane>
                <StackPane fx:id="button_3" layoutX="370.0" layoutY="10.0" onMouseClicked="#button_pressed" prefHeight="0.0" prefWidth="145.0">
                   <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../assets/ui/button_normal.png" />
+                     <Image url="@../../assets/ui/button_normal.png" />
                   </ImageView>
                   <Text boundsType="VISUAL" disable="true" fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.8" text="Gum-Gum Bazooka" textAlignment="CENTER" textOrigin="CENTER">
                      <font>
@@ -137,7 +137,7 @@
                </StackPane>
                <StackPane fx:id="button_4" layoutX="443.0" layoutY="10.0" onMouseClicked="#button_pressed" prefHeight="0.0" prefWidth="145.0">
                   <ImageView accessibleRole="BUTTON" fitHeight="54.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
-                     <Image url="@../assets/ui/button_normal.png" />
+                     <Image url="@../../assets/ui/button_normal.png" />
                   </ImageView>
                   <Text boundsType="VISUAL" disable="true" fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.8" text="Gum-Gum Gatling" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="146.63999938964844">
                      <font>
@@ -169,13 +169,13 @@
                   <effect>
                      <DropShadow blurType="TWO_PASS_BOX" />
                   </effect>
-                  <Image url="@../assets/ui/ui_medium_wood.png" />
+                  <Image url="@../../assets/ui/ui_medium_wood.png" />
                </ImageView>
                <ImageView fitHeight="53.0" fitWidth="58.0" layoutX="10.0" layoutY="35.0" mouseTransparent="true" pickOnBounds="true">
                   <effect>
                      <DropShadow blurType="ONE_PASS_BOX" />
                   </effect>
-                  <Image url="@../assets/icons/log_pose.png" />
+                  <Image url="@../../assets/icons/log_pose.png" />
                </ImageView>
             </StackPane>
             <StackPane layoutX="10.0" layoutY="10.0" GridPane.columnIndex="1">
@@ -183,10 +183,10 @@
                   <effect>
                      <DropShadow blurType="TWO_PASS_BOX" />
                   </effect>
-                  <Image url="@../assets/ui/ui_medium_wood.png" />
+                  <Image url="@../../assets/ui/ui_medium_wood.png" />
                </ImageView>
                <ImageView fitHeight="58.0" fitWidth="54.0" layoutX="10.0" layoutY="35.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@../assets/icons/close_icon.png" />
+                  <Image url="@../../assets/icons/close_icon.png" />
                   <effect>
                      <ColorAdjust brightness="-0.17" contrast="-0.26" saturation="-0.37">
                         <input>
@@ -217,7 +217,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Zoro27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Zoro27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -230,7 +230,7 @@
                   <StackPane.margin>
                      <Insets right="10.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -242,7 +242,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Nami27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Nami27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -255,7 +255,7 @@
                   <StackPane.margin>
                      <Insets right="-10.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane>
@@ -267,7 +267,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -280,7 +280,7 @@
                   <StackPane.margin>
                      <Insets right="-10.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane GridPane.rowIndex="1">
@@ -292,7 +292,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -305,7 +305,7 @@
                   <StackPane.margin>
                      <Insets right="20.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -317,7 +317,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Usopp27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Usopp27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -330,7 +330,7 @@
                   <StackPane.margin>
                      <Insets top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane GridPane.rowIndex="2">
@@ -342,7 +342,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Franky27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Franky27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -355,7 +355,7 @@
                   <StackPane.margin>
                      <Insets right="10.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane GridPane.rowIndex="3">
@@ -367,7 +367,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
+                  <Image url="@../../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -380,7 +380,7 @@
                   <StackPane.margin>
                      <Insets top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -392,7 +392,7 @@
                         </input>
                      </DropShadow>
                   </effect>
-                  <Image url="@../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
+                  <Image url="@../../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
                </ImageView>
                <ImageView depthTest="DISABLE" fitHeight="34.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                   <effect>
@@ -405,7 +405,7 @@
                   <StackPane.margin>
                      <Insets right="20.0" top="-80.0" />
                   </StackPane.margin>
-                  <Image url="@../assets/posters/Pin-PNG-Picture.png" />
+                  <Image url="@../../assets/posters/Pin-PNG-Picture.png" />
                </ImageView>
             </StackPane>
          </GridPane>
@@ -424,7 +424,7 @@
                            <effect>
                               <DropShadow blurType="TWO_PASS_BOX" />
                            </effect>
-                           <Image url="@../assets/posters/player.png" />
+                           <Image url="@../../assets/posters/player.png" />
                         </ImageView>
                         <Text fx:id="playerName" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYER NAME" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
                            <StackPane.margin>
@@ -502,7 +502,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Zoro27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Zoro27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -514,7 +514,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿ 100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -541,7 +541,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Nami27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Nami27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -553,7 +553,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -580,7 +580,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Usopp27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Usopp27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -592,7 +592,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -619,7 +619,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -631,7 +631,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -658,7 +658,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -670,7 +670,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -697,7 +697,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -709,7 +709,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -736,7 +736,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Franky27s_Wanted_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Franky27s_Wanted_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -748,7 +748,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
@@ -775,7 +775,7 @@
                                           <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
                                        </effect>
                                        <image>
-                                          <Image url="@../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
+                                          <Image url="@../../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
                                        </image>
                                     </ImageView>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
@@ -787,7 +787,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
                                              <image>
-                                                <Image url="@../assets/ui/button_normal.png" />
+                                                <Image url="@../../assets/ui/button_normal.png" />
                                              </image>
                                           </ImageView>
                                           <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">

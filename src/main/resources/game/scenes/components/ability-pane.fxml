@@ -26,7 +26,7 @@
     </Text>
     <StackPane fx:id="buttonContainer" maxWidth="-Infinity" prefHeight="18.0" prefWidth="60.0">
         <ImageView fx:id="buttonImage" fitHeight="30.0" fitWidth="60.0">
-            <Image url="@../../assets/ui/button_normal.png" />
+            <Image url="@../../../assets/ui/button_normal.png" />
         </ImageView>
         <Text fx:id="abilityPrice" boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK"
               strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER"

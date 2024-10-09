@@ -1,4 +1,4 @@
-package game.components.dependencies;
+package game.scenes.components.dependencies;
 
 
 import game.services.Resource;

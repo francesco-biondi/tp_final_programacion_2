@@ -6,6 +6,7 @@ import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -20,6 +21,10 @@ public abstract class SceneManager {
 
     public static Scene getScene() {
         return scene;
+    }
+
+    public static Stage getStage() {
+        return (Stage) scene.getWindow();
     }
 
     public static void changeScene(Scenes scene) {

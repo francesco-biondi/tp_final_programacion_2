@@ -1,12 +1,12 @@
 package game.scenes.battle;
 
-import game.components.AbilityPane;
+import game.scenes.components.AbilityPane;
 import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
-import game.components.dependencies.ButtonManager;
+import game.scenes.components.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
-import game.scenes.battle.dependencies.ShopManager;
+import game.scenes.components.dependencies.ShopManager;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;

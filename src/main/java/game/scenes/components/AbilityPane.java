@@ -1,9 +1,8 @@
-package game.components;
+package game.scenes.components;
 
-import game.components.dependencies.ButtonManager;
+import game.scenes.components.dependencies.ButtonManager;
 import game.models.abilities.Ability;
-import game.models.abilities.enums.AbilityNames;
-import game.scenes.dependencies.GameManager;
+import game.scenes.dependencies.NotificationManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
@@ -13,7 +12,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-import java.beans.EventHandler;
 import java.io.IOException;
 
 public class AbilityPane extends VBox {
@@ -36,7 +34,7 @@ public class AbilityPane extends VBox {
     @FXML
     private StackPane buttonContainer;
 
-    private EventHandler onBuyClick;
+    private String description;
 
     public AbilityPane() {
         FXMLLoader loader = new FXMLLoader(
@@ -52,14 +50,18 @@ public class AbilityPane extends VBox {
             throw new RuntimeException(e);
         }
 
-//        abilityImage.setOnMouseEntered(event -> {})
+        abilityImage.setOnMouseEntered(event -> {
+            NotificationManager.toolTip(abilityImage, description, "gameInfo", 200);
+        });
         buttonImage.setOnMouseClicked(this::onBuyButtonClicked);
     }
 
     public void setAbilityData(Ability ability) {
+        this.description = ability.getDescription();
+        System.out.println(description);
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));
-        abilityPrice.textProperty().bind(ability.priceProperty());
+        abilityPrice.textProperty().bind(ability.priceProperty().concat(" ฿"));
         abilityLevel.textProperty().bind(ability.levelProperty());
     }
 
