@@ -1,10 +1,8 @@
 package game.scenes.battle;
 
-import game.models.abilities.Nakama;
-import game.scenes.components.AbilityPane;
-import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
+import game.scenes.components.ShopPane;
 import game.scenes.components.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.components.dependencies.ShopManager;
@@ -15,9 +13,7 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -27,35 +23,32 @@ import javafx.scene.text.Text;
 public class BattleController {
 
     @FXML
-    private Text enemyName, playerName, playerBounty, gold;
+    private Text enemyName, gold;
 
     @FXML
     private StackPane root;
 
     @FXML
-    private GridPane battle, abilityGrid, nakamaGrid;
+    private GridPane battle;
 
     @FXML
     private ProgressBar healthBar;
 
     @FXML
-    private TabPane shopPane;
+    private ShopPane shopPane;
 
     @FXML
     private ImageView enemyImage;
 
     @FXML
     public void initialize(){
-        playerName.setText(GameManager.getCurrentPlayer().getName());
-        playerBounty.setText(String.valueOf(GameManager.getCurrentPlayer().getBounty()));
+        configureScale();
+        ShopManager.configureStore(shopPane);
         gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
         updateEnemy(GameManager.getCurrentEnemy());
-        ShopManager.configureStore(shopPane);
-        configureBattle();
-
     }
 
-    void configureBattle() {
+    void configureScale() {
         DoubleProperty widthScale = new SimpleDoubleProperty();
         DoubleProperty heightScale = new SimpleDoubleProperty();
 
@@ -69,12 +62,6 @@ public class BattleController {
     @FXML
     void toggleShop(MouseEvent event){
         ShopManager.toggleStore(shopPane);
-    }
-
-    @FXML
-    void shopBuy(MouseEvent event){
-        ButtonManager.updateButtonState((StackPane) event.getSource(), 1);
-        ShopManager.buy();
     }
 
     @FXML

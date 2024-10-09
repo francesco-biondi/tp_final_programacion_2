@@ -1,10 +1,13 @@
 package game.scenes.components;
 
+import game.models.abilities.Ability;
 import game.models.abilities.enums.AbilityNames;
 import game.scenes.dependencies.GameManager;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
 
@@ -31,6 +34,7 @@ public class ShopPane extends TabPane {
 
         displayShop();
     }
+
     private void displayShop(){
         for(Node child : abilityGrid.getChildren()){
             if(child instanceof AbilityPane abilityPane) {
@@ -43,4 +47,6 @@ public class ShopPane extends TabPane {
             }
         }
     }
+
+
 }

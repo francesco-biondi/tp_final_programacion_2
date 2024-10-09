@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import game.scenes.components.AbilityPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -54,7 +55,7 @@
         </AnchorPane>
     </Tab>
     <Tab text="ABILITIES">
-        <ScrollPane fitToHeight="true" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
+        <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
             <GridPane fx:id="abilityGrid" alignment="CENTER" prefWidth="250.0" vgap="20.0">
                 <columnConstraints>
                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
@@ -65,6 +66,12 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
+                <AbilityPane fx:id="PISTOL" />
+                <AbilityPane fx:id="GEAR_2" GridPane.columnIndex="1" />
+                <AbilityPane fx:id="ELEPHANT" GridPane.rowIndex="1" />
+                <AbilityPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <AbilityPane fx:id="KING_KONG" GridPane.rowIndex="2" />
+                <AbilityPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <padding>
                     <Insets top="20.0" />
                 </padding>
@@ -72,7 +79,7 @@
         </ScrollPane>
     </Tab>
     <Tab text="NAKAMAS">
-        <ScrollPane fitToHeight="true" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
+        <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
             <GridPane fx:id="nakamaGrid" alignment="CENTER" prefWidth="250.0" vgap="20.0">
                 <columnConstraints>
                     <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
@@ -84,6 +91,14 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
+                <AbilityPane fx:id="nakama0" />
+                <AbilityPane fx:id="nakama1" GridPane.columnIndex="1" />
+                <AbilityPane fx:id="nakama2" GridPane.rowIndex="1" />
+                <AbilityPane fx:id="nakama3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <AbilityPane fx:id="nakama4" GridPane.rowIndex="2" />
+                <AbilityPane fx:id="nakama5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <AbilityPane fx:id="nakama6" GridPane.rowIndex="3" />
+                <AbilityPane fx:id="nakama7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <padding>
                     <Insets top="20.0" />
                 </padding>
