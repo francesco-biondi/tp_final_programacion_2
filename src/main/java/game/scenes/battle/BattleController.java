@@ -1,5 +1,6 @@
 package game.scenes.battle;
 
+import game.models.abilities.Nakama;
 import game.scenes.components.AbilityPane;
 import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
@@ -32,7 +33,7 @@ public class BattleController {
     private StackPane root;
 
     @FXML
-    private GridPane battle, abilityGrid;
+    private GridPane battle, abilityGrid, nakamaGrid;
 
     @FXML
     private ProgressBar healthBar;
@@ -55,6 +56,12 @@ public class BattleController {
         for(Node child : abilityGrid.getChildren()){
             AbilityPane abilityPane = (AbilityPane) child;
             abilityPane.setAbilityData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(abilityPane.getId())));
+        }
+        for(Node child : nakamaGrid.getChildren()){
+            if(child instanceof AbilityPane){
+                AbilityPane abilityPane = (AbilityPane) child;
+                abilityPane.setAbilityData(GameManager.getCurrentPlayer().getNakama(Integer.parseInt(abilityPane.getId().replace("nakama", ""))));
+            }
         }
     }
 

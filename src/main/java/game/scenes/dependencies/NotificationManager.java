@@ -3,7 +3,6 @@ package game.scenes.dependencies;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Modality;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class NotificationManager {
@@ -21,7 +20,7 @@ public class NotificationManager {
         Tooltip.install(node, tooltip);
     }
 
-    public static boolean showConfirmationAlert(String title, String header, String content) {
+    public static boolean showAlert(String title, String header, String content) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setHeaderText(header);

@@ -4,6 +4,8 @@ import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.characters.Character;
 import game.services.SchedulerService;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -21,14 +23,16 @@ public class Ability implements I_Ability {
     protected int price;
     protected double strength;
     protected int cooldownTime;
-    protected boolean isAvailable;
-    protected boolean isAnimating;
+    protected boolean available = true;
+    protected boolean animating = false;
+    protected boolean unlocked = false;
 
     protected transient StringProperty nameProperty;
     protected transient StringProperty levelProperty;
     protected transient StringProperty priceProperty;
+    protected transient BooleanProperty unlockProperty;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, int cooldownTime) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.name = name;
         this.type = type;
@@ -37,9 +41,7 @@ public class Ability implements I_Ability {
         this.level = level;
         this.price = price;
         this.strength = strength;
-        this.isAvailable = isAvailable;
         this.cooldownTime = cooldownTime;
-        this.isAnimating = isAnimating;
     }
 
     @Override
@@ -49,9 +51,9 @@ public class Ability implements I_Ability {
 
     @Override
     public void cooldown(){
-        this.isAvailable = false;
+        this.available = false;
         SchedulerService.getScheduler().schedule(() -> {
-            this.isAvailable = true;
+            this.available = true;
         }, this.cooldownTime, TimeUnit.SECONDS);
     }
 
@@ -149,18 +151,37 @@ public class Ability implements I_Ability {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        this.available = available;
     }
 
     public boolean isAnimating() {
-        return isAnimating;
+        return animating;
     }
 
     public void setAnimating(boolean animating) {
-        isAnimating = animating;
+        this.animating = animating;
+    }
+
+    public boolean isUnlocked() {
+        return unlocked;
+    }
+
+    public void setUnlocked(boolean unlocked) {
+        this.unlocked = unlocked;
+        this.unlockProperty.set(unlocked);
+    }
+
+    public BooleanProperty unlockProperty() {
+        return unlockProperty == null ? unlockProperty  = new SimpleBooleanProperty(unlocked) : unlockProperty;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %f\n\nPrecio: %d",
+                name, description, strength, price);
     }
 }

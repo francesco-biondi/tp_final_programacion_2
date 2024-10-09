@@ -46,6 +46,10 @@ public class Player extends Character{
         return nakamas;
     }
 
+    public Nakama getNakama(int id) {
+        return nakamas.get(id);
+    }
+
     public void setNakamas(ArrayList<Nakama> nakamas) {
         this.nakamas = nakamas;
     }

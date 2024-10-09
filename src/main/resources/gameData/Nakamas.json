@@ -1,8 +1,8 @@
 [
   {
-    "name": "Roronoa Zoro",
-    "poster": "@../../assets/posters/Zoro27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Roronoa_Zoro27s_Current_Wanted_Poster.jpg",
+    "name": "ZORO",
+    "image": "file:src/main/resources/assets/posters/Zoro27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Roronoa_Zoro27s_Current_Wanted_Poster.jpg",
     "BASE_STRENGTH": 90,
     "type": "NAKAMA",
     "descripcion": "El espadachín de la tripulación, aspira a ser el mejor espadachín del mundo.",
@@ -13,9 +13,9 @@
     "isAnimating": true
   },
   {
-    "name": "Nami",
-    "poster": "@../../assets/posters/Nami27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Nami27s_Current_Wanted_Poster.jpg",
+    "name": "NAMI",
+    "image": "file:src/main/resources/assets/posters/Nami27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Nami27s_Current_Wanted_Poster.jpg",
     "BASE_STRENGTH": 70,
     "type": "NAKAMA",
     "descripcion": "Navegante y ladrona experta, sueña con dibujar un mapa del mundo.",
@@ -26,9 +26,9 @@
     "isAnimating": true
   },
   {
-    "name": "Usopp",
-    "poster": "@../../assets/posters/Usopp27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/God_Usopp27s_Wanted_Poster.jpg",
+    "name": "USOPP",
+    "image": "file:src/main/resources/assets/posters/Usopp27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/God_Usopp27s_Wanted_Poster.jpg",
     "BASE_STRENGTH": 60,
     "type": "NAKAMA",
     "descripcion": "Francotirador de la tripulación, es conocido por sus historias exageradas.",
@@ -39,9 +39,9 @@
     "isAnimating": true
   },
   {
-    "name": "Sanji",
-    "poster": "@../../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Sanji27s_Current_Wanted_Poster.jpg",
+    "name": "SANJI",
+    "image": "file:src/main/resources/assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Sanji27s_Current_Wanted_Poster.jpg",
     "BASE_STRENGTH": 80,
     "type": "NAKAMA",
     "descripcion": "El cocinero de la tripulación, sueña con encontrar el All Blue.",
@@ -52,9 +52,9 @@
     "isAnimating": true
   },
   {
-    "name": "Tony Tony Chopper",
-    "poster": "@../../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Tony_Tony_Chopper27s_Current_Wanted_Poster.jpg",
+    "name": "CHOPPER",
+    "image": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Current_Wanted_Poster.jpg",
     "BASE_STRENGTH": 50,
     "type": "NAKAMA",
     "descripcion": "Médico de la tripulación, un reno que puede transformarse en humano.",
@@ -65,9 +65,9 @@
     "isAnimating": true
   },
   {
-    "name": "Nico Robin",
-    "poster": "@../../assets/posters/Nico_Robin27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Nico_Robin27s_Current_Wanted_Poster.jpg",
+    "name": "ROBIN",
+    "image": "file:src/main/resources/assets/posters/Nico_Robin27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/../assets/posters/Nico_Robin27s_Current_Wanted_Poster.jpg",
     "BASE_STRENGTH": 75,
     "type": "NAKAMA",
     "descripcion": "Arqueóloga de la tripulación, busca los Poneglyphs.",
@@ -78,9 +78,9 @@
     "isAnimating": true
   },
   {
-    "name": "Franky",
-    "poster": "@../../assets/posters/Franky27s_Wanted_Poster.jpg",
-    "poster2": "@../../assets/posters/Cyborg_Franky27s_Wanted_Poster.jpg",
+    "name": "FRANKY",
+    "image": "file:src/main/resources/assets/posters/Franky27s_Wanted_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Cyborg_Franky27s_Wanted_Poster.jpg",
     "BASE_STRENGTH": 85,
     "type": "NAKAMA",
     "descripcion": "Carpintero de la tripulación, un cyborg que construyó el Thousand Sunny.",
@@ -91,9 +91,9 @@
     "isAnimating": true
   },
   {
-    "name": "Brook",
-    "poster": "@../../assets/posters/Brook_Alive_Bounty_Poster.jpg",
-    "poster2": "@../../assets/posters/Brook27s_Concert_Wanted_Poster.jpg",
+    "name": "BROOK",
+    "image": "file:src/main/resources/assets/posters/Brook_Alive_Bounty_Poster.jpg",
+    "poster2": "file:src/main/resources/assets/posters/Brook27s_Concert_Wanted_Poster.jpg",
     "BASE_STRENGTH": 65,
     "type": "NAKAMA",
     "descripcion": "Músico de la tripulación, un esqueleto que puede usar el poder de la Yomi Yomi no Mi.",

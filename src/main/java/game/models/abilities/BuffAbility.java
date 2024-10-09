@@ -15,14 +15,14 @@ public class BuffAbility extends Ability{
     private int durationTime;
     private Ability buffedAbility;
 
-    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String descripcion, String image, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, int durationTime) {
-        super(BASE_STRENGTH, name, type, descripcion, image, level, price, strength, isAvailable, cooldownTime, isAnimating);
+    public BuffAbility(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, int cooldownTime, int durationTime) {
+        super(BASE_STRENGTH, name, type, description, image, level, price, strength, cooldownTime);
         this.durationTime = durationTime;
     }
 
     @Override
     public double use(Character character) {
-        if(this.isAvailable){
+        if(this.available){
             if(character instanceof Player player){
                 this.buffedAbility = player.getAbility(PUNCH);
                 // NO SE si es aplicado siempre el buff solo al ataque basico

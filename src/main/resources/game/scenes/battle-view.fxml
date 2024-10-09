@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -448,26 +447,25 @@
             </Tab>
             <Tab text="ABILITIES">
                <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
-                  <GridPane fx:id="abilityGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                            minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0">
+                  <GridPane fx:id="abilityGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="250.0">
                      <columnConstraints>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0"/>
-                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                      </columnConstraints>
                      <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
-                        <RowConstraints vgrow="SOMETIMES"/>
-                        <RowConstraints vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
                      </rowConstraints>
                      <padding>
-                        <Insets right="5.0"/>
+                        <Insets right="5.0" />
                      </padding>
-                     <AbilityPane fx:id="PISTOL"/>
-                     <AbilityPane fx:id="GEAR_2" GridPane.columnIndex="1"/>
-                     <AbilityPane fx:id="ELEPHANT" GridPane.rowIndex="1"/>
-                     <AbilityPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                     <AbilityPane fx:id="KING_KONG" GridPane.rowIndex="2"/>
-                     <AbilityPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                     <AbilityPane fx:id="PISTOL" />
+                     <AbilityPane fx:id="GEAR_2" GridPane.columnIndex="1" />
+                     <AbilityPane fx:id="ELEPHANT" GridPane.rowIndex="1" />
+                     <AbilityPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     <AbilityPane fx:id="KING_KONG" GridPane.rowIndex="2" />
+                     <AbilityPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   </GridPane>
                </ScrollPane>
             </Tab>
@@ -475,7 +473,7 @@
                <content>
                   <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
                      <content>
-                        <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="250.0">
+                        <GridPane fx:id="nakamaGrid" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="250.0">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -490,318 +488,14 @@
                               <Insets left="10.0" right="15.0" top="10.0" />
                            </padding>
                            <children>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ZORO" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Zoro27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_1" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿ 100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NAMI" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Nami27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_2" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="USOPP" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Usopp27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_3" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="21.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SANJI" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_4" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="2">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CHOPPER" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_5" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ROBIN" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Nico_Robin27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_6" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" layoutX="22.0" layoutY="406.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FRANKY" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Franky27s_Wanted_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_7" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER" layoutX="22.0" layoutY="451.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BROOK" textAlignment="CENTER" wrappingWidth="100.0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <effect>
-                                          <InnerShadow choke="0.43" height="20.0" radius="9.5" width="20.0" />
-                                       </effect>
-                                       <image>
-                                          <Image url="@../../assets/posters/Brook_Alive_Bounty_Poster.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LVL 0">
-                                       <font>
-                                          <Font name="Unispace-Bold" size="12.0" />
-                                       </font>
-                                    </Text>
-                                    <StackPane fx:id="nakama_8" accessibleRole="BUTTON" maxWidth="-Infinity" onMouseClicked="#shopBuy" prefHeight="18.0" prefWidth="60.0">
-                                       <children>
-                                          <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="60.0" pickOnBounds="true">
-                                             <image>
-                                                <Image url="@../../assets/ui/button_normal.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text boundsType="VISUAL" fill="#ffd146" mouseTransparent="true" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="฿100" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="88.78401136398315">
-                                             <font>
-                                                <Font name="Unispace-Bold" size="10.0" />
-                                             </font>
-                                             <StackPane.margin>
-                                                <Insets bottom="4.0" />
-                                             </StackPane.margin>
-                                          </Text>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </VBox>
+                              <AbilityPane fx:id="nakama0" />
+                              <AbilityPane fx:id="nakama1" GridPane.columnIndex="1" />
+                              <AbilityPane fx:id="nakama2" GridPane.rowIndex="1" />
+                              <AbilityPane fx:id="nakama3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <AbilityPane fx:id="nakama4" GridPane.rowIndex="2" />
+                              <AbilityPane fx:id="nakama5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <AbilityPane fx:id="nakama6" GridPane.rowIndex="3" />
+                              <AbilityPane fx:id="nakama7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </content>

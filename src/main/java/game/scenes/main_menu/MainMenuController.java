@@ -4,13 +4,12 @@ import game.scenes.dependencies.*;
 import game.services.Resource;
 import game.models.saves.dependencies.SaveManager;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 
 public class MainMenuController {
@@ -161,7 +160,7 @@ public class MainMenuController {
     }
 
     private boolean showConfirmationDialog() {
-        return NotificationManager.showConfirmationAlert("Sobrescribir", null, "¿Estás seguro de sobrescribir el archivo guardado?");
+        return NotificationManager.showAlert("Sobrescribir", null, "¿Estás seguro de sobrescribir el archivo guardado?");
     }
 }
 
