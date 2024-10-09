@@ -12,6 +12,7 @@ public class ShopManager {
     private static TranslateTransition translateTransition;
 
     public static void configureStore(TabPane shopPane) {
+        isOpen = false;
         shopPane.setTranslateX(-400);
         translateTransition = new TranslateTransition(Duration.millis(600), shopPane);
         shopPane.setCache(true);

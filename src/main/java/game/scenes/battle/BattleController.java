@@ -4,7 +4,7 @@ import game.components.AbilityPane;
 import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
-import game.scenes.battle.dependencies.ButtonManager;
+import game.components.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.battle.dependencies.ShopManager;
 import game.scenes.dependencies.GameManager;

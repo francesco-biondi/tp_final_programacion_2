@@ -1,4 +1,4 @@
-package game.scenes.battle.dependencies;
+package game.components.dependencies;
 
 
 import game.services.Resource;
@@ -27,7 +27,7 @@ public class ButtonManager {
 
     private static void pressButton(ImageView button, int cooldown) {
         button.setImage(new Image(Resource.pressedButtonImagePath));
-        SchedulerService.getScheduler().schedule(() -> resetButton(button), cooldown, TimeUnit.SECONDS);
+        SchedulerService.getScheduler().schedule(() -> resetButton(button), cooldown, TimeUnit.MILLISECONDS);
     }
 
     private static void pressText(Text buttonText, int cooldown) {
@@ -35,7 +35,7 @@ public class ButtonManager {
         ColorAdjust textEffect = new ColorAdjust();
         textEffect.setBrightness(-0.5);
         buttonText.setEffect(textEffect);
-        SchedulerService.getScheduler().schedule(() -> resetButtonText(buttonText), cooldown, TimeUnit.SECONDS);
+        SchedulerService.getScheduler().schedule(() -> resetButtonText(buttonText), cooldown, TimeUnit.MILLISECONDS);
     }
 
     private static void resetButton(ImageView button) {
