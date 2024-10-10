@@ -17,7 +17,9 @@ import static game.services.Resource.NAKAMAS;
 public class Player extends Character{
 
     private int gold = 0;
+
     private transient StringProperty goldProperty;
+    private transient StringProperty bountyProperty;
 
     Map<AbilityNames, Ability> abilities;
     Map<NakamaNames, Nakama> nakamas;
@@ -63,5 +65,15 @@ public class Player extends Character{
 
     public StringProperty goldProperty() {
         return goldProperty == null ? goldProperty  = new SimpleStringProperty(Integer.toString(gold)) : goldProperty;
+    }
+
+    @Override
+    public void setBounty(long bounty) {
+        this.bounty = bounty;
+        this.bountyProperty.set(Long.toString(bounty));
+    }
+
+    public StringProperty bountyProperty() {
+        return bountyProperty == null ? bountyProperty  = new SimpleStringProperty(Long.toString(bounty)) : bountyProperty;
     }
 }

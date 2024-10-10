@@ -8,10 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class ShopPane extends TabPane {
+
+    @FXML
+    private Text playerName, playerBounty;
 
     @FXML
     private GridPane abilityGrid, nakamaGrid;
@@ -30,7 +34,13 @@ public class ShopPane extends TabPane {
             throw new RuntimeException(e);
         }
 
+        displayPlayerData();
         displayShop();
+    }
+
+    private void displayPlayerData(){
+        this.playerName.setText(GameManager.getCurrentPlayer().getName());
+        this.playerBounty.textProperty().bind(GameManager.getCurrentPlayer().bountyProperty());
     }
 
     private void displayShop(){
