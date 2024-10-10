@@ -27,7 +27,7 @@ public class ItemPane extends VBox {
     private Text abilityLevel;
 
     @FXML
-    private Text abilityPrice;
+    private WoodenButton buyButton;
 
     @FXML
     private ImageView abilityImage;
@@ -55,14 +55,13 @@ public class ItemPane extends VBox {
         }
 
         abilityImage.setOnMouseEntered(event -> NotificationManager.toolTip(abilityImage, description, "gameInfo", 200));
-        buttonImage.setOnMouseClicked(this::onBuyButtonClicked);
     }
 
     public void setShopItemData(Ability ability) {
         this.description = ability.toString();
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));
-        abilityPrice.textProperty().bind(Bindings.concat("฿ ", ability.priceProperty()));
+        buyButton.textProperty().bind(Bindings.concat("฿ ", ability.priceProperty()));
         abilityLevel.textProperty().bind(ability.levelProperty());
         unlockHandle(ability.unlockProperty());
     }
@@ -81,11 +80,6 @@ public class ItemPane extends VBox {
                         unlocked
                 )
         );
-    }
-
-    @FXML
-    private void onBuyButtonClicked(MouseEvent event) {
-        ButtonManager.updateButtonState(buttonContainer, 400);
     }
 
 }

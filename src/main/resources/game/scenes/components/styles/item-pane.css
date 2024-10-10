@@ -1,0 +1,16 @@
+.button .text{
+    -fx-fill: #e1c71e; /* Color del texto */
+    -fx-stroke: black; /* Color del borde del texto */
+    -fx-stroke-type: outside; /* Tipo de borde (por fuera del texto) */
+    -fx-stroke-width: 0.6; /* Ancho del borde */
+    -fx-font-size: 10px; /* Tamaño de fuente */
+    -fx-font-family: "Unispace-Bold"; /* Fuente */
+}
+
+#buyButton {
+    -fx-padding: 5px 5px 10px 5px;
+}
+
+#buyButton:pressed {
+    -fx-padding: 10px 5px 5px 5px;
+}
