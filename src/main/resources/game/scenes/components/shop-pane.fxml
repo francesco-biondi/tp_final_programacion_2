@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.scenes.components.AbilityPane?>
+<?import game.scenes.components.ItemPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -66,12 +66,12 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
-                <AbilityPane fx:id="PISTOL" />
-                <AbilityPane fx:id="GEAR_2" GridPane.columnIndex="1" />
-                <AbilityPane fx:id="ELEPHANT" GridPane.rowIndex="1" />
-                <AbilityPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <AbilityPane fx:id="KING_KONG" GridPane.rowIndex="2" />
-                <AbilityPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ItemPane fx:id="PISTOL" />
+                <ItemPane fx:id="GEAR_2" GridPane.columnIndex="1" />
+                <ItemPane fx:id="ELEPHANT" GridPane.rowIndex="1" />
+                <ItemPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ItemPane fx:id="KING_KONG" GridPane.rowIndex="2" />
+                <ItemPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <padding>
                     <Insets top="20.0" />
                 </padding>
@@ -91,14 +91,14 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
-                <AbilityPane fx:id="nakama0" />
-                <AbilityPane fx:id="nakama1" GridPane.columnIndex="1" />
-                <AbilityPane fx:id="nakama2" GridPane.rowIndex="1" />
-                <AbilityPane fx:id="nakama3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <AbilityPane fx:id="nakama4" GridPane.rowIndex="2" />
-                <AbilityPane fx:id="nakama5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <AbilityPane fx:id="nakama6" GridPane.rowIndex="3" />
-                <AbilityPane fx:id="nakama7" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <ItemPane fx:id="ZORO" />
+                <ItemPane fx:id="NAMI" GridPane.columnIndex="1" />
+                <ItemPane fx:id="USOPP" GridPane.rowIndex="1" />
+                <ItemPane fx:id="SANJI" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ItemPane fx:id="CHOPPER" GridPane.rowIndex="2" />
+                <ItemPane fx:id="ROBIN" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <ItemPane fx:id="FRANKY" GridPane.rowIndex="3" />
+                <ItemPane fx:id="BROOK" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <padding>
                     <Insets top="20.0" />
                 </padding>

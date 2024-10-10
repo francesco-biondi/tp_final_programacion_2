@@ -3,14 +3,12 @@ package game.models.characters;
 import com.google.gson.reflect.TypeToken;
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
+import game.models.abilities.enums.NakamaNames;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import game.models.abilities.enums.AbilityNames;
 import game.models.saves.dependencies.SaveManager;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 import static game.services.Resource.ABILITIES;
@@ -22,12 +20,12 @@ public class Player extends Character{
     private transient StringProperty goldProperty;
 
     Map<AbilityNames, Ability> abilities;
-    ArrayList<Nakama> nakamas;
+    Map<NakamaNames, Nakama> nakamas;
 
     public Player(String name) {
         this.name = name;
         this.abilities = SaveManager.loadFileMap(ABILITIES, new TypeToken<Map<AbilityNames, Ability>>(){}.getType());
-        this.nakamas = SaveManager.loadFile(NAKAMAS, new TypeToken<ArrayList<Ability>>(){}.getType());
+        this.nakamas = SaveManager.loadFileMap(NAKAMAS, new TypeToken<Map<NakamaNames, Nakama>>(){}.getType());
     }
 
     public Map<AbilityNames, Ability> getAbilities() {
@@ -42,15 +40,15 @@ public class Player extends Character{
         return abilities.get(abilityName);
     }
 
-    public ArrayList<Nakama> getNakamas() {
+    public Map<NakamaNames, Nakama> getNakamas() {
         return nakamas;
     }
 
-    public Nakama getNakama(int id) {
-        return nakamas.get(id);
+    public Nakama getNakama(NakamaNames nakamaName) {
+        return nakamas.get(nakamaName);
     }
 
-    public void setNakamas(ArrayList<Nakama> nakamas) {
+    public void setNakamas(Map<NakamaNames, Nakama> nakamas) {
         this.nakamas = nakamas;
     }
 

@@ -1,13 +1,11 @@
 package game.scenes.components;
 
-import game.models.abilities.Ability;
 import game.models.abilities.enums.AbilityNames;
+import game.models.abilities.enums.NakamaNames;
 import game.scenes.dependencies.GameManager;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
 
@@ -37,13 +35,13 @@ public class ShopPane extends TabPane {
 
     private void displayShop(){
         for(Node child : abilityGrid.getChildren()){
-            if(child instanceof AbilityPane abilityPane) {
-                abilityPane.setAbilityData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(abilityPane.getId())));
+            if(child instanceof ItemPane itemPane) {
+                itemPane.setShopItemData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(itemPane.getId())));
             }
         }
         for(Node child : nakamaGrid.getChildren()){
-            if(child instanceof AbilityPane abilityPane){
-                abilityPane.setAbilityData(GameManager.getCurrentPlayer().getNakama(Integer.parseInt(abilityPane.getId().replace("nakama", ""))));
+            if(child instanceof ItemPane itemPane){
+                itemPane.setShopItemData(GameManager.getCurrentPlayer().getNakama(NakamaNames.valueOf(itemPane.getId())));
             }
         }
     }

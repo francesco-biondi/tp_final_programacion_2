@@ -1,13 +1,13 @@
 {
   "savePath": "src/main/resources/saves/save1.json",
-  "saveName": "Ppdas",
-  "saveDate": "2024-10-09",
+  "saveName": "Canela",
+  "saveDate": "2024-10-10",
   "player": {
     "gold": 0,
     "abilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10.0,
-        "name": "basicAttack",
+        "name": "PUNCH",
         "type": "ATTACK",
         "description": "Ataque básico con el puño.",
         "image": "file:src/main/resources/assets/abilities/pistol.jpg",
@@ -111,8 +111,9 @@
         "unlocked": false
       }
     },
-    "nakamas": [
-      {
+    "nakamas": {
+      "ZORO": {
+        "poster2": "file:src/main/resources/assets/posters/Roronoa_Zoro27s_Current_Wanted_Poster.jpg",
         "BASE_STRENGTH": 90.0,
         "name": "ZORO",
         "type": "NAKAMA",
@@ -126,7 +127,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "NAMI": {
+        "poster2": "file:src/main/resources/assets/posters/Nami27s_Current_Wanted_Poster.jpg",
         "BASE_STRENGTH": 70.0,
         "name": "NAMI",
         "type": "NAKAMA",
@@ -140,7 +142,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "USOPP": {
+        "poster2": "file:src/main/resources/assets/posters/God_Usopp27s_Wanted_Poster.jpg",
         "BASE_STRENGTH": 60.0,
         "name": "USOPP",
         "type": "NAKAMA",
@@ -154,7 +157,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "SANJI": {
+        "poster2": "file:src/main/resources/assets/posters/Sanji27s_Current_Wanted_Poster.jpg",
         "BASE_STRENGTH": 80.0,
         "name": "SANJI",
         "type": "NAKAMA",
@@ -168,7 +172,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "CHOPPER": {
+        "poster2": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Current_Wanted_Poster.jpg",
         "BASE_STRENGTH": 50.0,
         "name": "CHOPPER",
         "type": "NAKAMA",
@@ -182,7 +187,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "ROBIN": {
+        "poster2": "file:src/main/resources/../assets/posters/Nico_Robin27s_Current_Wanted_Poster.jpg",
         "BASE_STRENGTH": 75.0,
         "name": "ROBIN",
         "type": "NAKAMA",
@@ -196,7 +202,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "FRANKY": {
+        "poster2": "file:src/main/resources/assets/posters/Cyborg_Franky27s_Wanted_Poster.jpg",
         "BASE_STRENGTH": 85.0,
         "name": "FRANKY",
         "type": "NAKAMA",
@@ -210,7 +217,8 @@
         "animating": false,
         "unlocked": false
       },
-      {
+      "BROOK": {
+        "poster2": "file:src/main/resources/assets/posters/Brook27s_Concert_Wanted_Poster.jpg",
         "BASE_STRENGTH": 65.0,
         "name": "BROOK",
         "type": "NAKAMA",
@@ -224,8 +232,8 @@
         "animating": false,
         "unlocked": false
       }
-    ],
-    "name": "Ppdas",
+    },
+    "name": "Canela",
     "bounty": 0
   },
   "enemies": [

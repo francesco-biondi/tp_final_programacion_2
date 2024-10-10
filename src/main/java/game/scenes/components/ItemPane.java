@@ -1,9 +1,7 @@
 package game.scenes.components;
 
-import game.models.abilities.enums.AbilityNames;
 import game.scenes.components.dependencies.ButtonManager;
 import game.models.abilities.Ability;
-import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -20,7 +18,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class AbilityPane extends VBox {
+public class ItemPane extends VBox {
 
     @FXML
     private Text abilityName;
@@ -42,10 +40,10 @@ public class AbilityPane extends VBox {
 
     private String description;
 
-    public AbilityPane() {
+    public ItemPane() {
         FXMLLoader loader = new FXMLLoader(
-                AbilityPane.class.getResource(
-                        "ability-pane.fxml"
+                ItemPane.class.getResource(
+                        "item-pane.fxml"
                 )
         );
         loader.setRoot(this);
@@ -58,10 +56,9 @@ public class AbilityPane extends VBox {
 
         abilityImage.setOnMouseEntered(event -> NotificationManager.toolTip(abilityImage, description, "gameInfo", 200));
         buttonImage.setOnMouseClicked(this::onBuyButtonClicked);
-
     }
 
-    public void setAbilityData(Ability ability) {
+    public void setShopItemData(Ability ability) {
         this.description = ability.toString();
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));

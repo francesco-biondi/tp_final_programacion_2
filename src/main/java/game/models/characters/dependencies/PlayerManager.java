@@ -31,7 +31,7 @@ public class PlayerManager {
     }
 
     public static void stopAllNakamas(Player player){
-        for (Nakama nakama : player.getNakamas()) {
+        for (Nakama nakama : player.getNakamas().values()) {
             nakama.stopUse();
         }
     }
