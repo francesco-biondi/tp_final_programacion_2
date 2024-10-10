@@ -14,28 +14,19 @@ public class Nakama extends Ability {
     /**
      * Atributos
      */
-    private String poster;
     private String poster2;
 
     /**
      * Constructor
      */
-    public Nakama(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating, String poster, String poster2) {
-        super(BASE_STRENGTH, name, type, descripcion, level, price, strength, isAvailable, cooldownTime, isAnimating);
-        this.poster = poster;
+    public Nakama(double BASE_STRENGTH, String image, String name, AbilityType type, String description, int level, int price, double strength, int cooldownTime, boolean available, boolean animating, boolean unlocked, String poster2) {
+        super(BASE_STRENGTH, image, name, type, description, level, price, strength, cooldownTime, available, animating, unlocked);
         this.poster2 = poster2;
     }
 
     /**
      * Getters y setters
      */
-    public String getPoster() {
-        return poster;
-    }
-
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
 
     public String getPoster2() {
         return poster2;
@@ -47,7 +38,7 @@ public class Nakama extends Ability {
 
     @Override
     public double use(Character character) {
-        if(this.isAvailable){
+        if(this.available){
             if(character instanceof Enemy e){
                 SchedulerService.getScheduler().scheduleAtFixedRate(() -> {
                     e.setHealth(e.getHealth() - this.strength);
@@ -80,6 +71,6 @@ public class Nakama extends Ability {
 
     @Override
     public void animation() {
-        
+
     }
 }

@@ -1,0 +1,58 @@
+{
+  "PUNCH": {
+    "name": "basicAttack",
+    "BASE_STRENGTH": 10,
+    "type": "ATTACK",
+    "description": "Ataque básico con el puño.",
+    "image": "file:src/main/resources/assets/abilities/pistol.jpg",
+    "level": 1,
+    "strength": 10,
+    "cooldownTime": 0,
+    "price": 10,
+    "available": true,
+    "animating": false,
+    "unlocked": false
+  },
+  "PISTOL": {
+    "name": "PISTOL",
+    "BASE_STRENGTH": 10,
+    "type": "ATTACK",
+    "description": "Un ataque rápido con el puño estirado.",
+    "image": "file:src/main/resources/assets/abilities/pistol.jpg",
+    "level": 0,
+    "strength": 200,
+    "cooldownTime": 2,
+    "price": 20,
+    "available": false,
+    "animating": false,
+    "unlocked": false
+  },
+  "ELEPHANT": {
+    "name": "ELEPHANT",
+    "BASE_STRENGTH": 10,
+    "type": "ATTACK",
+    "description": "Un golpe masivo con la fuerza de un elefante.",
+    "image": "file:src/main/resources/assets/abilities/elephant_gun.jpg",
+    "level": 0,
+    "strength": 50,
+    "cooldownTime": 5,
+    "price": 5000,
+    "available": false,
+    "animating": false,
+    "unlocked": false
+  },
+  "KING_KONG": {
+    "name": "KING KONG",
+    "BASE_STRENGTH": 10,
+    "type": "ATTACK",
+    "description": "El golpe más poderoso, con devastadora fuerza.",
+    "image": "file:src/main/resources/assets/abilities/king_kon.jpg",
+    "level": 0,
+    "strength": 100,
+    "cooldownTime": 10,
+    "price": 50000,
+    "available": false,
+    "animating": false,
+    "unlocked": false
+  }
+}

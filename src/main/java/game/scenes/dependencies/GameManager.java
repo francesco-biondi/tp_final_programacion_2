@@ -1,7 +1,9 @@
 package game.scenes.dependencies;
 
+import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
+import game.models.characters.dependencies.PlayerManager;
 import game.models.saves.Save;
 
 public class GameManager {
@@ -9,6 +11,7 @@ public class GameManager {
     private static Save currentSave;
     private static Enemy currentEnemy;
     private static Player currentPlayer;
+    private static PlayerManager currentPlayerManager = new PlayerManager();
 
     public static Save getCurrentSave() {
         return currentSave;
@@ -21,6 +24,10 @@ public class GameManager {
 
     public static Player getCurrentPlayer() {
         return currentPlayer;
+    }
+
+    public static PlayerManager getCurrentPlayerManager(){
+        return currentPlayerManager;
     }
 
     public static Enemy getCurrentEnemy() {
@@ -46,7 +53,25 @@ public class GameManager {
         currentSave.getEnemy(index + 1).setUnlocked(true);
     }
 
+    public static void hitBasicAttack(){
+        currentPlayerManager.basicAttack(currentPlayer, currentEnemy);
+    }
 
+    public static void goldByBasicAttack(){
+        currentPlayerManager.addGoldByClick(currentPlayer, currentEnemy);
+    }
+
+    public static void startAttackNakamas(){
+        for(Nakama nakama : currentPlayer.getNakamas()){
+            if (nakama.isAvailable()){
+                nakama.use(currentEnemy);
+            }
+        }
+    }
+
+    public static void stopAttackNakamas(){
+        currentPlayerManager.stopAllNakamas(currentPlayer);
+    }
 
 
 }

@@ -53,6 +53,7 @@ public class BattleController {
         playerBounty.setText(String.valueOf(GameManager.getCurrentPlayer().getBounty()));
         gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
         updateEnemy(GameManager.getCurrentEnemy());
+        GameManager.startAttackNakamas();
         ShopManager.configureStore(shopPane);
         configureBattle();
 
@@ -82,8 +83,8 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-        GameManager.getCurrentEnemy().setHealth(GameManager.getCurrentEnemy().getHealth() - 500);
-        GameManager.getCurrentPlayer().setGold(GameManager.getCurrentPlayer().getGold() + GameManager.getCurrentEnemy().getId());
+        GameManager.hitBasicAttack();
+        GameManager.goldByBasicAttack();
     }
 
     @FXML
@@ -105,11 +106,13 @@ public class BattleController {
     @FXML
     void toggleMap(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAP);
+//        GameManager.stopAttackNakamas();
     }
 
     @FXML
     void mainMenu(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAIN_MENU);
+//        GameManager.stopAttackNakamas();
         SaveManager.saveGame(GameManager.getCurrentSave());
     }
 

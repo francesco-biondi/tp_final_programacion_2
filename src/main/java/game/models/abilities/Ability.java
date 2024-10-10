@@ -2,7 +2,12 @@ package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
+import game.models.characters.Character;
 import game.services.SchedulerService;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,34 +16,55 @@ public abstract class Ability implements I_Ability {
     protected final double BASE_STRENGTH;
     protected String name;
     protected AbilityType type;
-    protected String descripcion;
+    protected String description;
+    protected final String image;
     protected int level;
     protected final int maxLevel = 10;
     protected int price;
     protected double strength;
     protected int cooldownTime;
-    protected boolean isAvailable;
-    protected boolean isAnimating;
+    protected boolean available;
+    protected boolean animating;
+    protected boolean unlocked;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String descripcion, int level, int price, double strength, boolean isAvailable, int cooldownTime, boolean isAnimating) {
+    protected transient StringProperty nameProperty;
+    protected transient StringProperty levelProperty;
+    protected transient StringProperty priceProperty;
+    protected transient BooleanProperty unlockProperty;
+
+    public Ability(double BASE_STRENGTH, String image, String name, AbilityType type, String description, int level, int price, double strength, int cooldownTime, boolean available, boolean animating, boolean unlocked) {
         this.BASE_STRENGTH = BASE_STRENGTH;
+        this.image = image;
         this.name = name;
         this.type = type;
-        this.descripcion = descripcion;
+        this.description = description;
         this.level = level;
         this.price = price;
         this.strength = strength;
-        this.isAvailable = isAvailable;
         this.cooldownTime = cooldownTime;
-        this.isAnimating = isAnimating;
+        this.available = available;
+        this.animating = animating;
+        this.unlocked = unlocked;
     }
 
     @Override
     public void cooldown(){
-        this.isAvailable = false;
+        this.available = false;
         SchedulerService.getScheduler().schedule(() -> {
-            this.isAvailable = true;
+            this.available = true;
         }, this.cooldownTime, TimeUnit.SECONDS);
+    }
+
+    public StringProperty levelProperty() {
+        return levelProperty == null ? levelProperty  = new SimpleStringProperty(Integer.toString(level)) : levelProperty;
+    }
+
+    public StringProperty nameProperty() {
+        return nameProperty == null ? nameProperty  = new SimpleStringProperty(name) : nameProperty;
+    }
+
+    public StringProperty priceProperty() {
+        return priceProperty == null ? priceProperty  = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
     }
 
     public double getBASE_STRENGTH() {
@@ -51,6 +77,7 @@ public abstract class Ability implements I_Ability {
 
     public void setName(String name) {
         this.name = name;
+        this.nameProperty.set(name);
     }
 
     public int getPrice() {
@@ -59,6 +86,11 @@ public abstract class Ability implements I_Ability {
 
     public void setPrice(int price) {
         this.price = price;
+        this.priceProperty.set(Integer.toString(this.price));
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public AbilityType getType() {
@@ -69,12 +101,12 @@ public abstract class Ability implements I_Ability {
         this.type = type;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getLevel() {
@@ -83,6 +115,7 @@ public abstract class Ability implements I_Ability {
 
     public void setLevel(int level) {
         this.level = level;
+        this.levelProperty.set(Integer.toString(level));
     }
 
     public int getMaxLevel() {
@@ -106,18 +139,37 @@ public abstract class Ability implements I_Ability {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        this.available = available;
     }
 
     public boolean isAnimating() {
-        return isAnimating;
+        return animating;
     }
 
     public void setAnimating(boolean animating) {
-        isAnimating = animating;
+        this.animating = animating;
+    }
+
+    public boolean isUnlocked() {
+        return unlocked;
+    }
+
+    public void setUnlocked(boolean unlocked) {
+        this.unlocked = unlocked;
+        this.unlockProperty.set(unlocked);
+    }
+
+    public BooleanProperty unlockProperty() {
+        return unlockProperty == null ? unlockProperty  = new SimpleBooleanProperty(unlocked) : unlockProperty;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %f\n\nPrecio: %d\n\nAvailable: %b\n\nAnimating: %b\n\nUnlocked: %b",
+                name, description, strength, price, available, animating, unlocked);
     }
 }

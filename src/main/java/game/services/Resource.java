@@ -16,7 +16,8 @@ public class Resource {
     public static final String APP_FONT_PRESS_START = "/assets/fonts/PressStart2P-Regular.ttf";
     public static final String APP_ICON = "file:src/main/resources/assets/icons/opf_icon.png";
     public static final String ENEMIES = "src/main/resources/gameData/Enemies.json";
-    public static final String ABILITIES = "src/main/resources/gameData/Abilities.json";
+    public static final String ATTACK_ABILITIES = "src/main/resources/gameData/AttackAbilities.json";
+    public static final String BUFF_ABILITIES = "src/main/resources/gameData/BuffAbilities.json";
     public static final String NAKAMAS = "src/main/resources/gameData/Nakamas.json";
 
     /**

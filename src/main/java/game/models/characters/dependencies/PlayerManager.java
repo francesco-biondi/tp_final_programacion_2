@@ -11,9 +11,9 @@ import static game.models.abilities.enums.AbilityNames.PUNCH;
 
 public class PlayerManager {
 
-    public static void addGoldByClick(Player player, Enemy enemy){
+    public void addGoldByClick(Player player, Enemy enemy){
         int goldByClick = enemy.getGOLD_BY_CLICK();
-        player.setGold(goldByClick);
+        player.updateGold(goldByClick);
     }
 
     private static void applyAbility(Player player, Enemy enemy, Ability ability){
@@ -24,13 +24,13 @@ public class PlayerManager {
         }
     }
 
-    public static void basicAttack(Player player, Enemy enemy){
+    public void basicAttack(Player player, Enemy enemy){
         Ability basic = player.getAbility(PUNCH);
 
         applyAbility(player, enemy, basic);
     }
 
-    public static void stopAllNakamas(Player player){
+    public void stopAllNakamas(Player player){
         for (Nakama nakama : player.getNakamas()) {
             nakama.stopUse();
         }
