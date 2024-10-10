@@ -112,6 +112,6 @@
    <ImageView fitHeight="62.0" fitWidth="70.0" onMouseClicked="#toggleMusic" onMouseEntered="#handleHover"
               onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
               GridPane.rowIndex="4">
-      <Image url="@../assets/icons/musica.png"/>
+      <Image url="@../../assets/icons/musica.png"/>
    </ImageView>
 </GridPane>

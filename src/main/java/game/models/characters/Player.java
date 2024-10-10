@@ -5,14 +5,12 @@ import game.models.abilities.Ability;
 import game.models.abilities.AttackAbility;
 import game.models.abilities.BuffAbility;
 import game.models.abilities.Nakama;
+import game.models.abilities.enums.NakamaNames;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import game.models.abilities.enums.AbilityNames;
 import game.models.saves.dependencies.SaveManager;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 import static game.services.Resource.*;
@@ -20,17 +18,19 @@ import static game.services.Resource.*;
 public class Player extends Character{
 
     private int gold = 0;
+
     private transient StringProperty goldProperty;
+    private transient StringProperty bountyProperty;
 
     Map<AbilityNames, AttackAbility> attackAbilities;
     Map<AbilityNames, BuffAbility> buffAbilities;
-    ArrayList<Nakama> nakamas;
+    Map<NakamaNames, Nakama> nakamas;
 
     public Player(String name) {
         this.name = name;
         this.attackAbilities = SaveManager.loadFileMap(ATTACK_ABILITIES, new TypeToken<Map<AbilityNames, AttackAbility>>(){}.getType());
         this.buffAbilities = SaveManager.loadFileMap(BUFF_ABILITIES, new TypeToken<Map<AbilityNames, BuffAbility>>(){}.getType());
-        this.nakamas = SaveManager.loadFile(NAKAMAS, new TypeToken<ArrayList<Nakama>>(){}.getType());
+        this.nakamas = SaveManager.loadFileMap(NAKAMAS, new TypeToken<Map<NakamaNames, Nakama>>(){}.getType());
     }
 
     public Map<AbilityNames, AttackAbility> getAttackAbilities() {
@@ -59,15 +59,15 @@ public class Player extends Character{
         this.buffAbilities = buffAbilities;
     }
 
-    public ArrayList<Nakama> getNakamas() {
+    public Map<NakamaNames, Nakama> getNakamas() {
         return nakamas;
     }
 
-    public Nakama getNakama(int id) {
-        return nakamas.get(id);
+    public Nakama getNakama(NakamaNames nakamaName) {
+        return nakamas.get(nakamaName);
     }
 
-    public void setNakamas(ArrayList<Nakama> nakamas) {
+    public void setNakamas(Map<NakamaNames, Nakama> nakamas) {
         this.nakamas = nakamas;
     }
 
@@ -87,5 +87,15 @@ public class Player extends Character{
 
     public StringProperty goldProperty() {
         return goldProperty == null ? goldProperty  = new SimpleStringProperty(Integer.toString(gold)) : goldProperty;
+    }
+
+    @Override
+    public void setBounty(long bounty) {
+        this.bounty = bounty;
+        this.bountyProperty.set(Long.toString(bounty));
+    }
+
+    public StringProperty bountyProperty() {
+        return bountyProperty == null ? bountyProperty  = new SimpleStringProperty(Long.toString(bounty)) : bountyProperty;
     }
 }

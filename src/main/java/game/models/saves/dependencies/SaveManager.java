@@ -2,6 +2,7 @@ package game.models.saves.dependencies;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import game.models.exceptions.SaveNotFoundException;
 import game.models.saves.Save;
 
 import java.io.*;
@@ -61,6 +62,8 @@ public abstract class SaveManager {
     public static Save loadGame(int slotIndex) {
         try (FileReader reader = new FileReader(Save.getSavePath(slotIndex))) {
             return gson.fromJson(reader, Save.class);
+        } catch (FileNotFoundException e) {
+            throw new SaveNotFoundException(Save.getSavePath(slotIndex));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

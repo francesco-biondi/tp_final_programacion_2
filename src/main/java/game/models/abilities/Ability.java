@@ -23,16 +23,16 @@ public abstract class Ability implements I_Ability {
     protected int price;
     protected double strength;
     protected int cooldownTime;
-    protected boolean available;
-    protected boolean animating;
-    protected boolean unlocked;
+    protected boolean available = true;
+    protected boolean animating = false;
+    protected boolean unlocked = false;
 
     protected transient StringProperty nameProperty;
     protected transient StringProperty levelProperty;
     protected transient StringProperty priceProperty;
     protected transient BooleanProperty unlockProperty;
 
-    public Ability(double BASE_STRENGTH, String image, String name, AbilityType type, String description, int level, int price, double strength, int cooldownTime, boolean available, boolean animating, boolean unlocked) {
+    public Ability(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, int cooldownTime) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.image = image;
         this.name = name;
@@ -42,9 +42,6 @@ public abstract class Ability implements I_Ability {
         this.price = price;
         this.strength = strength;
         this.cooldownTime = cooldownTime;
-        this.available = available;
-        this.animating = animating;
-        this.unlocked = unlocked;
     }
 
     @Override
@@ -169,7 +166,7 @@ public abstract class Ability implements I_Ability {
 
     @Override
     public String toString() {
-        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %f\n\nPrecio: %d\n\nAvailable: %b\n\nAnimating: %b\n\nUnlocked: %b",
-                name, description, strength, price, available, animating, unlocked);
+        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %f\n\nPrecio: %d",
+                name, description, strength, price);
     }
 }

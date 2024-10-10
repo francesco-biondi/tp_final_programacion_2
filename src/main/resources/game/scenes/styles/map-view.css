@@ -1,5 +1,5 @@
 #root{
-    -fx-background-image:  url("../../assets/backgrounds/map_background.jpg");
+    -fx-background-image:  url("../../../assets/backgrounds/map_background.jpg");
     -fx-background-position: center;
     -fx-background-repeat: NO-REPEAT;
     -fx-background-size: COVER, AUTO;

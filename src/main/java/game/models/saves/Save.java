@@ -17,7 +17,7 @@ public class Save implements Serializable {
     private final String savePath;
     private final String saveName;
     private final String saveDate;
-    private Player player;
+    private final Player player;
     ArrayList<Enemy> enemies;
 
     public Save(String saveName, int slotIndex) {

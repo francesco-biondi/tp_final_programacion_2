@@ -7,8 +7,8 @@ import game.models.exceptions.*;
 
 public class AttackAbility extends Ability {
 
-    public AttackAbility(double BASE_STRENGTH, String image, String name, AbilityType type, String description, int level, int price, double strength, int cooldownTime, boolean available, boolean animating, boolean unlocked) {
-        super(BASE_STRENGTH, image, name, type, description, level, price, strength, cooldownTime, available, animating, unlocked);
+    public AttackAbility(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, int cooldownTime) {
+        super(BASE_STRENGTH, name, type, description, image, level, price, strength, cooldownTime);
     }
 
     @Override

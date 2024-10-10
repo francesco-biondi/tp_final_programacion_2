@@ -6,6 +6,6 @@ public enum AbilityNames {
     ELEPHANT,
     KING_KONG,
     GEAR_2,
-    GEAR_3,
-    GEAR_4
+    GEAR_4,
+    GEAR_5
 }

@@ -1,0 +1,6 @@
+.button-bar {
+    -fx-background-image: url("../../../../assets/ui/ui_small_wood.png");
+    -fx-background-position: top;
+    -fx-background-size: contain, auto;
+    -fx-background-repeat: no-repeat;
+}

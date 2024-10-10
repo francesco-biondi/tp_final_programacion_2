@@ -1,5 +1,5 @@
-[
-  {
+{
+  "ZORO": {
     "name": "ZORO",
     "image": "file:src/main/resources/assets/posters/Zoro27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Roronoa_Zoro27s_Current_Wanted_Poster.jpg",
@@ -14,7 +14,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "NAMI": {
     "name": "NAMI",
     "image": "file:src/main/resources/assets/posters/Nami27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Nami27s_Current_Wanted_Poster.jpg",
@@ -29,7 +29,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "USOPP": {
     "name": "USOPP",
     "image": "file:src/main/resources/assets/posters/Usopp27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/God_Usopp27s_Wanted_Poster.jpg",
@@ -44,7 +44,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "SANJI": {
     "name": "SANJI",
     "image": "file:src/main/resources/assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Sanji27s_Current_Wanted_Poster.jpg",
@@ -59,7 +59,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "CHOPPER": {
     "name": "CHOPPER",
     "image": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Current_Wanted_Poster.jpg",
@@ -74,7 +74,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "ROBIN": {
     "name": "ROBIN",
     "image": "file:src/main/resources/assets/posters/Nico_Robin27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/../assets/posters/Nico_Robin27s_Current_Wanted_Poster.jpg",
@@ -89,7 +89,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "FRANKY": {
     "name": "FRANKY",
     "image": "file:src/main/resources/assets/posters/Franky27s_Wanted_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Cyborg_Franky27s_Wanted_Poster.jpg",
@@ -104,7 +104,7 @@
     "animating": false,
     "unlocked": false
   },
-  {
+  "BROOK": {
     "name": "BROOK",
     "image": "file:src/main/resources/assets/posters/Brook_Alive_Bounty_Poster.jpg",
     "poster2": "file:src/main/resources/assets/posters/Brook27s_Concert_Wanted_Poster.jpg",
@@ -119,4 +119,4 @@
     "animating": false,
     "unlocked": false
   }
-]
+}

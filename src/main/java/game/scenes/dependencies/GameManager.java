@@ -62,7 +62,7 @@ public class GameManager {
     }
 
     public static void startAttackNakamas(){
-        for(Nakama nakama : currentPlayer.getNakamas()){
+        for(Nakama nakama : currentPlayer.getNakamas().values()){
             if (nakama.isAvailable()){
                 nakama.use(currentEnemy);
             }

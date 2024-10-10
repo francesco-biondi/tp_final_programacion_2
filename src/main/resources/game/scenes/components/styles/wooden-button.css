@@ -1,0 +1,37 @@
+
+/* Estilo base del botón */
+.button {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../../../../assets/ui/button_normal.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 5px 5px 15px 5px;
+}
+
+/* Estilo cuando el botón está presionado */
+.button:pressed{
+    -fx-background-image: url("../../../../assets/ui/button_pressed.png");
+    -fx-padding: 10px 5px 5px 5px;
+}
+
+/* Estilo para botón desactivado */
+.button:disabled {
+    -fx-padding: 10px 5px 5px 5px;
+    -fx-background-image: url("../../../../assets/ui/button_pressed.png");
+    -fx-opacity: 0.8; /* Menor opacidad cuando está deshabilitado */
+    -fx-cursor: default; /* Cambia el cursor al estado por defecto */
+}
+
+/* Estilo del texto dentro del botón */
+.text {
+    -fx-fill: white; /* Color del texto */
+    -fx-stroke: black; /* Color del borde del texto */
+    -fx-stroke-type: outside; /* Tipo de borde (por fuera del texto) */
+    -fx-stroke-width: 0.8; /* Ancho del borde */
+    -fx-font-size: 14px; /* Tamaño de fuente */
+    -fx-font-family: "Unispace-Bold"; /* Fuente */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 1, 0.5, 1, 1); /* Sombra para el texto */
+}

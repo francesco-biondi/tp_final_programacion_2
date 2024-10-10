@@ -4,13 +4,12 @@ import game.scenes.dependencies.*;
 import game.services.Resource;
 import game.models.saves.dependencies.SaveManager;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 
 public class MainMenuController {
@@ -64,7 +63,6 @@ public class MainMenuController {
                     updateSlotTexts(true);
                     SceneManager.changeScene(Scenes.MAP);
                 } catch (IllegalArgumentException e) {
-                    currentTextField.clear();
                     showError(currentTextField);
                 }
             }
@@ -90,6 +88,7 @@ public class MainMenuController {
     }
 
     private void handleNewGameAction(int index) {
+        updateSlotTexts(true);
         if (index < slotTexts.length - 1) {
             if (SaveManager.saveExists(index)) {
                 boolean confirmed = showConfirmationDialog();
@@ -157,29 +156,11 @@ public class MainMenuController {
     }
 
     private void showError(TextField textField) {
-        Tooltip tooltip = new Tooltip("Nombre inválido. Ingrese un nombre de entre 3 y 10 caracteres.");
-        tooltip.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-
-        tooltip.setAutoHide(true);
-        tooltip.show(textField.getScene().getWindow(), textField.getScene().getWindow().getX() + textField.getLayoutX(),textField.getScene().getWindow().getY() + textField.getLayoutY());
+        NotificationManager.toolTip(textField, "Nombre inválido. Ingrese un nombre de entre 3 y 10 caracteres.", "error", 500);
     }
 
     private boolean showConfirmationDialog() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Sobrescribir");
-        alert.setHeaderText(null);
-        alert.setContentText("¿Estás seguro de sobrescribir el archivo guardado?");
-
-        ButtonType buttonTypeYes = new ButtonType("Sí", ButtonBar.ButtonData.YES);
-        ButtonType buttonTypeNo = new ButtonType("No", ButtonBar.ButtonData.NO);
-
-        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
-
-        Stage stage = (Stage) slotTexts[0].getScene().getWindow();
-        alert.initOwner(stage);
-        alert.initModality(Modality.WINDOW_MODAL);
-
-        return alert.showAndWait().orElse(buttonTypeNo) == buttonTypeYes;
+        return NotificationManager.showAlert("Sobrescribir", null, "¿Estás seguro de sobrescribir el archivo guardado?");
     }
 }
 
