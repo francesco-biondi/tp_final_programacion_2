@@ -1,6 +1,6 @@
 {
   "savePath": "src/main/resources/saves/save1.json",
-  "saveName": "Canela",
+  "saveName": "Pepe",
   "saveDate": "2024-10-10",
   "player": {
     "gold": 0,
@@ -233,8 +233,8 @@
         "unlocked": false
       }
     },
-    "name": "Canela",
-    "bounty": 50000
+    "name": "Pepe",
+    "bounty": 0
   },
   "enemies": [
     {
