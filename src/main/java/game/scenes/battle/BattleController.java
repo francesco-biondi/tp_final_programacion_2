@@ -3,7 +3,6 @@ package game.scenes.battle;
 import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
-import game.scenes.components.dependencies.ButtonManager;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.components.dependencies.ShopManager;
 import game.scenes.dependencies.GameManager;
@@ -73,7 +72,7 @@ public class BattleController {
 
     @FXML
     void button_pressed(MouseEvent event) {
-        ButtonManager.updateButtonState((StackPane) event.getSource(), 1);
+
     }
 
     @FXML

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.scenes.components.WoodenButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
@@ -20,16 +19,14 @@
             <Font name="Unispace-Bold" size="12.0" />
         </font>
     </Text>
-   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="80.0">
-      <VBox.margin>
-         <Insets left="5.0" right="5.0" />
-      </VBox.margin>
-      <children>
-         <WoodenButton fx:id="buyButton" text="฿ 0" textAlignment="CENTER" textFill="#e1c71e" wrapText="true">
-            <font>
-               <Font size="8.0" />
-            </font>
-         </WoodenButton>
-      </children>
-   </StackPane>
+    <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="80.0">
+        <VBox.margin>
+            <Insets left="5.0" right="5.0" />
+        </VBox.margin>
+<!--        <WoodenButton fx:id="buyButton" text="฿ 0" textAlignment="CENTER" textFill="#e1c71e" wrapText="true">-->
+<!--           <font>-->
+<!--               <Font size="8.0"/>-->
+<!--           </font>-->
+<!--        </WoodenButton>-->
+    </StackPane>
 </fx:root>

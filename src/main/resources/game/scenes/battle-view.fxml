@@ -14,9 +14,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import game.scenes.components.ShopPane?>
+<?import game.scenes.components.*?>
 
-<?import game.scenes.components.AbilityBar?>
 <StackPane fx:id="root" stylesheets="@styles/battle-view.css" xmlns="http://javafx.com/javafx/22"
            xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.scenes.battle.BattleController">
    <GridPane fx:id="battle" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"

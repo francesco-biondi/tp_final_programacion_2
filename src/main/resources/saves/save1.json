@@ -1,24 +1,24 @@
 {
   "savePath": "src/main/resources/saves/save1.json",
-  "saveName": "Pepe",
-  "saveDate": "2024-10-10",
+  "saveName": "seba",
+  "saveDate": "2024-10-11",
   "player": {
-    "gold": 0,
-    "abilities": {
+    "gold": 1025,
+    "attackAbilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10.0,
-        "name": "PUNCH",
+        "name": "basicAttack",
         "type": "ATTACK",
         "description": "Ataque básico con el puño.",
         "image": "file:src/main/resources/assets/abilities/pistol.jpg",
-        "level": 0,
+        "level": 1,
         "maxLevel": 0,
-        "price": 0,
+        "price": 10,
         "strength": 10.0,
         "cooldownTime": 0,
-        "available": false,
+        "available": true,
         "animating": false,
-        "unlocked": true
+        "unlocked": false
       },
       "PISTOL": {
         "BASE_STRENGTH": 10.0,
@@ -29,7 +29,7 @@
         "level": 0,
         "maxLevel": 0,
         "price": 20,
-        "strength": 20.0,
+        "strength": 200.0,
         "cooldownTime": 2,
         "available": false,
         "animating": false,
@@ -64,8 +64,11 @@
         "available": false,
         "animating": false,
         "unlocked": false
-      },
+      }
+    },
+    "buffAbilities": {
       "GEAR_2": {
+        "durationTime": 15,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 2",
         "type": "BUFF",
@@ -81,6 +84,7 @@
         "unlocked": false
       },
       "GEAR_4": {
+        "durationTime": 10,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 4",
         "type": "BUFF",
@@ -96,6 +100,7 @@
         "unlocked": false
       },
       "GEAR_5": {
+        "durationTime": 8,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 5",
         "type": "BUFF",
@@ -118,12 +123,12 @@
         "name": "ZORO",
         "type": "NAKAMA",
         "image": "file:src/main/resources/assets/posters/Zoro27s_Wanted_Poster.jpg",
-        "level": 0,
+        "level": 1,
         "maxLevel": 0,
-        "price": 0,
-        "strength": 9.0,
+        "price": 900,
+        "strength": 50.0,
         "cooldownTime": 4,
-        "available": false,
+        "available": true,
         "animating": false,
         "unlocked": false
       },
@@ -135,7 +140,7 @@
         "image": "file:src/main/resources/assets/posters/Nami27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 7.0,
         "cooldownTime": 3,
         "available": false,
@@ -150,7 +155,7 @@
         "image": "file:src/main/resources/assets/posters/Usopp27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 6.0,
         "cooldownTime": 2,
         "available": false,
@@ -165,7 +170,7 @@
         "image": "file:src/main/resources/assets/posters/Vinsmoke_Sanji27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 8.0,
         "cooldownTime": 3,
         "available": false,
@@ -180,7 +185,7 @@
         "image": "file:src/main/resources/assets/posters/Tony_Tony_Chopper27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 5.0,
         "cooldownTime": 2,
         "available": false,
@@ -195,7 +200,7 @@
         "image": "file:src/main/resources/assets/posters/Nico_Robin27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 7.0,
         "cooldownTime": 3,
         "available": false,
@@ -210,7 +215,7 @@
         "image": "file:src/main/resources/assets/posters/Franky27s_Wanted_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 8.0,
         "cooldownTime": 4,
         "available": false,
@@ -225,7 +230,7 @@
         "image": "file:src/main/resources/assets/posters/Brook_Alive_Bounty_Poster.jpg",
         "level": 0,
         "maxLevel": 0,
-        "price": 0,
+        "price": 900,
         "strength": 6.0,
         "cooldownTime": 3,
         "available": false,
@@ -233,7 +238,7 @@
         "unlocked": false
       }
     },
-    "name": "Pepe",
+    "name": "seba",
     "bounty": 0
   },
   "enemies": [
@@ -242,9 +247,9 @@
       "MAX_HEALTH": 5000.0,
       "GOLD_BY_CLICK": 5,
       "image": "file:src/main/resources/assets/enemies/1-alvida.png",
-      "health": 5000.0,
+      "health": -3970.0,
       "unlocked": true,
-      "defeated": false,
+      "defeated": true,
       "name": "ALVIDA",
       "bounty": 5000,
       "posterImage": "file:src/main/resources/assets/posters/alvida.png"
@@ -254,9 +259,9 @@
       "MAX_HEALTH": 20000.0,
       "GOLD_BY_CLICK": 15,
       "image": "file:src/main/resources/assets/enemies/2-buggy.png",
-      "health": 20000.0,
-      "unlocked": false,
-      "defeated": false,
+      "health": 18740.0,
+      "unlocked": true,
+      "defeated": true,
       "name": "BUGGY THE CLOWN",
       "bounty": 15000,
       "posterImage": "file:src/main/resources/assets/posters/buggy.png"
@@ -267,7 +272,7 @@
       "GOLD_BY_CLICK": 16,
       "image": "file:src/main/resources/assets/enemies/3-kuro.png",
       "health": 31000.0,
-      "unlocked": false,
+      "unlocked": true,
       "defeated": false,
       "name": "KURO",
       "bounty": 16000,

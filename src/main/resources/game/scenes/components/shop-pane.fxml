@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import game.scenes.components.ItemPane?>
-<?import javafx.geometry.Insets?>
+<!--<?import game.scenes.components.ItemPane?>-->
+<!--<?import javafx.geometry.Insets?>-->
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+<!--<?import javafx.scene.image.Image?>-->
+<!--<?import javafx.scene.image.ImageView?>-->
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<!--<?import javafx.scene.layout.StackPane?>-->
+<!--<?import javafx.scene.layout.VBox?>-->
+<!--<?import javafx.scene.text.Font?>-->
+<!--<?import javafx.scene.text.Text?>-->
 
 <fx:root fx:id="shopPane" cache="true" cacheHint="SPEED" prefHeight="450.0" prefWidth="250.0" stylesheets="@styles/shop-pane.css" tabClosingPolicy="UNAVAILABLE" type="TabPane" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
     <effect>
@@ -23,35 +23,35 @@
     </effect>
     <Tab text="PLAYER">
         <AnchorPane>
-            <VBox alignment="TOP_CENTER" layoutX="9.0" prefHeight="408.0" prefWidth="248.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                <padding>
-                    <Insets top="20.0" />
-                </padding>
-                <StackPane prefHeight="190.0" prefWidth="248.0">
-                    <ImageView fitHeight="193.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
-                        <effect>
-                            <DropShadow blurType="TWO_PASS_BOX" />
-                        </effect>
-                        <Image url="@../../../assets/posters/player.png" />
-                    </ImageView>
-                    <Text fx:id="playerName" fill="#514A43" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYER NAME" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
-                        <StackPane.margin>
-                            <Insets bottom="30.0" />
-                        </StackPane.margin>
-                        <font>
-                            <Font name="Unispace-Bold" size="12.0" />
-                        </font>
-                    </Text>
-                    <Text fx:id="playerBounty" fill="#514a43" fontSmoothingType="LCD" layoutX="33.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1,000,000" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
-                        <font>
-                            <Font name="Unispace-Bold" size="12.0" />
-                        </font>
-                        <StackPane.margin>
-                            <Insets bottom="12.0" />
-                        </StackPane.margin>
-                    </Text>
-                </StackPane>
-            </VBox>
+<!--            <VBox alignment="TOP_CENTER" layoutX="9.0" prefHeight="408.0" prefWidth="248.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">-->
+<!--                <padding>-->
+<!--                    <Insets top="20.0" />-->
+<!--                </padding>-->
+<!--                <StackPane prefHeight="190.0" prefWidth="248.0">-->
+<!--                    <ImageView fitHeight="193.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                        <effect>-->
+<!--                            <DropShadow blurType="TWO_PASS_BOX" />-->
+<!--                        </effect>-->
+<!--                        <Image url="@../../../assets/posters/player.png" />-->
+<!--                    </ImageView>-->
+<!--                    <Text fx:id="playerName" fill="#514A43" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYER NAME" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">-->
+<!--                        <StackPane.margin>-->
+<!--                            <Insets bottom="30.0" />-->
+<!--                        </StackPane.margin>-->
+<!--                        <font>-->
+<!--                            <Font name="Unispace-Bold" size="12.0" />-->
+<!--                        </font>-->
+<!--                    </Text>-->
+<!--                    <Text fx:id="playerBounty" fill="#514a43" fontSmoothingType="LCD" layoutX="33.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1,000,000" textAlignment="CENTER" StackPane.alignment="BOTTOM_CENTER">-->
+<!--                        <font>-->
+<!--                            <Font name="Unispace-Bold" size="12.0" />-->
+<!--                        </font>-->
+<!--                        <StackPane.margin>-->
+<!--                            <Insets bottom="12.0" />-->
+<!--                        </StackPane.margin>-->
+<!--                    </Text>-->
+<!--                </StackPane>-->
+<!--            </VBox>-->
         </AnchorPane>
     </Tab>
     <Tab text="ABILITIES">
@@ -66,43 +66,43 @@
                     <RowConstraints vgrow="SOMETIMES" />
                     <RowConstraints vgrow="SOMETIMES" />
                 </rowConstraints>
-                <ItemPane fx:id="PISTOL" />
-                <ItemPane fx:id="GEAR_2" GridPane.columnIndex="1" />
-                <ItemPane fx:id="ELEPHANT" GridPane.rowIndex="1" />
-                <ItemPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <ItemPane fx:id="KING_KONG" GridPane.rowIndex="2" />
-                <ItemPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <padding>
-                    <Insets top="20.0" />
-                </padding>
+<!--                <ItemPane fx:id="PISTOL" />-->
+<!--                <ItemPane fx:id="GEAR_2" GridPane.columnIndex="1" />-->
+<!--                <ItemPane fx:id="ELEPHANT" GridPane.rowIndex="1" />-->
+<!--                <ItemPane fx:id="GEAR_4" GridPane.columnIndex="1" GridPane.rowIndex="1" />-->
+<!--                <ItemPane fx:id="KING_KONG" GridPane.rowIndex="2" />-->
+<!--                <ItemPane fx:id="GEAR_5" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
+<!--                <padding>-->
+<!--                    <Insets top="20.0" />-->
+<!--                </padding>-->
             </GridPane>
         </ScrollPane>
     </Tab>
     <Tab text="NAKAMAS">
         <ScrollPane fitToHeight="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="250.0" vbarPolicy="ALWAYS">
-            <GridPane fx:id="nakamaGrid" alignment="CENTER" prefWidth="250.0" vgap="20.0">
-                <columnConstraints>
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
-                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                </columnConstraints>
-                <rowConstraints>
-                    <RowConstraints vgrow="SOMETIMES" />
-                    <RowConstraints vgrow="SOMETIMES" />
-                    <RowConstraints vgrow="SOMETIMES" />
-                    <RowConstraints vgrow="SOMETIMES" />
-                </rowConstraints>
-                <ItemPane fx:id="ZORO" />
-                <ItemPane fx:id="NAMI" GridPane.columnIndex="1" />
-                <ItemPane fx:id="USOPP" GridPane.rowIndex="1" />
-                <ItemPane fx:id="SANJI" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <ItemPane fx:id="CHOPPER" GridPane.rowIndex="2" />
-                <ItemPane fx:id="ROBIN" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <ItemPane fx:id="FRANKY" GridPane.rowIndex="3" />
-                <ItemPane fx:id="BROOK" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <padding>
-                    <Insets top="20.0" />
-                </padding>
-            </GridPane>
+<!--            <GridPane fx:id="nakamaGrid" alignment="CENTER" prefWidth="250.0" vgap="20.0">-->
+<!--                <columnConstraints>-->
+<!--                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />-->
+<!--                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />-->
+<!--                </columnConstraints>-->
+<!--                <rowConstraints>-->
+<!--                    <RowConstraints vgrow="SOMETIMES" />-->
+<!--                    <RowConstraints vgrow="SOMETIMES" />-->
+<!--                    <RowConstraints vgrow="SOMETIMES" />-->
+<!--                    <RowConstraints vgrow="SOMETIMES" />-->
+<!--                </rowConstraints>-->
+<!--                <ItemPane fx:id="ZORO" />-->
+<!--                <ItemPane fx:id="NAMI" GridPane.columnIndex="1" />-->
+<!--                <ItemPane fx:id="USOPP" GridPane.rowIndex="1" />-->
+<!--                <ItemPane fx:id="SANJI" GridPane.columnIndex="1" GridPane.rowIndex="1" />-->
+<!--                <ItemPane fx:id="CHOPPER" GridPane.rowIndex="2" />-->
+<!--                <ItemPane fx:id="ROBIN" GridPane.columnIndex="1" GridPane.rowIndex="2" />-->
+<!--                <ItemPane fx:id="FRANKY" GridPane.rowIndex="3" />-->
+<!--                <ItemPane fx:id="BROOK" GridPane.columnIndex="1" GridPane.rowIndex="3" />-->
+<!--                <padding>-->
+<!--                    <Insets top="20.0" />-->
+<!--                </padding>-->
+<!--            </GridPane>-->
         </ScrollPane>
     </Tab>
 </fx:root>

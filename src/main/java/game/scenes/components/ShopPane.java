@@ -38,22 +38,26 @@ public class ShopPane extends TabPane {
         displayShop();
     }
 
+    private void addItemPane(ItemPane itemPane) {
+
+    }
+
     private void displayPlayerData(){
-        this.playerName.setText(GameManager.getCurrentPlayer().getName());
-        this.playerBounty.textProperty().bind(GameManager.getCurrentPlayer().bountyProperty());
+//        this.playerName.setText(GameManager.getCurrentPlayer().getName());
+//        this.playerBounty.textProperty().bind(GameManager.getCurrentPlayer().bountyProperty());
     }
 
     private void displayShop(){
-        for(Node child : abilityGrid.getChildren()){
-            if(child instanceof ItemPane itemPane) {
-                itemPane.setShopItemData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(itemPane.getId())));
-            }
-        }
-        for(Node child : nakamaGrid.getChildren()){
-            if(child instanceof ItemPane itemPane){
-                itemPane.setShopItemData(GameManager.getCurrentPlayer().getNakama(NakamaNames.valueOf(itemPane.getId())));
-            }
-        }
+//        for(Node child : abilityGrid.getChildren()){
+//            if(child instanceof ItemPane itemPane) {
+//                itemPane.setShopItemData(GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(itemPane.getId())));
+//            }
+//        }
+//        for(Node child : nakamaGrid.getChildren()){
+//            if(child instanceof ItemPane itemPane){
+//                itemPane.setShopItemData(GameManager.getCurrentPlayer().getNakama(NakamaNames.valueOf(itemPane.getId())));
+//            }
+//        }
     }
 
 

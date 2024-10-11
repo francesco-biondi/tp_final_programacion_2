@@ -1,6 +1,5 @@
 package game.scenes.components;
 
-import game.scenes.components.dependencies.ButtonManager;
 import game.models.abilities.Ability;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
@@ -11,7 +10,6 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -32,12 +30,6 @@ public class ItemPane extends VBox {
     @FXML
     private ImageView abilityImage;
 
-    @FXML
-    private ImageView buttonImage;
-
-    @FXML
-    private StackPane buttonContainer;
-
     private String description;
 
     public ItemPane() {
@@ -53,7 +45,6 @@ public class ItemPane extends VBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         abilityImage.setOnMouseEntered(event -> NotificationManager.toolTip(abilityImage, description, "gameInfo", 200));
     }
 
