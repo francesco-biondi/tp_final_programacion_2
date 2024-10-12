@@ -18,7 +18,7 @@
         "cooldownTime": 0,
         "available": true,
         "animating": false,
-        "unlocked": false
+        "unlocked": true
       },
       "PISTOL": {
         "BASE_STRENGTH": 10.0,
@@ -130,7 +130,7 @@
         "cooldownTime": 4,
         "available": true,
         "animating": false,
-        "unlocked": false
+        "unlocked": true
       },
       "NAMI": {
         "poster2": "file:src/main/resources/assets/posters/Nami27s_Current_Wanted_Poster.jpg",
@@ -259,7 +259,7 @@
       "MAX_HEALTH": 20000.0,
       "GOLD_BY_CLICK": 15,
       "image": "file:src/main/resources/assets/enemies/2-buggy.png",
-      "health": 18740.0,
+      "health": 18200.0,
       "unlocked": true,
       "defeated": true,
       "name": "BUGGY THE CLOWN",

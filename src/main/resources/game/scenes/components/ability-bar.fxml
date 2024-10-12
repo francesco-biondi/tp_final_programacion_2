@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import game.scenes.components.WoodenButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ButtonBar?>
-
 
 <fx:root fx:id="abilityBar" buttonMinWidth="170.0" buttonOrder="BUTTON_ORDER_WINDOWS" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="105.0" prefWidth="750.0" stylesheets="@styles/ability-bar.css" type="ButtonBar" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets left="20.0" right="20.0" />
    </padding>
+   <buttons>
+      <WoodenButton/>
+      <WoodenButton/>
+      <WoodenButton/>
+      <WoodenButton/>
+   </buttons>
 </fx:root>

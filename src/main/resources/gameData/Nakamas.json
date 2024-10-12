@@ -6,7 +6,7 @@
     "BASE_STRENGTH": 90,
     "type": "NAKAMA",
     "descripcion": "El espadachín de la tripulación, aspira a ser el mejor espadachín del mundo.",
-    "level": 1,
+    "level": 0,
     "price": 900,
     "strength": 50,
     "cooldownTime": 4,
