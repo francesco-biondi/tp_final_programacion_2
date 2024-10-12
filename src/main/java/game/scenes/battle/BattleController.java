@@ -4,7 +4,6 @@ import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
-import game.scenes.components.dependencies.ShopManager;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
@@ -42,7 +41,6 @@ public class BattleController {
     @FXML
     public void initialize(){
         configureScale();
-        ShopManager.configureStore(shopPane);
         gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
         updateEnemy(GameManager.getCurrentEnemy());
         GameManager.startAttackNakamas();
@@ -61,7 +59,7 @@ public class BattleController {
 
     @FXML
     void toggleShop(MouseEvent event){
-        ShopManager.toggleStore(shopPane);
+        shopPane.toggleShop();
     }
 
     @FXML
