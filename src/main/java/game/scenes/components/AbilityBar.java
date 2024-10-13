@@ -1,18 +1,19 @@
 package game.scenes.components;
 
-import game.models.abilities.Ability;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class AbilityBar extends ButtonBar {
+public class AbilityBar extends HBox {
+
+    Map<String, WoodenButton> abilityDeck = new HashMap<>();
 
     public AbilityBar() {
         FXMLLoader loader = new FXMLLoader(
@@ -30,9 +31,28 @@ public class AbilityBar extends ButtonBar {
     }
 
     @FXML
+    private void initialize() {
+    }
+
+    @FXML
+    void addButton(DragEvent event) {
+        WoodenButton button = new WoodenButton(event.getDragboard().getString());
+
+        if(abilityDeck.size() < 4 && !abilityDeck.containsKey(button.getText())) {
+            abilityDeck.put(button.getText(), button);
+            button.setOnMouseClicked(this::onButtonPressed);
+            button.setOnDragOver(this::onDragOver);
+            button.setOnDragDropped(this::onDragDropped);
+            getChildren().add(button);
+            event.consume();
+        }
+    }
+
+    @FXML
     void onButtonPressed(MouseEvent event) {
-        WoodenButton woodenButton = (WoodenButton) event.getSource();
-        System.out.println(woodenButton.getId());
+        WoodenButton button = (WoodenButton) event.getSource();
+
+        // Codigo para usar la habilidad en base al button.getText()
     }
 
     @FXML
@@ -43,13 +63,14 @@ public class AbilityBar extends ButtonBar {
 
     @FXML
     void onDragDropped(DragEvent event) {
-        WoodenButton woodenButton = (WoodenButton) event.getSource();
-        woodenButton.setText(event.getDragboard().getString());
+        WoodenButton button = (WoodenButton) event.getSource();
+
+        abilityDeck.remove(event.getDragboard().getString());
+
+        button.setText(event.getDragboard().getString());
         event.setDropCompleted(true);
 
         event.consume();
     }
 
-    @FXML
-    void onDragDone(DragEvent event) {}
 }

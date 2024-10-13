@@ -33,7 +33,7 @@
         "cooldownTime": 2,
         "available": false,
         "animating": false,
-        "unlocked": false
+        "unlocked": true
       },
       "ELEPHANT": {
         "BASE_STRENGTH": 10.0,
@@ -81,7 +81,7 @@
         "cooldownTime": 5,
         "available": false,
         "animating": false,
-        "unlocked": false
+        "unlocked": true
       },
       "GEAR_4": {
         "durationTime": 10,

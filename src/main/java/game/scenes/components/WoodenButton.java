@@ -7,9 +7,10 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 
 public class WoodenButton extends Button {
+
     public WoodenButton(String text) {
         initialize();
-        this.setText(text);
+        setText(text);
     }
 
     public WoodenButton() {
@@ -29,6 +30,9 @@ public class WoodenButton extends Button {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        managedProperty().bind(textProperty().isNotEmpty());
+        visibleProperty().bind(textProperty().isNotEmpty());
     }
 
 

@@ -10,7 +10,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import game.models.abilities.enums.AbilityNames;
 import game.models.saves.dependencies.SaveManager;
+import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import static game.services.Resource.*;
@@ -22,9 +25,9 @@ public class Player extends Character{
     private transient StringProperty goldProperty;
     private transient StringProperty bountyProperty;
 
-    Map<AbilityNames, AttackAbility> attackAbilities;
-    Map<AbilityNames, BuffAbility> buffAbilities;
-    Map<NakamaNames, Nakama> nakamas;
+    private Map<AbilityNames, AttackAbility> attackAbilities;
+    private Map<AbilityNames, BuffAbility> buffAbilities;
+    private Map<NakamaNames, Nakama> nakamas;
 
     public Player(String name) {
         this.name = name;

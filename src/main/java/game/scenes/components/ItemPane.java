@@ -1,24 +1,22 @@
 package game.scenes.components;
 
 import game.models.abilities.Ability;
-import game.models.abilities.AttackAbility;
 import game.models.abilities.Nakama;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class ItemPane extends VBox {
 
@@ -60,7 +58,7 @@ public class ItemPane extends VBox {
     @FXML
     private void handleDrag(MouseEvent event) {
         if(!(ability instanceof Nakama)){
-            Dragboard dragboard = this.startDragAndDrop(TransferMode.MOVE);
+            Dragboard dragboard = startDragAndDrop(TransferMode.MOVE);
 
             ClipboardContent content = new ClipboardContent();
             content.putImage(abilityImage.getImage());
