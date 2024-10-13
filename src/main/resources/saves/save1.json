@@ -1,9 +1,9 @@
 {
   "savePath": "src/main/resources/saves/save1.json",
-  "saveName": "seba",
-  "saveDate": "2024-10-11",
+  "saveName": "pepe",
+  "saveDate": "2024-10-12",
   "player": {
-    "gold": 1025,
+    "gold": 0,
     "attackAbilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10.0,
@@ -18,7 +18,7 @@
         "cooldownTime": 0,
         "available": true,
         "animating": false,
-        "unlocked": true
+        "unlocked": false
       },
       "PISTOL": {
         "BASE_STRENGTH": 10.0,
@@ -123,14 +123,14 @@
         "name": "ZORO",
         "type": "NAKAMA",
         "image": "file:src/main/resources/assets/posters/Zoro27s_Wanted_Poster.jpg",
-        "level": 1,
+        "level": 0,
         "maxLevel": 0,
         "price": 900,
         "strength": 50.0,
         "cooldownTime": 4,
         "available": true,
         "animating": false,
-        "unlocked": true
+        "unlocked": false
       },
       "NAMI": {
         "poster2": "file:src/main/resources/assets/posters/Nami27s_Current_Wanted_Poster.jpg",
@@ -238,7 +238,7 @@
         "unlocked": false
       }
     },
-    "name": "seba",
+    "name": "pepe",
     "bounty": 0
   },
   "enemies": [
@@ -247,9 +247,9 @@
       "MAX_HEALTH": 5000.0,
       "GOLD_BY_CLICK": 5,
       "image": "file:src/main/resources/assets/enemies/1-alvida.png",
-      "health": -3970.0,
+      "health": 5000.0,
       "unlocked": true,
-      "defeated": true,
+      "defeated": false,
       "name": "ALVIDA",
       "bounty": 5000,
       "posterImage": "file:src/main/resources/assets/posters/alvida.png"
@@ -259,9 +259,9 @@
       "MAX_HEALTH": 20000.0,
       "GOLD_BY_CLICK": 15,
       "image": "file:src/main/resources/assets/enemies/2-buggy.png",
-      "health": 18200.0,
-      "unlocked": true,
-      "defeated": true,
+      "health": 20000.0,
+      "unlocked": false,
+      "defeated": false,
       "name": "BUGGY THE CLOWN",
       "bounty": 15000,
       "posterImage": "file:src/main/resources/assets/posters/buggy.png"
@@ -272,7 +272,7 @@
       "GOLD_BY_CLICK": 16,
       "image": "file:src/main/resources/assets/enemies/3-kuro.png",
       "health": 31000.0,
-      "unlocked": true,
+      "unlocked": false,
       "defeated": false,
       "name": "KURO",
       "bounty": 16000,

@@ -1,16 +1,20 @@
 package game.scenes.components;
 
 import game.models.abilities.Ability;
+import game.models.abilities.AttackAbility;
+import game.models.abilities.Nakama;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.WritableImage;
+import javafx.scene.input.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -31,6 +35,7 @@ public class ItemPane extends VBox {
     private ImageView abilityImage;
 
     private String description;
+    private Ability ability;
 
     public ItemPane() {
         FXMLLoader loader = new FXMLLoader(
@@ -45,10 +50,30 @@ public class ItemPane extends VBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        abilityImage.setOnMouseEntered(event -> NotificationManager.toolTip(abilityImage, description, "gameInfo", 200));
+    }
+
+    @FXML
+    private void displayAbilityInfo(MouseEvent event) {
+        NotificationManager.toolTip(abilityImage, description, "gameInfo", 200);
+    }
+
+    @FXML
+    private void handleDrag(MouseEvent event) {
+        if(!(ability instanceof Nakama)){
+            Dragboard dragboard = this.startDragAndDrop(TransferMode.MOVE);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(abilityImage.getImage());
+            content.putString(abilityName.getText());
+
+            dragboard.setContent(content);
+
+            event.consume();
+        }
     }
 
     public void setShopItemData(Ability ability) {
+        this.ability = ability;
         this.description = ability.toString();
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));

@@ -9,9 +9,9 @@
       <Insets left="20.0" right="20.0" />
    </padding>
    <buttons>
-      <WoodenButton/>
-      <WoodenButton/>
-      <WoodenButton/>
-      <WoodenButton/>
+      <WoodenButton fx:id="button1" onDragDone="#onDragDone" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onMouseClicked="#onButtonPressed" />
+      <WoodenButton fx:id="button2" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onMouseClicked="#onButtonPressed" />
+      <WoodenButton fx:id="button3" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onMouseClicked="#onButtonPressed" />
+      <WoodenButton fx:id="button4" onDragDone="#onDragDone" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onMouseClicked="#onButtonPressed" />
    </buttons>
 </fx:root>
