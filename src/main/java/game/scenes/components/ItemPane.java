@@ -57,7 +57,7 @@ public class ItemPane extends VBox {
 
     @FXML
     private void handleDrag(MouseEvent event) {
-        if(!(ability instanceof Nakama)){
+        if(!(ability instanceof Nakama) && ability.isUnlocked()){
             Dragboard dragboard = startDragAndDrop(TransferMode.MOVE);
 
             ClipboardContent content = new ClipboardContent();

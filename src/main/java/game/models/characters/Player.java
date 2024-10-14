@@ -10,11 +10,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import game.models.abilities.enums.AbilityNames;
 import game.models.saves.dependencies.SaveManager;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static game.services.Resource.*;
 
@@ -28,6 +27,7 @@ public class Player extends Character{
     private Map<AbilityNames, AttackAbility> attackAbilities;
     private Map<AbilityNames, BuffAbility> buffAbilities;
     private Map<NakamaNames, Nakama> nakamas;
+    private List<String> abilityDeck;
 
     public Player(String name) {
         this.name = name;
@@ -100,5 +100,13 @@ public class Player extends Character{
 
     public StringProperty bountyProperty() {
         return bountyProperty == null ? bountyProperty  = new SimpleStringProperty(Long.toString(bounty)) : bountyProperty;
+    }
+
+    public List<String> getAbilityDeck() {
+        return abilityDeck == null ? new ArrayList<>() : abilityDeck;
+    }
+
+    public void setAbilityDeck(List<String> abilityDeck) {
+        this.abilityDeck = abilityDeck;
     }
 }

@@ -2,11 +2,11 @@ package game.scenes.components;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.io.Serializable;
 
-public class WoodenButton extends Button {
+public class WoodenButton extends Button implements Serializable {
 
     public WoodenButton(String text) {
         initialize();
