@@ -43,7 +43,9 @@ public class BattleController {
         configureScale();
         gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
         updateEnemy(GameManager.getCurrentEnemy());
-        GameManager.startAttackNakamas();
+//        GameManager.startAttackNakamas();
+//        El metodo startAttackNakamas bugea el enemigo y hace que se desbloqueen varios niveles
+//        puede ser porque se inicia el ataque cada vez que salis y entras y se acumula
     }
 
     void configureScale() {

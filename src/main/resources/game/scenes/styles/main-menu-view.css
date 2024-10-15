@@ -1,0 +1,6 @@
+#root {
+    -fx-background-image:  url("../../../assets/backgrounds/main_menu_background.jpg");
+    -fx-background-position: center;
+    -fx-background-repeat: NO-REPEAT;
+    -fx-background-size: COVER, AUTO;
+}

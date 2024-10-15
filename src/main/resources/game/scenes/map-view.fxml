@@ -172,9 +172,27 @@
                   <CubicCurve id="path" controlX1="254.0" controlX2="384.0" controlY1="-25.5" controlY2="10.5" endX="356.0" endY="-92.5" layoutX="-262.0" layoutY="225.5" startX="262.0" startY="-60.5" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
-            <Group layoutX="160.0" layoutY="296.0">
+            <Group layoutX="121.0" layoutY="110.0">
                <children>
                   <ImageView fx:id="lvl9" fitHeight="136.0" fitWidth="83.0" layoutX="89.3397216796875" layoutY="59.50537109375" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/posters/katakuri.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView fitHeight="134.0" fitWidth="117.0" layoutX="72.3397216796875" layoutY="60.50537109375" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../assets/posters/x.png" />
+                     </image>
+                  </ImageView>
+                  <CubicCurve id="path" controlX1="245.0" controlX2="252.0" controlY1="-25.0" controlY2="-110.0" endX="354.0" endY="-110.0" layoutX="-270.0" layoutY="260.0" startX="309.0" startY="21.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+               </children>
+            </Group>
+            <Group layoutX="160.0" layoutY="296.0">
+               <children>
+                  <ImageView fx:id="lvl10" fitHeight="136.0" fitWidth="83.0" layoutX="89.3397216796875" layoutY="59.50537109375" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/posters/big_mom.png" />
                      </image>
@@ -187,12 +205,12 @@
                         <Image url="@../../assets/posters/x.png" />
                      </image>
                   </ImageView>
-                  <CubicCurve id="path" controlX1="276.0" controlX2="446.0" controlY1="-38.0" controlY2="-102.0" endX="446.0" endY="-22.0" layoutX="-305.0" layoutY="65.0" startX="309.0" startY="21.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
+                  <CubicCurve id="path" controlX1="446.0" controlX2="427.0" controlY1="33.0" controlY2="-8.0" endX="434.0" endY="-27.04180908203125" layoutX="-310.0" layoutY="17.0" startX="446.0" startY="39.0" stroke="#a10000" strokeLineCap="ROUND" strokeWidth="6.0" />
                </children>
             </Group>
             <Group layoutX="246.0" layoutY="410.0">
                <children>
-                  <ImageView fx:id="lvl10" fitHeight="136.0" fitWidth="83.0" layoutX="109.649169921875" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="lvl11" fitHeight="136.0" fitWidth="83.0" layoutX="109.649169921875" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/posters/kaido.png" />
                      </image>
@@ -210,7 +228,7 @@
             </Group>
             <Group layoutX="442.0" layoutY="400.0">
                <children>
-                  <ImageView fx:id="lvl11" fitHeight="136.0" fitWidth="83.0" layoutX="53.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="lvl12" fitHeight="136.0" fitWidth="83.0" layoutX="53.5" layoutY="9.0" onMouseClicked="#selectLevel" onMouseEntered="#handleHover" onMouseExited="#handleHover" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../assets/posters/teach.png" />
                      </image>
