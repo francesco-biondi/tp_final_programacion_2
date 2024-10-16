@@ -55,7 +55,7 @@
     "name": "ENEL",
     "bounty": 500000000,
     "posterImage": "file:src/main/resources/assets/posters/enel.png",
-    "image": "file:src/main/resources/assets/enemies/9-enel.png",
+    "image": "file:src/main/resources/assets/enemies/6-enel.png",
     "MAX_HEALTH": 840000000.0,
     "health": 840000000.0,
     "GOLD_BY_CLICK": 1
@@ -75,7 +75,7 @@
     "name": "CAESAR CLOWN",
     "bounty": 300000000,
     "posterImage": "file:src/main/resources/assets/posters/caesar.png",
-    "image": "file:src/main/resources/assets/enemies/6-caesar.png",
+    "image": "file:src/main/resources/assets/enemies/8-caesar.png",
     "MAX_HEALTH": 381000000.0,
     "health": 381000000.0,
     "GOLD_BY_CLICK": 1
@@ -85,7 +85,7 @@
     "name": "DONQUIXOTE DOFLAMINGO",
     "bounty": 340000000,
     "posterImage": "file:src/main/resources/assets/posters/doflamingo.png",
-    "image": "file:src/main/resources/assets/enemies/8-doflamingo.png",
+    "image": "file:src/main/resources/assets/enemies/9-doflamingo.png",
     "MAX_HEALTH": 660000000.0,
     "health": 660000000.0,
     "GOLD_BY_CLICK": 1
@@ -105,7 +105,7 @@
     "name": "BIG MOM",
     "bounty": 4388000000,
     "posterImage": "file:src/main/resources/assets/posters/big_mom.png",
-    "image": "file:src/main/resources/assets/enemies/12-big_mom.png",
+    "image": "file:src/main/resources/assets/enemies/11-big_mom.png",
     "MAX_HEALTH": 8384000000.0,
     "health": 8384000000.0,
     "GOLD_BY_CLICK": 1
@@ -115,7 +115,7 @@
     "name": "KAIDO",
     "bounty": 4611100000,
     "posterImage": "file:src/main/resources/assets/posters/kaido.png",
-    "image": "file:src/main/resources/assets/enemies/13-kaido.png",
+    "image": "file:src/main/resources/assets/enemies/12-kaido.png",
     "MAX_HEALTH": 8999100000.0,
     "health": 8999100000.0,
     "GOLD_BY_CLICK": 1
@@ -125,7 +125,7 @@
     "name": "MARSHAL D. TEACH",
     "bounty": 3996000000,
     "posterImage": "file:src/main/resources/assets/posters/teach.png",
-    "image": "file:src/main/resources/assets/enemies/11-teach.png",
+    "image": "file:src/main/resources/assets/enemies/13-teach.png",
     "MAX_HEALTH": 5053000000.0,
     "health": 5053000000.0,
     "GOLD_BY_CLICK": 1
