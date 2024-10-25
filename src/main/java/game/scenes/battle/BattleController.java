@@ -4,6 +4,7 @@ import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
+import game.scenes.dependencies.EffectManager;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.SceneManager;
 import game.scenes.dependencies.Scenes;
@@ -68,6 +69,7 @@ public class BattleController {
     void hitEnemy(MouseEvent event) {
         GameManager.hitBasicAttack();
         GameManager.goldByBasicAttack();
+        EffectManager.damageEnemyEffect((ImageView) event.getSource(), 2);
     }
 
     @FXML
