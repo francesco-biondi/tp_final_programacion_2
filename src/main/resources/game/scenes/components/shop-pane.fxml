@@ -23,9 +23,9 @@
     </effect>
     <Tab text="PLAYER">
         <AnchorPane>
-            <VBox alignment="TOP_CENTER" layoutX="9.0" prefHeight="408.0" prefWidth="248.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox alignment="TOP_CENTER" spacing="20" prefHeight="408.0" prefWidth="248.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <padding>
-                    <Insets top="20.0" />
+                    <Insets top="10.0" />
                 </padding>
                 <StackPane prefHeight="190.0" prefWidth="248.0">
                     <ImageView fitHeight="193.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
@@ -51,6 +51,7 @@
                         </StackPane.margin>
                     </Text>
                 </StackPane>
+                <ItemPane fx:id="player"/>
             </VBox>
         </AnchorPane>
     </Tab>

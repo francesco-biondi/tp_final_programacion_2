@@ -1,17 +1,17 @@
 {
   "PUNCH": {
-    "name": "basicAttack",
+    "name": "ATTACK",
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "description": "Ataque básico con el puño.",
-    "image": "file:src/main/resources/assets/abilities/pistol.jpg",
+    "image": "file:src/main/resources/assets/abilities/punch.jpg",
     "level": 1,
     "strength": 10,
     "cooldownTime": 0,
     "price": 10,
     "available": true,
     "animating": false,
-    "unlocked": false
+    "unlocked": true
   },
   "PISTOL": {
     "name": "PISTOL",

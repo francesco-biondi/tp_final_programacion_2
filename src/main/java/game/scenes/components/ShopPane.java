@@ -20,6 +20,9 @@ public class ShopPane extends TabPane {
     private Text playerName, playerBounty;
 
     @FXML
+    private ItemPane player;
+
+    @FXML
     private GridPane abilityGrid, nakamaGrid;
 
     public static boolean isOpen = false, isAnimating = false;
@@ -48,6 +51,7 @@ public class ShopPane extends TabPane {
     }
 
     private void displayPlayerData(){
+        player.setShopItemData(GameManager.getCurrentPlayer().getAbility(AbilityNames.PUNCH));
         this.playerName.setText(GameManager.getCurrentPlayer().getName());
         this.playerBounty.textProperty().bind(GameManager.getCurrentPlayer().bountyProperty());
     }
