@@ -2,7 +2,6 @@ package game.models.abilities;
 
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
-import game.models.characters.Character;
 import game.models.exceptions.MaxLevelReachedException;
 import game.services.SchedulerService;
 import javafx.beans.property.BooleanProperty;
@@ -14,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class Ability implements I_Ability{
 
-    protected final double BASE_STRENGTH;
+    protected final long BASE_STRENGTH;
     protected String name;
     protected AbilityType type;
     protected String description;
@@ -22,7 +21,7 @@ public abstract class Ability implements I_Ability{
     protected int level;
     protected final int maxLevel = 10;
     protected int price;
-    protected double strength;
+    protected long strength;
     protected int cooldownTime;
     protected boolean available = true;
     protected boolean animating = false;
@@ -32,7 +31,7 @@ public abstract class Ability implements I_Ability{
     protected transient StringProperty priceProperty;
     protected transient BooleanProperty unlockProperty;
 
-    public Ability(double BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, double strength, int cooldownTime) {
+    public Ability(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime) {
         this.BASE_STRENGTH = BASE_STRENGTH;
         this.image = image;
         this.name = name;
@@ -55,9 +54,10 @@ public abstract class Ability implements I_Ability{
     @Override
     public void upgrade() throws MaxLevelReachedException {
         if(this.level < this.maxLevel){
-            if(this.level == 0) this.unlocked = true;
-            this.level++;
-            this.strength = this.BASE_STRENGTH * Math.pow(level, 1.2);
+            if(this.level == 0) this.setUnlocked(true);
+            this.setLevel(++this.level);
+            this.setPrice((int) (this.price * Math.pow(1.2, level)) + level * 100);
+            this.setStrength((long) (this.BASE_STRENGTH * Math.pow(2, level)));
         } else {
             throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
         }
@@ -71,7 +71,7 @@ public abstract class Ability implements I_Ability{
         return priceProperty == null ? priceProperty  = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
     }
 
-    public double getBASE_STRENGTH() {
+    public long getBASE_STRENGTH() {
         return BASE_STRENGTH;
     }
 
@@ -125,11 +125,11 @@ public abstract class Ability implements I_Ability{
         return maxLevel;
     }
 
-    public double getStrength() {
+    public long getStrength() {
         return strength;
     }
 
-    public void setStrength(double strength) {
+    public void setStrength(long strength) {
         this.strength = strength;
     }
 
@@ -172,7 +172,7 @@ public abstract class Ability implements I_Ability{
 
     @Override
     public String toString() {
-        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %f\n\nPrecio: %d",
+        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %d\n\nPrecio: %d",
                 name, description, strength, price);
     }
 }

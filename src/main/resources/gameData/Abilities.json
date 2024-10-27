@@ -1,6 +1,6 @@
 {
   "PUNCH": {
-    "name": "ATTACK",
+    "name": "PUNCH",
     "BASE_STRENGTH": 10,
     "type": "ATTACK",
     "description": "Ataque básico con el puño.",

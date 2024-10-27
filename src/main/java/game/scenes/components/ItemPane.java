@@ -2,6 +2,9 @@ package game.scenes.components;
 
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
+import game.models.abilities.enums.AbilityNames;
+import game.models.shop.Shop;
+import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -48,6 +51,12 @@ public class ItemPane extends VBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    private void buy(MouseEvent event) {
+        Shop.buyItem(ability);
+        this.description = ability.toString();
     }
 
     @FXML
