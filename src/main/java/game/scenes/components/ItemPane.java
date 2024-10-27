@@ -3,6 +3,7 @@ package game.scenes.components;
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
 import game.models.abilities.enums.AbilityNames;
+import game.models.exceptions.InsufficientGoldException;
 import game.models.shop.Shop;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.NotificationManager;
@@ -55,8 +56,12 @@ public class ItemPane extends VBox {
 
     @FXML
     private void buy(MouseEvent event) {
-        Shop.buyItem(ability);
-        this.description = ability.toString();
+        try {
+            Shop.buyItem(ability);
+            this.description = ability.toString();
+        } catch (InsufficientGoldException e){
+            NotificationManager.toolTip(buyButton, e.getMessage(), "error", 200);
+        }
     }
 
     @FXML

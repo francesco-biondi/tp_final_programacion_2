@@ -1,6 +1,6 @@
 {
   "savePath": "src/main/resources/saves/save1.json",
-  "saveName": "pepe",
+  "saveName": "asd",
   "saveDate": "2024-10-27",
   "player": {
     "gold": 0,
@@ -233,7 +233,7 @@
         "unlocked": false
       }
     },
-    "name": "pepe",
+    "name": "asd",
     "bounty": 0
   },
   "enemies": [

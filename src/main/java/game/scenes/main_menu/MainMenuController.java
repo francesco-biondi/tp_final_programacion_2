@@ -1,10 +1,13 @@
 package game.scenes.main_menu;
 
+import game.models.exceptions.InsufficientGoldException;
+import game.models.exceptions.InvalidNameException;
+import game.models.exceptions.SaveNotFoundException;
+import game.models.shop.Shop;
 import game.scenes.dependencies.*;
 import game.services.Resource;
 import game.models.saves.dependencies.SaveManager;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -52,7 +55,7 @@ public class MainMenuController {
         SoundManager.toggleMusic();
     }
 
-    private void handleTextFieldAction(KeyEvent event, int index) {
+    private void handleTextFieldAction(KeyEvent event, int index) throws InvalidNameException {
         TextField currentTextField = (TextField) event.getSource();
         switch (event.getCode()) {
             case ENTER -> {
@@ -62,8 +65,8 @@ public class MainMenuController {
                     GameManager.setCurrentSave(SaveManager.loadGame(index));
                     updateSlotTexts(true);
                     SceneManager.changeScene(Scenes.MAP);
-                } catch (IllegalArgumentException e) {
-                    showError(currentTextField);
+                } catch (InvalidNameException e) {
+                    NotificationManager.toolTip(currentTextField, "Nombre inválido. Ingrese un nombre de entre 3 y 10 caracteres.", "error", 500);
                 }
             }
             case ESCAPE -> updateSlotTexts(true);
@@ -105,8 +108,12 @@ public class MainMenuController {
 
     private void handleLoadGameAction(int index) {
         if (index < slotTexts.length - 1) {
-            GameManager.setCurrentSave(SaveManager.loadGame(index));
-            SceneManager.changeScene(Scenes.MAP);
+            try {
+                GameManager.setCurrentSave(SaveManager.loadGame(index));
+                SceneManager.changeScene(Scenes.MAP);
+            } catch (SaveNotFoundException e){
+                NotificationManager.toolTip(slotTexts[index], e.getMessage(), "error", 300);
+            }
         } else {
             initializeMainMenu();
         }
@@ -155,12 +162,8 @@ public class MainMenuController {
         }
     }
 
-    private void showError(TextField textField) {
-        NotificationManager.toolTip(textField, "Nombre inválido. Ingrese un nombre de entre 3 y 10 caracteres.", "error", 500);
-    }
-
     private boolean showConfirmationDialog() {
-        return NotificationManager.showAlert("Sobrescribir", null, "¿Estás seguro de sobrescribir el archivo guardado?");
+        return NotificationManager.alert("Sobrescribir", null, "¿Estás seguro de sobrescribir el archivo guardado?");
     }
 }
 

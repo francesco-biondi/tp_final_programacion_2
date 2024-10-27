@@ -4,6 +4,7 @@ import com.google.gson.*;
 import game.models.abilities.Ability;
 import game.models.abilities.AttackAbility;
 import game.models.abilities.BuffAbility;
+import game.models.exceptions.InvalidNameException;
 import game.models.exceptions.SaveNotFoundException;
 import game.models.saves.Save;
 
@@ -99,11 +100,11 @@ public abstract class SaveManager {
      * @return El nombre de guardado validado.
      * @throws IllegalArgumentException si el nombre de guardado es inválido.
      */
-    public static String setSaveName(String saveName) {
+    public static String setSaveName(String saveName) throws InvalidNameException {
         if (isValidSaveName(saveName)) {
             return saveName;
         } else {
-            throw new IllegalArgumentException("Invalid save name");
+            throw new InvalidNameException("Invalid save name");
         }
     }
 
