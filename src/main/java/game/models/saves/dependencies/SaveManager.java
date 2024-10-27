@@ -20,7 +20,7 @@ import java.util.Map;
  * <p>El gestor de guardados utiliza la librería Gson para convertir los objetos {@link Save} en JSON,
  * y viceversa. También valida los nombres de los guardados y controla los errores de I/O.
  *
- * <p>Esta clase no puede ser instanciada ya que es final y todos sus métodos son estáticos.
+ * <p>Esta clase no puede ser instanciada ya que es abstracta y todos sus métodos son estáticos.
  */
 public abstract class SaveManager {
 
@@ -107,7 +107,15 @@ public abstract class SaveManager {
         }
     }
 
-    public static <T> ArrayList<T> loadFile(String filePath, Type type) {
+    /**
+     * Carga una lista de objetos desde un archivo JSON.
+     * @param filePath Ruta del archivo JSON desde el cual se cargará la lista.
+     * @param type Tipo de datos en el ArrayList para la deserialización.
+     * @param <T> Tipo genérico de los elementos en la lista.
+     * @return ArrayList de objetos deserializados desde el archivo JSON.
+     * @throws RuntimeException Si ocurre un error al leer el archivo.
+     */
+    public static <T> ArrayList<T> loadFileList(String filePath, Type type) {
         try (FileReader reader = new FileReader(filePath)) {
             return gson.fromJson(reader, type);
         } catch (IOException e) {
@@ -115,6 +123,15 @@ public abstract class SaveManager {
         }
     }
 
+    /**
+     * Carga un mapa de objetos desde un archivo JSON.
+     * @param filePath Ruta del archivo JSON desde el cual se cargará el mapa.
+     * @param type Tipo de datos en el Map para la deserialización.
+     * @param <K> Tipo de las claves en el mapa.
+     * @param <V> Tipo de los valores en el mapa.
+     * @return Mapa de objetos deserializados desde el archivo JSON.
+     * @throws RuntimeException Si ocurre un error al leer el archivo.
+     */
     public static <K, V> Map<K, V> loadFileMap(String filePath, Type type) {
         try (FileReader reader = new FileReader(filePath)) {
             return gson.fromJson(reader, type);
@@ -123,7 +140,18 @@ public abstract class SaveManager {
         }
     }
 
+    /**
+     * Adaptador personalizado para deserializar instancias de Ability en función del tipo de habilidad.
+     */
     private static class AbilityAdapter implements JsonDeserializer<Ability> {
+        /**
+         * Deserializa un objeto JSON en una instancia de una subclase de Ability.
+         * @param json JSON que representa la habilidad.
+         * @param typeOfT Tipo de destino de la habilidad.
+         * @param context Contexto de deserialización para crear instancias específicas.
+         * @return Instancia de Ability deserializada, ya sea como AttackAbility o BuffAbility.
+         * @throws JsonParseException Si el tipo de habilidad no es reconocido.
+         */
         @Override
         public Ability deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
                 throws JsonParseException {

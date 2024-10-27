@@ -3,6 +3,7 @@ package game.models.abilities;
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.characters.Character;
+import game.models.exceptions.MaxLevelReachedException;
 import game.services.SchedulerService;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -27,7 +28,6 @@ public abstract class Ability implements I_Ability{
     protected boolean animating = false;
     protected boolean unlocked = false;
 
-    protected transient StringProperty nameProperty;
     protected transient StringProperty levelProperty;
     protected transient StringProperty priceProperty;
     protected transient BooleanProperty unlockProperty;
@@ -52,12 +52,19 @@ public abstract class Ability implements I_Ability{
         }, this.cooldownTime, TimeUnit.SECONDS);
     }
 
-    public StringProperty levelProperty() {
-        return levelProperty == null ? levelProperty  = new SimpleStringProperty(Integer.toString(level)) : levelProperty;
+    @Override
+    public void upgrade() throws MaxLevelReachedException {
+        if(this.level < this.maxLevel){
+            if(this.level == 0) this.unlocked = true;
+            this.level++;
+            this.strength = this.BASE_STRENGTH * Math.pow(level, 1.2);
+        } else {
+            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
+        }
     }
 
-    public StringProperty nameProperty() {
-        return nameProperty == null ? nameProperty  = new SimpleStringProperty(name) : nameProperty;
+    public StringProperty levelProperty() {
+        return levelProperty == null ? levelProperty  = new SimpleStringProperty(Integer.toString(level)) : levelProperty;
     }
 
     public StringProperty priceProperty() {
@@ -74,7 +81,6 @@ public abstract class Ability implements I_Ability{
 
     public void setName(String name) {
         this.name = name;
-        this.nameProperty.set(name);
     }
 
     public int getPrice() {

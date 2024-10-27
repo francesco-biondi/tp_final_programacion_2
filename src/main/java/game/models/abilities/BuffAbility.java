@@ -21,7 +21,7 @@ public class BuffAbility extends Ability{
     }
 
     @Override
-    public double use(Character character) {
+    public double use(Character character) throws AbilityNotAvailableException, IllegalArgumentException {
         if(this.available){
             if(character instanceof Player player){
                 this.buffedAbility = player.getAbility(PUNCH);
@@ -53,16 +53,6 @@ public class BuffAbility extends Ability{
         SchedulerService.getScheduler().schedule(() -> {
             removeBuff(buffedAb);
         }, durationTime, TimeUnit.SECONDS);
-    }
-
-    @Override
-    public void upgrade() {
-        if(this.level < this.maxLevel){
-            this.level++;
-            this.strength += 1; // numero a determinar
-        } else {
-            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
-        }
     }
 
     @Override

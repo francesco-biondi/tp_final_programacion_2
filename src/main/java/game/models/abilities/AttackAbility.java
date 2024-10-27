@@ -12,30 +12,17 @@ public class AttackAbility extends Ability {
     }
 
     @Override
-    public double use(Character character) {
+    public double use(Character enemy) throws AbilityNotAvailableException, IllegalArgumentException {
         if(this.available){
-            if(character instanceof Enemy e){
+            if(enemy instanceof Enemy e){
                 e.setHealth(e.getHealth() - this.strength);
                 cooldown();
                 return strength;
             } else {
-                throw new IllegalStateException("Character must be an enemy.");
+                throw new IllegalArgumentException("Target must be an enemy.");
             }
         } else {
             throw new AbilityNotAvailableException("This ability is not available.");
-        }
-    }
-
-    @Override
-    public void upgrade(){
-        if(this.level < this.maxLevel){
-            if(this.level == 0){
-                this.available = true;
-            }
-            this.level++;
-            this.strength += level * 10; // numero a determinar
-        } else {
-            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
         }
     }
 

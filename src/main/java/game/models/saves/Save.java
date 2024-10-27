@@ -7,7 +7,6 @@ import game.models.saves.dependencies.SaveManager;
 import game.services.Resource;
 
 import java.io.Serializable;
-import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class Save implements Serializable {
     public Save(String saveName, int slotIndex) {
         this.saveName = saveName;
         this.saveDate = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
-        this.enemies = SaveManager.loadFile(Resource.ENEMIES, new TypeToken<ArrayList<Enemy>>(){}.getType());
+        this.enemies = SaveManager.loadFileList(Resource.ENEMIES, new TypeToken<ArrayList<Enemy>>(){}.getType());
         this.savePath = getSavePath(slotIndex);
         this.player = new Player(saveName);
     }
