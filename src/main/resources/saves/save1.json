@@ -4,7 +4,7 @@
   "saveDate": "2024-10-27",
   "player": {
     "gold": 0,
-    "attackAbilities": {
+    "abilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10.0,
         "name": "ATTACK",
@@ -64,11 +64,8 @@
         "available": false,
         "animating": false,
         "unlocked": false
-      }
-    },
-    "buffAbilities": {
+      },
       "GEAR_2": {
-        "durationTime": 15,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 2",
         "type": "BUFF",
@@ -84,7 +81,6 @@
         "unlocked": false
       },
       "GEAR_4": {
-        "durationTime": 10,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 4",
         "type": "BUFF",
@@ -100,7 +96,6 @@
         "unlocked": false
       },
       "GEAR_5": {
-        "durationTime": 8,
         "BASE_STRENGTH": 10.0,
         "name": "GEAR 5",
         "type": "BUFF",

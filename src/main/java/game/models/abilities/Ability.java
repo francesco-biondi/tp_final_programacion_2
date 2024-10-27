@@ -11,7 +11,7 @@ import javafx.beans.property.StringProperty;
 
 import java.util.concurrent.TimeUnit;
 
-public class Ability implements I_Ability{
+public abstract class Ability implements I_Ability{
 
     protected final double BASE_STRENGTH;
     protected String name;
@@ -45,26 +45,11 @@ public class Ability implements I_Ability{
     }
 
     @Override
-    public double use(Character character) {
-        return 0;
-    }
-
-    @Override
     public void cooldown(){
         this.available = false;
         SchedulerService.getScheduler().schedule(() -> {
             this.available = true;
         }, this.cooldownTime, TimeUnit.SECONDS);
-    }
-
-    @Override
-    public void upgrade() {
-
-    }
-
-    @Override
-    public void animation() {
-
     }
 
     public StringProperty levelProperty() {

@@ -1,7 +1,9 @@
 package game.models.saves.dependencies;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
+import game.models.abilities.Ability;
+import game.models.abilities.AttackAbility;
+import game.models.abilities.BuffAbility;
 import game.models.exceptions.SaveNotFoundException;
 import game.models.saves.Save;
 
@@ -25,7 +27,7 @@ public abstract class SaveManager {
     /**
      * Instancia de Gson configurada con formateo de impresión amigable (pretty-printing).
      */
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(Ability.class, new AbilityAdapter()).create();
 
     /**
      * Crea un nuevo juego en el slot de guardado especificado, asignándole el nombre proporcionado.
@@ -120,5 +122,22 @@ public abstract class SaveManager {
             throw new RuntimeException(e);
         }
     }
+
+    private static class AbilityAdapter implements JsonDeserializer<Ability> {
+        @Override
+        public Ability deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+                throws JsonParseException {
+            JsonObject jsonObject = json.getAsJsonObject();
+            String abilityType = jsonObject.get("type").getAsString();
+
+            return switch (abilityType) {
+                case "ATTACK" -> context.deserialize(jsonObject, AttackAbility.class);
+                case "BUFF" -> context.deserialize(jsonObject, BuffAbility.class);
+                default -> throw new JsonParseException("Unknown type: " + abilityType);
+            };
+        }
+    }
 }
+
+
 
