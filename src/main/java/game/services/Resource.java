@@ -23,6 +23,8 @@ public class Resource {
      * Recursos para la interfaz de usuario del menu principal
      */
     public static final String MAIN_MENU_BACKGROUND_MUSIC_PATH = "/assets/music/One_Piece_OST_Overtaken.mp3";
+    public static final String MAP_BACKGROUND_MUSIC_PATH = "/assets/music/One_Piece_OST_To_The_Grand_Line.mp3";
+    public static final String BATTLE_BACKGROUND_MUSIC_PATH = "/assets/music/One_Piece_OST_The_Very_Very_Strongest.mp3";
     public static final String MAIN_MENU_BUTTON_CLICK_SOUND_PATH = "/assets/sounds/punch.mp3";
     public static final String MAIN_MENU_MUSIC_ON_ICON_PATH = "file:src/main/resources/assets/icons/musica.png";
     public static final String MAIN_MENU_MUSIC_OFF_ICON_PATH = "file:src/main/resources/assets/icons/sin-musica.png";
@@ -31,7 +33,5 @@ public class Resource {
     /**
      * Recursos para la interfaz de usuario del combate
      */
-    public static final String normalButtonImagePath = "file:src/main/resources/assets/ui/button_normal.png";
-    public static final String pressedButtonImagePath = "file:src/main/resources/assets/ui/button_pressed.png";
     public static final String cursorImagePath = "file:src/main/resources/assets/abilities/fist_cursor.png";
 }

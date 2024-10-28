@@ -4,10 +4,8 @@ import game.models.characters.Enemy;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
-import game.scenes.dependencies.EffectManager;
-import game.scenes.dependencies.GameManager;
-import game.scenes.dependencies.SceneManager;
-import game.scenes.dependencies.Scenes;
+import game.scenes.dependencies.*;
+import game.services.Resource;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -41,6 +39,7 @@ public class BattleController {
 
     @FXML
     public void initialize(){
+        SoundManager.setBackgroundMusic(Resource.BATTLE_BACKGROUND_MUSIC_PATH, 0.15);
         configureScale();
         gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
         updateEnemy(GameManager.getCurrentEnemy());

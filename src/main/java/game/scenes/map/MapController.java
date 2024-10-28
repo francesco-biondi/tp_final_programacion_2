@@ -1,9 +1,7 @@
 package game.scenes.map;
 
-import game.scenes.dependencies.EffectManager;
-import game.scenes.dependencies.GameManager;
-import game.scenes.dependencies.SceneManager;
-import game.scenes.dependencies.Scenes;
+import game.scenes.dependencies.*;
+import game.services.Resource;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -23,6 +21,7 @@ public class MapController {
 
     @FXML
     void initialize() {
+        SoundManager.setBackgroundMusic(Resource.MAP_BACKGROUND_MUSIC_PATH, 0.15);
         displayLevels();
         configureMap();
     }

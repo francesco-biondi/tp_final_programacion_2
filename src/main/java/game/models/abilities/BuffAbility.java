@@ -21,7 +21,7 @@ public class BuffAbility extends Ability{
     }
 
     @Override
-    public double use(Character character) throws AbilityNotAvailableException, IllegalArgumentException {
+    public double use(Character character) {
         if(this.available){
             if(character instanceof Player player){
                 this.buffedAbility = player.getAbility(PUNCH);

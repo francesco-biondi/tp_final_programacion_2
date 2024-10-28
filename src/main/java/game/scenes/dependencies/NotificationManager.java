@@ -25,7 +25,7 @@ public class NotificationManager {
         tooltip.setWrapText(true);
         tooltip.setMaxWidth(width);
         Tooltip.install(node, tooltip);
-        PauseTransition pause = new PauseTransition(Duration.seconds(4));
+        PauseTransition pause = new PauseTransition(Duration.seconds(5));
         pause.setOnFinished(event -> Tooltip.uninstall(node, tooltip));
         pause.play();
     }

@@ -12,7 +12,7 @@ public class AttackAbility extends Ability {
     }
 
     @Override
-    public double use(Character enemy) throws AbilityNotAvailableException, IllegalArgumentException {
+    public double use(Character enemy) {
         if(this.available){
             if(enemy instanceof Enemy e){
                 e.setHealth(e.getHealth() - this.strength);
