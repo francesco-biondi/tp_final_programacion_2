@@ -11,7 +11,7 @@ import game.scenes.dependencies.GameManager;
 
 public class Shop {
 
-    public static void buyItem(Ability item) throws MaxLevelReachedException {
+    public static void buyItem(Ability item) throws InsufficientGoldException {
         Player player = GameManager.getCurrentPlayer();
 
         int price = item.getPrice();

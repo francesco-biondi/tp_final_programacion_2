@@ -1,17 +1,12 @@
 package game.models.saves.dependencies;
 
-import com.google.gson.*;
-import game.models.abilities.Ability;
-import game.models.abilities.AttackAbility;
-import game.models.abilities.BuffAbility;
 import game.models.exceptions.InvalidNameException;
 import game.models.exceptions.SaveNotFoundException;
 import game.models.saves.Save;
 
 import java.io.*;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Map;
+
+import static game.models.saves.dependencies.GsonManager.gson;
 
 /**
  * La clase {@code SaveManager} es responsable de gestionar la creación, guardado y carga de los archivos de
@@ -24,11 +19,6 @@ import java.util.Map;
  * <p>Esta clase no puede ser instanciada ya que es abstracta y todos sus métodos son estáticos.
  */
 public abstract class SaveManager {
-
-    /**
-     * Instancia de Gson configurada con formateo de impresión amigable (pretty-printing).
-     */
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().registerTypeAdapter(Ability.class, new AbilityAdapter()).create();
 
     /**
      * Crea un nuevo juego en el slot de guardado especificado, asignándole el nombre proporcionado.
@@ -108,64 +98,6 @@ public abstract class SaveManager {
         }
     }
 
-    /**
-     * Carga una lista de objetos desde un archivo JSON.
-     * @param filePath Ruta del archivo JSON desde el cual se cargará la lista.
-     * @param type Tipo de datos en el ArrayList para la deserialización.
-     * @param <T> Tipo genérico de los elementos en la lista.
-     * @return ArrayList de objetos deserializados desde el archivo JSON.
-     * @throws RuntimeException Si ocurre un error al leer el archivo.
-     */
-    public static <T> ArrayList<T> loadFileList(String filePath, Type type) {
-        try (FileReader reader = new FileReader(filePath)) {
-            return gson.fromJson(reader, type);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * Carga un mapa de objetos desde un archivo JSON.
-     * @param filePath Ruta del archivo JSON desde el cual se cargará el mapa.
-     * @param type Tipo de datos en el Map para la deserialización.
-     * @param <K> Tipo de las claves en el mapa.
-     * @param <V> Tipo de los valores en el mapa.
-     * @return Mapa de objetos deserializados desde el archivo JSON.
-     * @throws RuntimeException Si ocurre un error al leer el archivo.
-     */
-    public static <K, V> Map<K, V> loadFileMap(String filePath, Type type) {
-        try (FileReader reader = new FileReader(filePath)) {
-            return gson.fromJson(reader, type);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * Adaptador personalizado para deserializar instancias de Ability en función del tipo de habilidad.
-     */
-    private static class AbilityAdapter implements JsonDeserializer<Ability> {
-        /**
-         * Deserializa un objeto JSON en una instancia de una subclase de Ability.
-         * @param json JSON que representa la habilidad.
-         * @param typeOfT Tipo de destino de la habilidad.
-         * @param context Contexto de deserialización para crear instancias específicas.
-         * @return Instancia de Ability deserializada, ya sea como AttackAbility o BuffAbility.
-         * @throws JsonParseException Si el tipo de habilidad no es reconocido.
-         */
-        @Override
-        public Ability deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
-                throws JsonParseException {
-            JsonObject jsonObject = json.getAsJsonObject();
-            String abilityType = jsonObject.get("type").getAsString();
-
-            return switch (abilityType) {
-                case "ATTACK" -> context.deserialize(jsonObject, AttackAbility.class);
-                case "BUFF" -> context.deserialize(jsonObject, BuffAbility.class);
-                default -> throw new JsonParseException("Unknown type: " + abilityType);
-            };
-        }
-    }
 }
 
 

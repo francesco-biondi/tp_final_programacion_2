@@ -4,7 +4,6 @@ import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.exceptions.MaxLevelReachedException;
 import game.services.SchedulerService;
-import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -28,9 +27,9 @@ public abstract class Ability implements I_Ability{
     protected boolean animating = false;
     protected boolean unlocked = false;
 
-    protected transient StringProperty levelProperty;
-    protected transient StringProperty priceProperty;
-    protected transient BooleanProperty unlockProperty;
+    protected StringProperty levelProperty;
+    protected StringProperty priceProperty;
+    protected BooleanProperty unlockProperty;
 
     public Ability(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime) {
         this.BASE_STRENGTH = BASE_STRENGTH;
@@ -73,7 +72,7 @@ public abstract class Ability implements I_Ability{
     }
 
     public StringProperty priceProperty() {
-        return priceProperty == null ? priceProperty  = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
+        return priceProperty == null ? priceProperty = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
     }
 
     public long getBASE_STRENGTH() {

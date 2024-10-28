@@ -4,10 +4,10 @@ import com.google.gson.reflect.TypeToken;
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
 import game.models.abilities.enums.NakamaNames;
+import game.models.saves.dependencies.GsonManager;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import game.models.abilities.enums.AbilityNames;
-import game.models.saves.dependencies.SaveManager;
 
 import java.util.*;
 
@@ -26,8 +26,8 @@ public class Player extends Character{
 
     public Player(String name) {
         this.name = name;
-        this.abilities = SaveManager.loadFileMap(ABILITIES, new TypeToken<Map<AbilityNames, Ability>>(){}.getType());
-        this.nakamas = SaveManager.loadFileMap(NAKAMAS, new TypeToken<Map<NakamaNames, Nakama>>(){}.getType());
+        this.abilities = GsonManager.loadFileMap(ABILITIES, new TypeToken<Map<AbilityNames, Ability>>(){}.getType());
+        this.nakamas = GsonManager.loadFileMap(NAKAMAS, new TypeToken<Map<NakamaNames, Nakama>>(){}.getType());
     }
 
     public Map<AbilityNames, Ability> getAbilities() {

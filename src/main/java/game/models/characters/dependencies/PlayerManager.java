@@ -6,6 +6,7 @@ import game.models.abilities.BuffAbility;
 import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
+import game.scenes.dependencies.SoundManager;
 
 import static game.models.abilities.enums.AbilityNames.PUNCH;
 
@@ -18,6 +19,7 @@ public class PlayerManager {
 
     public static void basicAttack(Player player, Enemy enemy){
         player.getAbility(PUNCH).use(enemy);
+        SoundManager.playButtonSound(0.1);
     }
 
     public static void stopAllNakamas(Player player){

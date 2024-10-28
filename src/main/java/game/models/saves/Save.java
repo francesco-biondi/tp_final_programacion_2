@@ -3,6 +3,7 @@ package game.models.saves;
 import com.google.gson.reflect.TypeToken;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
+import game.models.saves.dependencies.GsonManager;
 import game.models.saves.dependencies.SaveManager;
 import game.services.Resource;
 
@@ -22,7 +23,7 @@ public class Save implements Serializable {
     public Save(String saveName, int slotIndex) {
         this.saveName = saveName;
         this.saveDate = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE);
-        this.enemies = SaveManager.loadFileList(Resource.ENEMIES, new TypeToken<ArrayList<Enemy>>(){}.getType());
+        this.enemies = GsonManager.loadFileList(Resource.ENEMIES, new TypeToken<ArrayList<Enemy>>(){}.getType());
         this.savePath = getSavePath(slotIndex);
         this.player = new Player(saveName);
     }
