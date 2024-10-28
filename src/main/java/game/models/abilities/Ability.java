@@ -4,44 +4,30 @@ import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.exceptions.MaxLevelReachedException;
 import game.services.SchedulerService;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 import java.util.concurrent.TimeUnit;
 
 public abstract class Ability implements I_Ability{
 
-    protected final long BASE_STRENGTH;
+    protected int BASE_STRENGTH;
     protected String name;
     protected AbilityType type;
     protected String description;
-    protected final String image;
-    protected int level;
+    protected String image;
     protected final int maxLevel = 10;
-    protected int price;
     protected long strength;
     protected int cooldownTime;
     protected boolean available = true;
     protected boolean animating = false;
-    protected boolean unlocked = false;
 
-    protected StringProperty levelProperty;
-    protected StringProperty priceProperty;
-    protected BooleanProperty unlockProperty;
-
-    public Ability(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime) {
-        this.BASE_STRENGTH = BASE_STRENGTH;
-        this.image = image;
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.level = level;
-        this.price = price;
-        this.strength = strength;
-        this.cooldownTime = cooldownTime;
-    }
+    protected SimpleIntegerProperty level;
+    protected SimpleIntegerProperty price;
+    protected SimpleBooleanProperty unlocked;
 
     @Override
     public void cooldown(){
@@ -53,26 +39,22 @@ public abstract class Ability implements I_Ability{
 
     @Override
     public void upgrade() {
-        if(this.level < this.maxLevel){
-            if(this.level == 0) this.setUnlocked(true);
-            this.setLevel(++this.level);
-            this.setPrice((int) (this.price * Math.pow(1.2, level)) + level * 100);
-            this.setStrength((long) (this.BASE_STRENGTH * Math.pow(2, level)));
+        if(level.get() < maxLevel){
+            if(this.getLevel() == 0) this.unlocked.set(true);
+            increaseLevel();
+            setPrice((int) (price.get() * Math.pow(1.2, level.get())) + level.get() * 100);
+            setStrength((long) (BASE_STRENGTH * Math.pow(2, level.get())));
         } else {
             throw new MaxLevelReachedException("La habilidad ha alcanzado el nivel maximo.");
         }
-        if(this.level == this.maxLevel){
-            this.price = 0;
-            this.priceProperty.set("Max Level");
-        }
     }
 
-    public StringProperty levelProperty() {
-        return levelProperty == null ? levelProperty  = new SimpleStringProperty(Integer.toString(level)) : levelProperty;
+    public IntegerProperty levelProperty() {
+        return level;
     }
 
-    public StringProperty priceProperty() {
-        return priceProperty == null ? priceProperty = new SimpleStringProperty(Integer.toString(price)) : priceProperty;
+    public IntegerProperty priceProperty() {
+        return price;
     }
 
     public long getBASE_STRENGTH() {
@@ -88,12 +70,11 @@ public abstract class Ability implements I_Ability{
     }
 
     public int getPrice() {
-        return price;
+        return price.get();
     }
 
     public void setPrice(int price) {
-        this.price = price;
-        this.priceProperty.set("฿ " + this.price);
+        this.price.set(price);
     }
 
     public String getImage() {
@@ -117,12 +98,15 @@ public abstract class Ability implements I_Ability{
     }
 
     public int getLevel() {
-        return level;
+        return level.get();
     }
 
     public void setLevel(int level) {
-        this.level = level;
-        this.levelProperty.set(Integer.toString(level));
+        this.level.set(level);
+    }
+
+    private void increaseLevel(){
+        this.setLevel(level.get() + 1);
     }
 
     public int getMaxLevel() {
@@ -161,22 +145,21 @@ public abstract class Ability implements I_Ability{
         this.animating = animating;
     }
 
-    public boolean isUnlocked() {
+    public BooleanProperty unlockedProperty() {
         return unlocked;
     }
 
     public void setUnlocked(boolean unlocked) {
-        this.unlocked = unlocked;
-        this.unlockProperty.set(unlocked);
+        this.unlocked.set(unlocked);
     }
 
-    public BooleanProperty unlockProperty() {
-        return unlockProperty == null ? unlockProperty  = new SimpleBooleanProperty(unlocked) : unlockProperty;
+    public boolean isUnlocked() {
+        return unlocked.get();
     }
 
     @Override
     public String toString() {
-        return String.format("Nombre: %s\n\nInfo: %s\n\nPoder: %d\n\nPrecio: %d",
-                name, description, strength, price);
+        return String.format("Nombre: %s\n\nInfo: %s\n\nNivel: %d\n\nPoder: %d\n\nPrecio: %d",
+                name, description, level.get(), strength, price.get());
     }
 }

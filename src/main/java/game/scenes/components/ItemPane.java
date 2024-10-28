@@ -2,11 +2,9 @@ package game.scenes.components;
 
 import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
-import game.models.abilities.enums.AbilityNames;
 import game.models.exceptions.InsufficientGoldException;
 import game.models.exceptions.MaxLevelReachedException;
 import game.models.shop.Shop;
-import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.NotificationManager;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -21,7 +19,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.util.Map;
 
 public class ItemPane extends VBox {
 
@@ -90,9 +87,13 @@ public class ItemPane extends VBox {
         this.description = ability.toString();
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));
-        buyButton.textProperty().bind(ability.priceProperty());
-        abilityLevel.textProperty().bind(ability.levelProperty());
-        unlockHandle(ability.unlockProperty());
+        buyButton.textProperty().bind(
+                Bindings.when(ability.levelProperty().greaterThanOrEqualTo(ability.getMaxLevel()))
+                        .then("Max Level")
+                        .otherwise(Bindings.concat("฿ ", ability.priceProperty()))
+        );
+        abilityLevel.textProperty().bind(ability.levelProperty().asString());
+        unlockHandle(ability.unlockedProperty());
     }
 
     private void unlockHandle(BooleanProperty unlocked) {

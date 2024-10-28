@@ -17,14 +17,6 @@ public class Nakama extends Ability {
     private String poster2;
 
     /**
-     * Constructor
-     */
-    public Nakama(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime, String poster2) {
-        super(BASE_STRENGTH, name, type, description, image, level, price, strength, cooldownTime);
-        this.poster2 = poster2;
-    }
-
-    /**
      * Getters y setters
      */
 

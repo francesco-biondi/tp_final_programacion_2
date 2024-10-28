@@ -15,11 +15,6 @@ public class BuffAbility extends Ability{
     private int durationTime;
     private Ability buffedAbility;
 
-    public BuffAbility(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime, int durationTime) {
-        super(BASE_STRENGTH, name, type, description, image, level, price, strength, cooldownTime);
-        this.durationTime = durationTime;
-    }
-
     @Override
     public double use(Character player) {
         if(this.available){

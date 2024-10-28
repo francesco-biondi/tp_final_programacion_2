@@ -7,10 +7,6 @@ import game.models.exceptions.*;
 
 public class AttackAbility extends Ability {
 
-    public AttackAbility(int BASE_STRENGTH, String name, AbilityType type, String description, String image, int level, int price, int strength, int cooldownTime) {
-        super(BASE_STRENGTH, name, type, description, image, level, price, strength, cooldownTime);
-    }
-
     @Override
     public double use(Character enemy) {
         if(this.available){

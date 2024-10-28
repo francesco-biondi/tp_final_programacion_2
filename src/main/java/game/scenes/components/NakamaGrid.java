@@ -37,7 +37,7 @@ public class NakamaGrid extends GridPane {
                 NakamaNames nakamaName = NakamaNames.valueOf(posterPane.getId());
                 Image posterImage = new Image(GameManager.getCurrentPlayer().getNakama(nakamaName).getImage());
                 posterPane.setPosterImage(posterImage);
-                posterPane.visibleProperty().bind(GameManager.getCurrentPlayer().getNakama(nakamaName).unlockProperty());
+                posterPane.visibleProperty().bind(GameManager.getCurrentPlayer().getNakama(nakamaName).unlockedProperty());
             }
         }
     }
