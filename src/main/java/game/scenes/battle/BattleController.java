@@ -46,7 +46,7 @@ public class BattleController {
     public void initialize(){
         SoundManager.setBackgroundMusic(Resource.BATTLE_BACKGROUND_MUSIC_PATH, 0.15);
         configureScale();
-        gold.textProperty().bind(player.goldProperty());
+        gold.textProperty().bind(player.goldProperty().asString());
         updateEnemy(enemy);
 //        GameManager.startAttackNakamas();
 //        El metodo startAttackNakamas bugea el enemigo y hace que se desbloqueen varios niveles

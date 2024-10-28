@@ -5,8 +5,8 @@ import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
 import game.models.abilities.enums.NakamaNames;
 import game.models.saves.dependencies.GsonManager;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import game.models.abilities.enums.AbilityNames;
 
 import java.util.*;
@@ -15,11 +15,7 @@ import static game.services.Resource.*;
 
 public class Player extends Character{
 
-    private int gold = 0;
-
-    private transient StringProperty goldProperty;
-    private transient StringProperty bountyProperty;
-
+    private final SimpleIntegerProperty gold = new SimpleIntegerProperty(0);
     private Map<AbilityNames, Ability> abilities;
     private Map<NakamaNames, Nakama> nakamas;
     private List<String> abilityDeck;
@@ -55,31 +51,19 @@ public class Player extends Character{
     }
 
     public int getGold() {
-        return gold;
+        return gold.get();
     }
 
     public void setGold(int gold) {
-        this.gold = gold;
-        this.goldProperty.set(Integer.toString(gold));
+        this.gold.set(gold);
     }
 
-    public void updateGold(int amount){
-        this.gold += amount;
-        setGold(this.gold);
+    public void increaseGold(int amount){
+        setGold(this.gold.get() + amount);
     }
 
-    public StringProperty goldProperty() {
-        return goldProperty == null ? goldProperty  = new SimpleStringProperty(Integer.toString(gold)) : goldProperty;
-    }
-
-    @Override
-    public void setBounty(long bounty) {
-        this.bounty = bounty;
-        this.bountyProperty.set(Long.toString(bounty));
-    }
-
-    public StringProperty bountyProperty() {
-        return bountyProperty == null ? bountyProperty  = new SimpleStringProperty(Long.toString(bounty)) : bountyProperty;
+    public IntegerProperty goldProperty() {
+        return gold;
     }
 
     public List<String> getAbilityDeck() {

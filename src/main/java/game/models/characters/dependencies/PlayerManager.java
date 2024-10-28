@@ -1,8 +1,5 @@
 package game.models.characters.dependencies;
 
-import game.models.abilities.Ability;
-import game.models.abilities.AttackAbility;
-import game.models.abilities.BuffAbility;
 import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
@@ -14,7 +11,7 @@ public class PlayerManager {
 
     public static void addGoldByClick(Player player, Enemy enemy){
         int goldByClick = enemy.getGOLD_BY_CLICK();
-        player.updateGold(goldByClick);
+        player.increaseGold(goldByClick);
     }
 
     public static void basicAttack(Player player, Enemy enemy){

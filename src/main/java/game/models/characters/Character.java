@@ -1,9 +1,12 @@
 package game.models.characters;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Character {
 
     protected String name;
-    protected long bounty;
+    private final SimpleStringProperty bounty = new SimpleStringProperty("0");
     protected String posterImage;
 
     @Override
@@ -22,12 +25,16 @@ public class Character {
         this.name = name;
     }
 
-    public long getBounty() {
+    public StringProperty bountyProperty() {
         return bounty;
     }
 
-    public void setBounty(long bounty) {
-        this.bounty = bounty;
+    public String getBounty() {
+        return bounty.get();
+    }
+
+    public void setBounty(String bounty) {
+        this.bounty.set(bounty);
     }
 
     public String getPosterImage() {
