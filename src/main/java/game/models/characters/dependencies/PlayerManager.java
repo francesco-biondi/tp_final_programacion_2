@@ -11,26 +11,16 @@ import static game.models.abilities.enums.AbilityNames.PUNCH;
 
 public class PlayerManager {
 
-    public void addGoldByClick(Player player, Enemy enemy){
+    public static void addGoldByClick(Player player, Enemy enemy){
         int goldByClick = enemy.getGOLD_BY_CLICK();
         player.updateGold(goldByClick);
     }
 
-    private static void applyAbility(Player player, Enemy enemy, Ability ability){
-        if(ability instanceof AttackAbility){
-            ability.use(enemy);
-        } else if(ability instanceof BuffAbility){
-            ability.use(player);
-        }
+    public static void basicAttack(Player player, Enemy enemy){
+        player.getAbility(PUNCH).use(enemy);
     }
 
-    public void basicAttack(Player player, Enemy enemy){
-        Ability basic = player.getAbility(PUNCH);
-
-        applyAbility(player, enemy, basic);
-    }
-
-    public void stopAllNakamas(Player player){
+    public static void stopAllNakamas(Player player){
         for (Nakama nakama : player.getNakamas().values()) {
             nakama.stopUse();
         }

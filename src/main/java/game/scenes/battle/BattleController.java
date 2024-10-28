@@ -1,6 +1,8 @@
 package game.scenes.battle;
 
 import game.models.characters.Enemy;
+import game.models.characters.Player;
+import game.models.characters.dependencies.PlayerManager;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
@@ -18,6 +20,9 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
 public class BattleController {
+
+    private Player player = GameManager.getCurrentPlayer();
+    private Enemy enemy = GameManager.getCurrentEnemy();
 
     @FXML
     private Text enemyName, gold;
@@ -41,8 +46,8 @@ public class BattleController {
     public void initialize(){
         SoundManager.setBackgroundMusic(Resource.BATTLE_BACKGROUND_MUSIC_PATH, 0.15);
         configureScale();
-        gold.textProperty().bind(GameManager.getCurrentPlayer().goldProperty());
-        updateEnemy(GameManager.getCurrentEnemy());
+        gold.textProperty().bind(player.goldProperty());
+        updateEnemy(enemy);
 //        GameManager.startAttackNakamas();
 //        El metodo startAttackNakamas bugea el enemigo y hace que se desbloqueen varios niveles
 //        puede ser porque se inicia el ataque cada vez que salis y entras y se acumula
@@ -66,9 +71,9 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-        GameManager.hitBasicAttack();
-        GameManager.goldByBasicAttack();
-        EffectManager.damageEnemyEffect((ImageView) event.getSource(), 2);
+        PlayerManager.basicAttack(player, enemy);
+        PlayerManager.addGoldByClick(player, enemy);
+        EffectManager.damageEnemyEffect(enemyImage, 2);
     }
 
     @FXML
@@ -101,7 +106,7 @@ public class BattleController {
     }
 
     void updateEnemy(Enemy enemy){
-        healthBar.progressProperty().bind(GameManager.getCurrentEnemy().healthProperty().divide(GameManager.getCurrentEnemy().MAX_HEALTH));
+        healthBar.progressProperty().bind(enemy.healthProperty().divide(enemy.MAX_HEALTH));
         enemyImage.setImage(new Image(enemy.getImage()));
         enemyName.setText(enemy.getName());
     }

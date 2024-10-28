@@ -21,10 +21,10 @@ public class BuffAbility extends Ability{
     }
 
     @Override
-    public double use(Character character) {
+    public double use(Character player) {
         if(this.available){
-            if(character instanceof Player player){
-                this.buffedAbility = player.getAbility(PUNCH);
+            if(player instanceof Player p){
+                this.buffedAbility = p.getAbility(PUNCH);
                 // NO SE si es aplicado siempre el buff solo al ataque basico
                 // Si es asi, se puede ya asignar en el constructor
                 // Si no, hay que ver como se trae la habilidad que acciona para aplicarle el buff
@@ -34,10 +34,10 @@ public class BuffAbility extends Ability{
                 cooldown();
                 return strength;
             } else {
-                throw new IllegalArgumentException("Character must be an instance of player.");
+                throw new IllegalArgumentException("Target must be a player.");
             }
         } else {
-            throw new AbilityNotAvailableException("Ability is not available.");
+            throw new AbilityNotAvailableException("This ability is not available.");
         }
     }
 

@@ -53,14 +53,6 @@ public class GameManager {
         currentSave.getEnemy(index + 1).setUnlocked(true);
     }
 
-    public static void hitBasicAttack(){
-        currentPlayerManager.basicAttack(currentPlayer, currentEnemy);
-    }
-
-    public static void goldByBasicAttack(){
-        currentPlayerManager.addGoldByClick(currentPlayer, currentEnemy);
-    }
-
     public static void startAttackNakamas(){
         for(Nakama nakama : currentPlayer.getNakamas().values()){
             if (nakama.isAvailable()){

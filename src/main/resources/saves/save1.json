@@ -3,7 +3,7 @@
   "saveName": "Fran",
   "saveDate": "2024-10-28",
   "player": {
-    "gold": 116,
+    "gold": 18,
     "abilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10,
@@ -11,10 +11,10 @@
         "type": "ATTACK",
         "description": "Ataque básico con el puño.",
         "image": "file:src/main/resources/assets/abilities/punch.jpg",
-        "level": 2,
+        "level": 3,
         "maxLevel": 0,
-        "price": 214,
-        "strength": 40,
+        "price": 669,
+        "strength": 80,
         "cooldownTime": 0,
         "available": true,
         "animating": false,
@@ -26,14 +26,14 @@
         "type": "ATTACK",
         "description": "Un ataque rápido con el puño estirado.",
         "image": "file:src/main/resources/assets/abilities/pistol.jpg",
-        "level": 0,
+        "level": 1,
         "maxLevel": 0,
-        "price": 20,
-        "strength": 200,
+        "price": 124,
+        "strength": 20,
         "cooldownTime": 2,
         "available": false,
         "animating": false,
-        "unlocked": false
+        "unlocked": true
       },
       "ELEPHANT": {
         "BASE_STRENGTH": 10,
@@ -233,6 +233,9 @@
         "unlocked": false
       }
     },
+    "abilityDeck": [
+      "PISTOL"
+    ],
     "name": "Fran",
     "bounty": 0
   },
@@ -242,9 +245,9 @@
       "MAX_HEALTH": 5000.0,
       "GOLD_BY_CLICK": 1,
       "image": "file:src/main/resources/assets/enemies/1-alvida.png",
-      "health": 1580.0,
+      "health": -20.0,
       "unlocked": true,
-      "defeated": false,
+      "defeated": true,
       "name": "ALVIDA",
       "bounty": 5000,
       "posterImage": "file:src/main/resources/assets/posters/alvida.png"
@@ -254,9 +257,9 @@
       "MAX_HEALTH": 20000.0,
       "GOLD_BY_CLICK": 3,
       "image": "file:src/main/resources/assets/enemies/2-buggy.png",
-      "health": 20000.0,
-      "unlocked": false,
-      "defeated": false,
+      "health": -3040.0,
+      "unlocked": true,
+      "defeated": true,
       "name": "BUGGY THE CLOWN",
       "bounty": 15000,
       "posterImage": "file:src/main/resources/assets/posters/buggy.png"
@@ -267,7 +270,7 @@
       "GOLD_BY_CLICK": 5,
       "image": "file:src/main/resources/assets/enemies/3-kuro.png",
       "health": 31000.0,
-      "unlocked": false,
+      "unlocked": true,
       "defeated": false,
       "name": "KURO",
       "bounty": 16000,
