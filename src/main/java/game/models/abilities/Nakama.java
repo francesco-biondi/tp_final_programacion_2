@@ -60,13 +60,7 @@ public class Nakama extends Ability {
 
     @Override
     public void upgrade(){
-        if(this.level < this.maxLevel){
-            this.level++;
-            this.strength += level * 1; // numero a determinar
-            // level = maxlevel cambiar poster
-        } else {
-            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
-        }
+        super.upgrade();
     }
 
     @Override
