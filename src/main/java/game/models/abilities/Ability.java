@@ -4,6 +4,7 @@ import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.exceptions.MaxLevelReachedException;
 import game.services.SchedulerService;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -52,14 +53,18 @@ public abstract class Ability implements I_Ability{
     }
 
     @Override
-    public void upgrade() throws MaxLevelReachedException {
+    public void upgrade() {
         if(this.level < this.maxLevel){
             if(this.level == 0) this.setUnlocked(true);
             this.setLevel(++this.level);
             this.setPrice((int) (this.price * Math.pow(1.2, level)) + level * 100);
             this.setStrength((long) (this.BASE_STRENGTH * Math.pow(2, level)));
         } else {
-            throw new MaxLevelReachedException("The level has already reached the maximum allowed.");
+            throw new MaxLevelReachedException("La habilidad ha alcanzado el nivel maximo.");
+        }
+        if(this.level == this.maxLevel){
+            this.price = 0;
+            this.priceProperty.set("Max Level");
         }
     }
 
@@ -89,7 +94,7 @@ public abstract class Ability implements I_Ability{
 
     public void setPrice(int price) {
         this.price = price;
-        this.priceProperty.set(Integer.toString(this.price));
+        this.priceProperty.set("฿ " + this.price);
     }
 
     public String getImage() {

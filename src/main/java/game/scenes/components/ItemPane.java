@@ -4,6 +4,7 @@ import game.models.abilities.Ability;
 import game.models.abilities.Nakama;
 import game.models.abilities.enums.AbilityNames;
 import game.models.exceptions.InsufficientGoldException;
+import game.models.exceptions.MaxLevelReachedException;
 import game.models.shop.Shop;
 import game.scenes.dependencies.GameManager;
 import game.scenes.dependencies.NotificationManager;
@@ -59,7 +60,7 @@ public class ItemPane extends VBox {
         try {
             Shop.buyItem(ability);
             this.description = ability.toString();
-        } catch (InsufficientGoldException e){
+        } catch (InsufficientGoldException | MaxLevelReachedException e){
             NotificationManager.toolTip(buyButton, e.getMessage(), "error", 200);
         }
     }
@@ -89,7 +90,7 @@ public class ItemPane extends VBox {
         this.description = ability.toString();
         this.abilityName.setText(ability.getName());
         this.abilityImage.setImage(new Image(ability.getImage()));
-        buyButton.textProperty().bind(Bindings.concat("฿ ", ability.priceProperty()));
+        buyButton.textProperty().bind(ability.priceProperty());
         abilityLevel.textProperty().bind(ability.levelProperty());
         unlockHandle(ability.unlockProperty());
     }
