@@ -7,37 +7,20 @@ import javafx.beans.property.SimpleDoubleProperty;
 
 public class Enemy extends Character{
 
-
-    private final int id;
-    public final double MAX_HEALTH;
-    public final int GOLD_BY_CLICK;
-    private final String image;
-    private double health;
-    private boolean unlocked = false;
-    private boolean defeated = false;
-
-    private transient DoubleProperty healthProperty;
-    private transient BooleanProperty defeatedProperty;
-    private transient BooleanProperty unlockedProperty;
-
-    public Enemy(String name, int bounty, String posterImage, int id, String image, double MAX_HEALTH, int GOLD_BY_CLICK) {
-        this.name = name;
-        this.bounty = bounty;
-        this.posterImage = posterImage;
-        this.id = id;
-        this.MAX_HEALTH = MAX_HEALTH;
-        this.health = MAX_HEALTH;
-        this.healthProperty = new SimpleDoubleProperty(MAX_HEALTH);
-        this.GOLD_BY_CLICK = GOLD_BY_CLICK;
-        this.image = image;
-    }
+    private int id;
+    public double MAX_HEALTH;
+    public int GOLD_BY_CLICK;
+    private String image;
+    private SimpleDoubleProperty health;
+    private SimpleBooleanProperty defeated;
+    private SimpleBooleanProperty unlocked;
 
     public String getImage() {
         return image;
     }
 
     public double getHealth() {
-        return health;
+        return health.get();
     }
 
     public int getGOLD_BY_CLICK() {
@@ -45,38 +28,35 @@ public class Enemy extends Character{
     }
 
     public void setHealth(double health) {
-        this.health = health;
-        this.healthProperty.set(health);
+        this.health.set(health);
     }
 
     public boolean isDefeated() {
-        return defeated;
+        return defeated.get();
     }
 
     public void setDefeated(boolean defeated) {
-        this.defeated = defeated;
-        this.defeatedProperty = new SimpleBooleanProperty(defeated);
+        this.defeated.set(defeated);
     }
 
     public boolean isUnlocked() {
-        return unlocked;
+        return unlocked.get();
     }
 
     public void setUnlocked(boolean unlocked) {
-        this.unlocked = unlocked;
-        this.unlockedProperty = new SimpleBooleanProperty(unlocked);
+        this.unlocked.set(unlocked);
     }
 
     public DoubleProperty healthProperty() {
-        return healthProperty == null ? healthProperty = new SimpleDoubleProperty(health) : healthProperty;
+        return health;
     }
 
     public BooleanProperty defeatedProperty() {
-        return defeatedProperty == null ? defeatedProperty = new SimpleBooleanProperty(defeated) : defeatedProperty;
+        return defeated;
     }
 
     public BooleanProperty unlockedProperty() {
-        return unlockedProperty == null ? unlockedProperty = new SimpleBooleanProperty(unlocked) : unlockedProperty;
+        return unlocked;
     }
 
     public int getId() {

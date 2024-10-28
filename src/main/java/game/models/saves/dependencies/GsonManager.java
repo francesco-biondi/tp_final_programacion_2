@@ -21,13 +21,14 @@ import java.util.Map;
 public abstract class GsonManager {
 
     /**
-     * Instancia de Gson configurada con los adaptadores de Ability, SimpleStringProperty y SimpleBooleanProperty.
+     * Instancia de Gson configurada con los adaptadores de Ability, SimpleStringProperty, SimpleIntegerProperty, SimpleDoubleProperty y SimpleBooleanProperty.
      */
     public static final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
             .registerTypeAdapter(Ability.class, new AbilityAdapter())
             .registerTypeAdapter(SimpleStringProperty.class, new StringPropertyAdapter())
             .registerTypeAdapter(SimpleIntegerProperty.class, new IntegerPropertyAdapter())
+            .registerTypeAdapter(SimpleDoubleProperty.class, new DoublePropertyAdapter())
             .registerTypeAdapter(SimpleBooleanProperty.class, new BooleanPropertyAdapter())
             .create();
 
@@ -111,6 +112,21 @@ public abstract class GsonManager {
         @Override
         public IntegerProperty read(JsonReader in) throws IOException {
             return new SimpleIntegerProperty(in.nextInt());
+        }
+    }
+
+    /**
+     * Adaptador personalizado para serializar y deserializar instancias de DoubleProperty.
+     */
+    private static class DoublePropertyAdapter extends TypeAdapter<DoubleProperty> {
+        @Override
+        public void write(JsonWriter out, DoubleProperty value) throws IOException {
+            out.value(value.get());
+        }
+
+        @Override
+        public DoubleProperty read(JsonReader in) throws IOException {
+            return new SimpleDoubleProperty(in.nextDouble());
         }
     }
 
