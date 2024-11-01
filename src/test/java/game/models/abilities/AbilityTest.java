@@ -3,13 +3,14 @@ package game.models.abilities;
 import game.DataProvider;
 import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Player;
+import game.models.exceptions.MaxLevelReachedException;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Clase de prueba para la clase Ability
@@ -84,5 +85,19 @@ public class AbilityTest {
         assertTrue(testBA.unlocked.get());
         assertEquals(expectedStrength, testBA.getStrength());
         assertEquals(expectedPrice, testBA.getPrice());
+    }
+
+    /**
+     * Prueba que se lance una excepcion al intentar mejorar una habilidad que ya alcanzo su nivel maximo.
+     */
+    @Test
+    public void testUpgradeMaxLevelReached(){
+        // Given
+        testAA.setLevel(testAA.getMaxLevel());
+        testBA.setLevel(testBA.getMaxLevel());
+
+        // When & Then
+        assertThrows(MaxLevelReachedException.class, () -> testAA.upgrade());
+        assertThrows(MaxLevelReachedException.class, () -> testBA.upgrade());
     }
 }
