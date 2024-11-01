@@ -79,3 +79,4 @@ src/
 
 ## Vista Previa del Juego
 
+<img src="/src/main/resources/assets/views/mainMenu.png" alt="Menú principal" width="500"/>
