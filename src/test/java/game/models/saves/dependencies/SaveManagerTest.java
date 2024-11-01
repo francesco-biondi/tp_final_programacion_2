@@ -1,5 +1,6 @@
 package game.models.saves.dependencies;
 
+import game.models.exceptions.InvalidNameException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +32,7 @@ public class SaveManagerTest {
         // Given
         String shortName = "x";
         // When - Then
-        assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(InvalidNameException.class, () -> {
             SaveManager.setSaveName(shortName);
         }, "Invalid save name");
     }
@@ -45,7 +46,7 @@ public class SaveManagerTest {
         // Given
         String longName = "xxxxxxxxxxxxxxxxx";
         // When - Then
-        assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(InvalidNameException.class, () -> {
             SaveManager.setSaveName(longName);
         }, "Invalid save name");
     }
@@ -59,7 +60,7 @@ public class SaveManagerTest {
         // Given
         String invalidName = "invalid@@@";
         // When - Then
-        assertThrows(IllegalArgumentException.class, () -> {
+        assertThrows(InvalidNameException.class, () -> {
             SaveManager.setSaveName(invalidName);
         }, "Invalid save name");
     }
