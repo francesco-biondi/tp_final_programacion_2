@@ -5,6 +5,7 @@ import game.models.abilities.enums.NakamaNames;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
 import game.models.exceptions.AbilityNotAvailableException;
+import game.models.exceptions.MaxLevelReachedException;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
@@ -121,4 +122,17 @@ public class NakamaTest {
         assertEquals(expectedStrength, testNakama.getStrength());
         assertEquals(expectedPrice, testNakama.getPrice());
     }
+
+    /**
+     * Prueba que se lance una excepcion al intentar mejorar un nakama que ya alcanzo su nivel maximo.
+     */
+    @Test
+    public void testUpgradeMaxLevelReached() {
+        // Given
+        testNakama.setLevel(testNakama.getMaxLevel());
+
+        // When & Then
+        assertThrows(MaxLevelReachedException.class, () -> testNakama.upgrade());
+    }
+
 }
