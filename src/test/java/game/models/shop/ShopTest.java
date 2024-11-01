@@ -96,5 +96,32 @@ public class ShopTest {
         assertEquals(expectedLevel, testBA.getLevel());
     }
 
-    
+    /**
+     * Prueba la compra exitosa de un nakama.
+     * Verifica que el oro se descuente correctamente y
+     * el nivel del nakama aumente.
+     */
+    @Test
+    public void testBuyItemSuccessfullyWithNakama(){
+        // Given
+        int initialGold = 100;
+        int initialPrice = 50;
+        int initialLevel = 4;
+
+        testPlayer.setGold(initialGold);
+        testNakama.setPrice(initialPrice);
+        testNakama.setLevel(initialLevel);
+
+        int expectedLevel = 5;
+        int expectedGold = initialGold - testNakama.getPrice();
+
+        // When
+        Shop.buyItem(testNakama);
+
+        // Then
+        assertEquals(expectedGold, testPlayer.getGold());
+        assertEquals(expectedLevel, testNakama.getLevel());
+    }
+
+
 }
