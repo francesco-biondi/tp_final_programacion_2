@@ -7,12 +7,14 @@ import game.models.abilities.Nakama;
 import game.models.abilities.enums.AbilityNames;
 import game.models.abilities.enums.NakamaNames;
 import game.models.characters.Player;
+import game.models.exceptions.InsufficientGoldException;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Clase de prueba para la clase Shop
@@ -149,4 +151,27 @@ public class ShopTest {
         assertEquals(expectedLevel, testNakama.getLevel());
     }
 
+    /**
+     * Prueba el caso de compra cuando el jugador no tiene suficiente oro.
+     * Verifica que se lance la excepcion apropiada y no se realicen cambios.
+     */
+    @Test
+    public void testBuyItemInsufficientGold(){
+        // Given
+        int initialGold = 100;
+        int initialPrice = 150;
+        int initialLevel = 4;
+
+        testPlayer.setGold(initialGold);
+        testNakama.setPrice(initialPrice);
+        testNakama.setLevel(initialLevel);
+
+        int expectedLevel = initialLevel;
+        int expectGold = initialGold;
+
+        // When & Then
+        assertThrows(InsufficientGoldException.class, () -> Shop.buyItem(testNakama));
+        assertEquals(expectedLevel, testNakama.getLevel());
+        assertEquals(expectGold, testPlayer.getGold());
+    }
 }
