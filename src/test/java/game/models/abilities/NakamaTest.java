@@ -12,8 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Clase de prueba para la clase Nakama
@@ -84,5 +83,42 @@ public class NakamaTest {
 
         // When & Then
         assertThrows(IllegalStateException.class, () -> testNakama.use(testPlayer));
+    }
+
+//    @Test
+//    public void testStopUse() throws InterruptedException {
+//        // Given
+//        testNakama.setAvailable(true);
+//        testNakama.use(testEnemy);
+//
+//        // When
+//        testNakama.stopUse();
+//
+//        // Then
+//        assertTrue(SchedulerService.getScheduler().isShutdown());
+//    }
+
+    /**
+     * Prueba la mejora exitosa de un nakama.
+     * Verifica que el nivel, fuerza y precio se actualicen correctamente.
+     */
+    @Test
+    public void testUpgradeSuccessfully() {
+        // Given
+        int initialLevel = testNakama.getLevel();
+        int initialPrice = testNakama.getPrice();
+
+        // When
+        testNakama.upgrade();
+
+        int expectedLevel = initialLevel + 1;
+        long expectedStrength = (long) (testNakama.BASE_STRENGTH * Math.pow(2, expectedLevel));
+        int expectedPrice = (int) (initialPrice * Math.pow(1.2, expectedLevel)) + expectedLevel * 100;
+
+        // Then
+        assertEquals(expectedLevel, testNakama.getLevel());
+        assertTrue(testNakama.unlocked.get());
+        assertEquals(expectedStrength, testNakama.getStrength());
+        assertEquals(expectedPrice, testNakama.getPrice());
     }
 }
