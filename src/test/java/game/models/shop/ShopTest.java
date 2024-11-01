@@ -10,6 +10,9 @@ import game.models.characters.Player;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Clase de prueba para la clase Shop
@@ -37,5 +40,32 @@ public class ShopTest {
         testAA = (AttackAbility) testPlayer.getAbility(AbilityNames.PISTOL);
         testBA = (BuffAbility) testPlayer.getAbility(AbilityNames.GEAR_2);
         testNakama = testPlayer.getNakama(NakamaNames.ZORO);
+    }
+
+    /**
+     * Prueba la compra exitosa de una habilidad de ataque.
+     * Verifica que el oro se descuente correctamente y
+     * el nivel de la habilidad aumente.
+     */
+    @Test
+    public void testBuyItemSuccessfullyWithAttackAbility(){
+        // Given
+        int initialGold = 100;
+        int initialPrice = 50;
+        int initialLevel = 4;
+
+        testPlayer.setGold(initialGold);
+        testAA.setPrice(initialPrice);
+        testAA.setLevel(initialLevel);
+
+        int expectedLevel = 5;
+        int expectedGold = initialGold - testAA.getPrice();
+
+        // When
+        Shop.buyItem(testAA);
+
+        // Then
+        assertEquals(expectedGold, testPlayer.getGold());
+        assertEquals(expectedLevel, testAA.getLevel());
     }
 }
