@@ -7,6 +7,9 @@ import game.models.characters.Player;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Clase de prueba para la clase AttackAbility
@@ -34,5 +37,23 @@ public class AttackAbilityTest {
         testAA = (AttackAbility) testPlayer.getAbility(AbilityNames.PISTOL);
     }
 
+    /**
+     * Prueba el uso exitoso de una habilidad de ataque.
+     * Verifica que el daño se aplique correctamente al enemigo.
+     */
+    @Test
+    public void testUseSuccessfully(){
+        // Given
+        testAA.setAvailable(true);
+        double enemyHealth = testEnemy.getHealth();
+        double AAStrength = testAA.getStrength();
+        double expected = enemyHealth - AAStrength;
+
+        // When
+        testAA.use(testEnemy);
+
+        // Then
+        assertEquals(expected, testEnemy.getHealth());
+    }
 
 }
