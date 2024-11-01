@@ -73,5 +73,16 @@ public class NakamaTest {
         // When & Then
         assertThrows(AbilityNotAvailableException.class, () -> testNakama.use(testEnemy));
     }
-    
+
+    /**
+     * Prueba que se lance una excepcion al intentar usar un nakama contra un objetivo que no es enemigo.
+     */
+    @Test
+    public void testUseAbilityOnNonEnemy() {
+        // Given
+        testNakama.setAvailable(true);
+
+        // When & Then
+        assertThrows(IllegalStateException.class, () -> testNakama.use(testPlayer));
+    }
 }
