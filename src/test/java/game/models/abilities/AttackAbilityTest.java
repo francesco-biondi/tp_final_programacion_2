@@ -70,4 +70,16 @@ public class AttackAbilityTest {
         assertThrows(AbilityNotAvailableException.class, () -> testAA.use(testEnemy));
     }
 
+    /**
+     * Prueba que se lance una excepcion al intentar usar una habilidad de ataque contra un objetivo que no es enemigo.
+     */
+    @Test
+    public void testUseAbilityOnNonEnemy(){
+        // Given
+        testAA.setAvailable(true);
+
+        // When & Then
+        assertThrows(IllegalArgumentException.class, () -> testAA.use(testPlayer));
+    }
+
 }
