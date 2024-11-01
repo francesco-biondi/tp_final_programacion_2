@@ -4,10 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase de prueba para la clase SaveManager
+ */
 public class SaveManagerTest {
 
     /**
-     * Tests para el metodo setSaveName (validación del nombre)
+     * Prueba que un nombre de guardado valido sea aceptado.
      */
     @Test
     public void testSetSaveNameValid(){
@@ -19,6 +22,10 @@ public class SaveManagerTest {
         assertEquals(validName, result);
     }
 
+    /**
+     * Prueba que los nombres demasiado cortos sean rechazados.
+     * Asegura que se cumpla el requisito de longitud minima.
+     */
     @Test
     public void testSetSaveNameTooShort(){
         // Given
@@ -29,6 +36,10 @@ public class SaveManagerTest {
         }, "Invalid save name");
     }
 
+    /**
+     * Prueba que los nombres que exceden la longitud maxima sean rechazados.
+     * Asegura que se cumpla el requisito de longitus maxima.
+     */
     @Test
     public void testSetSaveNameTooLong(){
         // Given
@@ -39,6 +50,10 @@ public class SaveManagerTest {
         }, "Invalid save name");
     }
 
+    /**
+     * Prueba que los nombres que contienen caracteres invalidos sean rechazados.
+     * Asegura que solo se acepten los caracteres permitidos.
+     */
     @Test
     public void testSetSaveNameInvalidCharacters(){
         // Given
