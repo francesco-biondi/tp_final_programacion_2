@@ -123,5 +123,30 @@ public class ShopTest {
         assertEquals(expectedLevel, testNakama.getLevel());
     }
 
+    /**
+     * Prueba la compra cuando el jugador tiene exactamente el oro necesario.
+     * Verifica que la transaccion se complete correctamente.
+     */
+    @Test
+    public void testBuyItemSuccessfullyExactlyGold(){
+        // Given
+        int initialGold = 100;
+        int initialPrice = 50;
+        int initialLevel = 4;
+
+        testPlayer.setGold(initialGold);
+        testNakama.setPrice(initialPrice);
+        testNakama.setLevel(initialLevel);
+
+        int expectedLevel = 5;
+        int expectedGold = initialGold - testNakama.getPrice();
+
+        // When
+        Shop.buyItem(testNakama);
+
+        // Then
+        assertEquals(expectedGold, testPlayer.getGold());
+        assertEquals(expectedLevel, testNakama.getLevel());
+    }
 
 }
