@@ -4,12 +4,14 @@ import game.DataProvider;
 import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
+import game.models.exceptions.AbilityNotAvailableException;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Clase de prueba para la clase AttackAbility
@@ -54,6 +56,18 @@ public class AttackAbilityTest {
 
         // Then
         assertEquals(expected, testEnemy.getHealth());
+    }
+
+    /**
+     * Prueba que se lance una excepcion al intentar usar una habilidad que no esta disponible.
+     */
+    @Test
+    public void testUseAbilityNotAvailable(){
+        // Given
+        testAA.setAvailable(false);
+
+        // When & Then
+        assertThrows(AbilityNotAvailableException.class, () -> testAA.use(testEnemy));
     }
 
 }
