@@ -61,4 +61,28 @@ public class AbilityTest {
         assertEquals(expectedStrength, testAA.getStrength());
         assertEquals(expectedPrice, testAA.getPrice());
     }
+
+    /**
+     * Prueba la mejora exitosa de una habilidad de mejora.
+     * Verifica que el nivel, la fuerza y precio se actualicen correctamente.
+     */
+    @Test
+    public void testUpgradeSuccessfullyWithBuffAbility(){
+        // Given
+        int initialLevel = testBA.getLevel();
+        int initialPrice = testBA.getPrice();
+
+        // When
+        testBA.upgrade();
+
+        int expectedLevel = initialLevel + 1;
+        long expectedStrength = (long) (testBA.BASE_STRENGTH * Math.pow(2, expectedLevel));
+        int expectedPrice = (int) (initialPrice * Math.pow(1.2, expectedLevel)) + expectedLevel * 100;
+
+        // Then
+        assertEquals(expectedLevel, testBA.getLevel());
+        assertTrue(testBA.unlocked.get());
+        assertEquals(expectedStrength, testBA.getStrength());
+        assertEquals(expectedPrice, testBA.getPrice());
+    }
 }
