@@ -68,4 +68,33 @@ public class ShopTest {
         assertEquals(expectedGold, testPlayer.getGold());
         assertEquals(expectedLevel, testAA.getLevel());
     }
+
+    /**
+     * Prueba la compra exitosa de una habilidad de mejora.
+     * Verifica que el oro se descuente correctamente y
+     * el nivel de la habilidad aumente.
+     */
+    @Test
+    public void testBuyItemSuccessfullyWithBuffAbility(){
+        // Given
+        int initialGold = 100;
+        int initialPrice = 50;
+        int initialLevel = 4;
+
+        testPlayer.setGold(initialGold);
+        testBA.setPrice(initialPrice);
+        testBA.setLevel(initialLevel);
+
+        int expectedLevel = 5;
+        int expectedGold = initialGold - testBA.getPrice();
+
+        // When
+        Shop.buyItem(testBA);
+
+        // Then
+        assertEquals(expectedGold, testPlayer.getGold());
+        assertEquals(expectedLevel, testBA.getLevel());
+    }
+
+    
 }
