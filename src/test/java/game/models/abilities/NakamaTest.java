@@ -4,6 +4,7 @@ import game.DataProvider;
 import game.models.abilities.enums.NakamaNames;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
+import game.models.exceptions.AbilityNotAvailableException;
 import game.models.saves.Save;
 import game.scenes.dependencies.GameManager;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Clase de prueba para la clase Nakama
@@ -60,4 +62,16 @@ public class NakamaTest {
         assertEquals(expected, testEnemy.getHealth());
     }
 
+    /**
+     * Prueba que se lance una excepcion al intentar usar un nakama que no esta habilitado.
+     */
+    @Test
+    public void testUseAbilityNotAvailable() {
+        // Given
+        testNakama.setAvailable(false);
+
+        // When & Then
+        assertThrows(AbilityNotAvailableException.class, () -> testNakama.use(testEnemy));
+    }
+    
 }
