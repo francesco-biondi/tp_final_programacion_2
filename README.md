@@ -79,4 +79,8 @@ src/
 
 ## Vista Previa del Juego
 
-<img src="/src/main/resources/assets/views/mainMenu.png" alt="Menú principal" width="500"/>
+<p align="center">
+  <img src="/src/main/resources/assets/views/mainMenu.png" alt="Menú principal" width="300"/>
+  <img src="/src/main/resources/assets/views/map.png" alt="Mapa" width="300"/>
+  <img src="/src/main/resources/assets/views/battle.png" alt="Pantalla de combate" width="300"/>
+</p>
