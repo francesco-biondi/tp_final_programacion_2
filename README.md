@@ -80,7 +80,7 @@ src/
 ## Vista Previa del Juego
 
 <p align="center">
-  <img src="/src/main/resources/assets/views/mainMenu.png" alt="Menú principal" width="300"/>
-  <img src="/src/main/resources/assets/views/map.png" alt="Mapa" width="300"/>
-  <img src="/src/main/resources/assets/views/battle.png" alt="Pantalla de combate" width="300"/>
+  <img src="/src/main/resources/assets/views/mainMenu.png" alt="Menú principal" width="400"/>
+  <img src="/src/main/resources/assets/views/map.png" alt="Mapa" width="400"/>
+  <img src="/src/main/resources/assets/views/battle.png" alt="Pantalla de combate" width="400"/>
 </p>
