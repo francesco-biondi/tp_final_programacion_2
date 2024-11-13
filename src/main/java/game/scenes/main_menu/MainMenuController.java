@@ -44,7 +44,7 @@ public class MainMenuController {
     @FXML
     private void clicked_text(MouseEvent event) {
         Text clickedText = (Text) event.getSource();
-        SoundManager.playButtonSound(0.1);
+        SoundManager.playSound(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH, 0.1);
         handleTextAction(Integer.parseInt(clickedText.getId().replace("text_", "")));
     }
 

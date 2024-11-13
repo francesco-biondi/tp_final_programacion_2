@@ -33,5 +33,7 @@ public class Resource {
     /**
      * Recursos para la interfaz de usuario del combate
      */
-    public static final String cursorImagePath = "file:src/main/resources/assets/abilities/fist_cursor.png";
+    public static final String CURSOR_IMAGE_PATH = "file:src/main/resources/assets/abilities/fist_cursor.png";
+    public static final String GOMU_GOMU_NO = "file:src/main/resources/assets/sounds/gomu-gomu-no.mp3";
+    public static final String GEAR = "file:src/main/resources/assets/sounds/gear.mp3";
 }

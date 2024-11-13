@@ -12,6 +12,7 @@ import java.util.Objects;
 public class SoundManager {
     private static MediaPlayer backgroundMusic;
     private static final AudioClip buttonSound = new AudioClip(Objects.requireNonNull(SoundManager.class.getResource(Resource.MAIN_MENU_BUTTON_CLICK_SOUND_PATH)).toExternalForm());
+    private static AudioClip sound;
     private static boolean isMute = false;
 
     public static void setBackgroundMusic(String path, double volume) {
@@ -36,8 +37,9 @@ public class SoundManager {
         musicIcon.setImage(new Image(backgroundMusic.isMute() ? Resource.MAIN_MENU_MUSIC_ON_ICON_PATH : Resource.MAIN_MENU_MUSIC_OFF_ICON_PATH));
     }
 
-    public static void playButtonSound(double volume) {
-        buttonSound.setVolume(volume);
-        buttonSound.play();
+    public static void playSound(String path, double volume) {
+        sound = new AudioClip(Objects.requireNonNull(SoundManager.class.getResource(path)).toExternalForm());
+        sound.setVolume(volume);
+        sound.play();
     }
 }

@@ -7,5 +7,5 @@ public interface I_Ability {
     double use(Character character);
     void cooldown();
     void upgrade();
-    void animation();
+    void effect();
 }

@@ -1,6 +1,6 @@
 package game.models.abilities;
 
-import game.models.abilities.enums.AbilityType;
+import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Character;
 import game.models.characters.Player;
 import game.models.exceptions.*;
@@ -8,22 +8,14 @@ import game.services.SchedulerService;
 
 import java.util.concurrent.TimeUnit;
 
-import static game.models.abilities.enums.AbilityNames.PUNCH;
-
 public class BuffAbility extends Ability{
-
-    private int durationTime;
-    private Ability buffedAbility;
 
     @Override
     public double use(Character player) {
         if(this.available){
             if(player instanceof Player p){
-                this.buffedAbility = p.getAbility(PUNCH);
-                // NO SE si es aplicado siempre el buff solo al ataque basico
-                // Si es asi, se puede ya asignar en el constructor
-                // Si no, hay que ver como se trae la habilidad que acciona para aplicarle el buff
-
+                effect();
+                Ability buffedAbility = p.getAbility(AbilityNames.PUNCH);
                 applyBuff(buffedAbility);
                 duration(buffedAbility);
                 cooldown();
@@ -50,7 +42,11 @@ public class BuffAbility extends Ability{
         }, durationTime, TimeUnit.SECONDS);
     }
 
-    @Override
-    public void animation() {
+    public int getDurationTime() {
+        return durationTime;
+    }
+
+    public void setDurationTime(int durationTime) {
+        this.durationTime = durationTime;
     }
 }

@@ -1,6 +1,11 @@
 package game.scenes.components;
 
+import game.models.abilities.Ability;
+import game.models.abilities.AttackAbility;
+import game.models.abilities.BuffAbility;
+import game.models.abilities.enums.AbilityNames;
 import game.scenes.dependencies.GameManager;
+import game.services.SchedulerService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.input.*;
@@ -8,6 +13,7 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class AbilityBar extends HBox {
 
@@ -66,10 +72,18 @@ public class AbilityBar extends HBox {
     @FXML
     void onButtonPressed(MouseEvent event) {
         WoodenButton button = (WoodenButton) event.getSource();
+        Ability ability = GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(button.getText().replace(" ", "_")));
 
-        System.out.println(button.getText());
-        System.out.println(abilityDeck);
-        // Aca va la logica para usar la habilidad
+        if(ability instanceof AttackAbility) {
+            ability.use(GameManager.getCurrentEnemy());
+        } else if (ability instanceof BuffAbility) {
+            ability.use(GameManager.getCurrentPlayer());
+        }
+
+        button.setDisable(true);
+        SchedulerService.getScheduler().schedule(() -> {
+            button.setDisable(false);
+        }, ability.getCooldownTime(), TimeUnit.SECONDS);
     }
 
     @FXML

@@ -3,6 +3,7 @@ package game.models.abilities;
 import game.models.abilities.enums.AbilityType;
 import game.models.abilities.interfaces.I_Ability;
 import game.models.exceptions.MaxLevelReachedException;
+import game.scenes.dependencies.SoundManager;
 import game.services.SchedulerService;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
@@ -24,6 +25,8 @@ public abstract class Ability implements I_Ability{
     protected int cooldownTime;
     protected boolean available = true;
     protected boolean animating = false;
+    protected String soundEffect;
+    protected int durationTime;
 
     protected SimpleIntegerProperty level;
     protected SimpleIntegerProperty price;
@@ -155,6 +158,11 @@ public abstract class Ability implements I_Ability{
 
     public boolean isUnlocked() {
         return unlocked.get();
+    }
+
+    @Override
+    public void effect() {
+        SoundManager.playSound(soundEffect, 0.3);
     }
 
     @Override

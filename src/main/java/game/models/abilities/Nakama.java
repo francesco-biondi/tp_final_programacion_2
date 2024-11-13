@@ -54,7 +54,7 @@ public class Nakama extends Ability {
     }
 
     @Override
-    public void animation() {
+    public void effect() {
 
     }
 }

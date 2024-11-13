@@ -1,8 +1,8 @@
 package game.scenes.battle;
 
+import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
-import game.models.characters.dependencies.PlayerManager;
 import game.models.saves.dependencies.SaveManager;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
@@ -21,8 +21,8 @@ import javafx.scene.text.Text;
 
 public class BattleController {
 
-    private Player player = GameManager.getCurrentPlayer();
-    private Enemy enemy = GameManager.getCurrentEnemy();
+    private final Player player = GameManager.getCurrentPlayer();
+    private final Enemy enemy = GameManager.getCurrentEnemy();
 
     @FXML
     private Text enemyName, gold;
@@ -48,9 +48,6 @@ public class BattleController {
         configureScale();
         gold.textProperty().bind(player.goldProperty().asString());
         updateEnemy(enemy);
-//        GameManager.startAttackNakamas();
-//        El metodo startAttackNakamas bugea el enemigo y hace que se desbloqueen varios niveles
-//        puede ser porque se inicia el ataque cada vez que salis y entras y se acumula
     }
 
     void configureScale() {
@@ -71,33 +68,9 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-        PlayerManager.basicAttack(player, enemy);
-        PlayerManager.addGoldByClick(player, enemy);
+        player.getAbility(AbilityNames.PUNCH).use(enemy);
+        addGoldByClick(player, enemy);
         EffectManager.damageEnemyEffect(enemyImage, 2);
-    }
-
-    @FXML
-    void button_pressed(MouseEvent event) {
-        // DEJA PREPARADA PARA RECIBIR QUE BOTON SE PRESIONA
-        // SE PUEDE HACER EL SWITCH ACA O EN PlayerManager
-        int button = 1;
-        switch(button) {
-            case 1:
-                PlayerManager.pistolAttack(player, enemy);
-                PlayerManager.addGoldByClick(player, enemy);
-                EffectManager.damageEnemyEffect(enemyImage, 3);
-                break;
-            case 2:
-                PlayerManager.elephantAttack(player, enemy);
-                PlayerManager.addGoldByClick(player, enemy);
-                EffectManager.damageEnemyEffect(enemyImage, 4);
-                break;
-            case 3:
-                PlayerManager.kingKongAttack(player, enemy);
-                PlayerManager.addGoldByClick(player, enemy);
-                EffectManager.damageEnemyEffect(enemyImage, 5);
-                break;
-        }
     }
 
     @FXML
@@ -128,6 +101,11 @@ public class BattleController {
         healthBar.progressProperty().bind(enemy.healthProperty().divide(enemy.MAX_HEALTH));
         enemyImage.setImage(new Image(enemy.getImage()));
         enemyName.setText(enemy.getName());
+    }
+
+    private void addGoldByClick(Player player, Enemy enemy){
+        int goldByClick = enemy.getGOLD_BY_CLICK();
+        player.increaseGold(goldByClick);
     }
 
 }

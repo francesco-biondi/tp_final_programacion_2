@@ -3,7 +3,6 @@ package game.scenes.dependencies;
 import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
-import game.models.characters.dependencies.PlayerManager;
 import game.models.saves.Save;
 
 public class GameManager {
@@ -11,7 +10,6 @@ public class GameManager {
     private static Save currentSave;
     private static Enemy currentEnemy;
     private static Player currentPlayer;
-    private static PlayerManager currentPlayerManager = new PlayerManager();
 
     public static Save getCurrentSave() {
         return currentSave;
@@ -24,10 +22,6 @@ public class GameManager {
 
     public static Player getCurrentPlayer() {
         return currentPlayer;
-    }
-
-    public static PlayerManager getCurrentPlayerManager(){
-        return currentPlayerManager;
     }
 
     public static Enemy getCurrentEnemy() {
@@ -62,7 +56,9 @@ public class GameManager {
     }
 
     public static void stopAttackNakamas(){
-        currentPlayerManager.stopAllNakamas(currentPlayer);
+        for (Nakama nakama : currentPlayer.getNakamas().values()) {
+            nakama.stopUse();
+        }
     }
 
 
