@@ -5,7 +5,7 @@ import game.models.characters.Enemy;
 import game.models.characters.Player;
 import game.scenes.dependencies.SoundManager;
 
-import static game.models.abilities.enums.AbilityNames.PUNCH;
+import static game.models.abilities.enums.AbilityNames.*;
 
 public class PlayerManager {
 
@@ -17,6 +17,21 @@ public class PlayerManager {
     public static void basicAttack(Player player, Enemy enemy){
         player.getAbility(PUNCH).use(enemy);
         SoundManager.playButtonSound(0.1);
+    }
+
+    public static void pistolAttack(Player player, Enemy enemy){
+        player.getAbility(PISTOL).use(enemy);
+        SoundManager.playButtonSound(0.2);
+    }
+
+    public static void elephantAttack(Player player, Enemy enemy){
+        player.getAbility(ELEPHANT).use(enemy);
+        SoundManager.playButtonSound(0.3);
+    }
+
+    public static void kingKongAttack(Player player, Enemy enemy){
+        player.getAbility(KING_KONG).use(enemy);
+        SoundManager.playButtonSound(0.4);
     }
 
     public static void stopAllNakamas(Player player){

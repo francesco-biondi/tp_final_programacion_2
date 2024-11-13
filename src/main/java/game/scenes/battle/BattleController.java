@@ -78,7 +78,26 @@ public class BattleController {
 
     @FXML
     void button_pressed(MouseEvent event) {
-
+        // DEJA PREPARADA PARA RECIBIR QUE BOTON SE PRESIONA
+        // SE PUEDE HACER EL SWITCH ACA O EN PlayerManager
+        int button = 1;
+        switch(button) {
+            case 1:
+                PlayerManager.pistolAttack(player, enemy);
+                PlayerManager.addGoldByClick(player, enemy);
+                EffectManager.damageEnemyEffect(enemyImage, 3);
+                break;
+            case 2:
+                PlayerManager.elephantAttack(player, enemy);
+                PlayerManager.addGoldByClick(player, enemy);
+                EffectManager.damageEnemyEffect(enemyImage, 4);
+                break;
+            case 3:
+                PlayerManager.kingKongAttack(player, enemy);
+                PlayerManager.addGoldByClick(player, enemy);
+                EffectManager.damageEnemyEffect(enemyImage, 5);
+                break;
+        }
     }
 
     @FXML
