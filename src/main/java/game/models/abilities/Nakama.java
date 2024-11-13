@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
          * Atributos
          */
         private String poster2;
-        private ScheduledExecutorService autoAttack;
+        private transient ScheduledExecutorService autoAttack;
 
         /**
          * Getters y setters
