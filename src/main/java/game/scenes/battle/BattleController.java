@@ -8,6 +8,7 @@ import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.dependencies.*;
 import game.services.Resource;
+import game.services.SchedulerService;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -48,6 +49,7 @@ public class BattleController {
         configureScale();
         gold.textProperty().bind(player.goldProperty().asString());
         updateEnemy(enemy);
+        GameManager.startAttackNakamas();
     }
 
     void configureScale() {
@@ -87,13 +89,13 @@ public class BattleController {
     @FXML
     void toggleMap(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAP);
-//        GameManager.stopAttackNakamas();
+        GameManager.stopAttackNakamas();
     }
 
     @FXML
     void mainMenu(MouseEvent event) {
         SceneManager.changeScene(Scenes.MAIN_MENU);
-//        GameManager.stopAttackNakamas();
+        GameManager.stopAttackNakamas();
         SaveManager.saveGame(GameManager.getCurrentSave());
     }
 

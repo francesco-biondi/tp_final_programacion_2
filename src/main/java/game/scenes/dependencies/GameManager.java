@@ -49,7 +49,12 @@ public class GameManager {
 
     public static void startAttackNakamas(){
         for(Nakama nakama : currentPlayer.getNakamas().values()){
-            if (nakama.isAvailable()){
+            nakama.unlockedProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue) {
+                    nakama.use(getCurrentEnemy());
+                }
+            });
+            if (nakama.isUnlocked()){
                 nakama.use(currentEnemy);
             }
         }
@@ -57,9 +62,9 @@ public class GameManager {
 
     public static void stopAttackNakamas(){
         for (Nakama nakama : currentPlayer.getNakamas().values()) {
-            nakama.stopUse();
+            if (nakama.isUnlocked()){
+                nakama.stopUse();
+            }
         }
     }
-
-
 }
