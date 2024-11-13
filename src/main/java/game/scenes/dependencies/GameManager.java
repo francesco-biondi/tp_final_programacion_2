@@ -1,5 +1,8 @@
 package game.scenes.dependencies;
 
+import game.models.abilities.Ability;
+import game.models.abilities.AttackAbility;
+import game.models.abilities.BuffAbility;
 import game.models.abilities.Nakama;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
@@ -65,6 +68,20 @@ public class GameManager {
             if (nakama.isUnlocked()){
                 nakama.stopUse();
             }
+        }
+    }
+
+    public static void addGoldByDamage(double damage){
+        int goldByDamage = (int) (1 + (getCurrentEnemy().getGOLD_BY_CLICK() * damage)/20);
+        getCurrentPlayer().increaseGold(goldByDamage);
+    }
+
+    public static void useAbility(Ability ability){
+        if(ability instanceof AttackAbility) {
+            ability.use(getCurrentEnemy());
+            addGoldByDamage(ability.getStrength());
+        } else if (ability instanceof BuffAbility) {
+            ability.use(getCurrentPlayer());
         }
     }
 }

@@ -3,7 +3,7 @@
   "saveName": "Fran",
   "saveDate": "2024-11-13",
   "player": {
-    "gold": 80000,
+    "gold": 28,
     "abilities": {
       "PUNCH": {
         "BASE_STRENGTH": 10,
@@ -12,14 +12,14 @@
         "description": "Ataque básico con el puño.",
         "image": "file:src/main/resources/assets/abilities/punch.jpg",
         "maxLevel": 10,
-        "strength": 10,
+        "strength": 40,
         "cooldownTime": 0,
         "available": true,
         "animating": false,
         "soundEffect": "/assets/sounds/punch.mp3",
         "durationTime": 0,
-        "level": 1,
-        "price": 10,
+        "level": 2,
+        "price": 214,
         "unlocked": true
       },
       "PISTOL": {
@@ -29,15 +29,15 @@
         "description": "Un ataque rápido con el puño estirado.",
         "image": "file:src/main/resources/assets/abilities/pistol.jpg",
         "maxLevel": 10,
-        "strength": 200,
+        "strength": 100,
         "cooldownTime": 2,
         "available": true,
         "animating": false,
         "soundEffect": "/assets/sounds/gomu-gomu-no.mp3",
         "durationTime": 0,
-        "level": 0,
-        "price": 20,
-        "unlocked": false
+        "level": 1,
+        "price": 124,
+        "unlocked": true
       },
       "ELEPHANT": {
         "BASE_STRENGTH": 200,
@@ -255,6 +255,9 @@
         "unlocked": false
       }
     },
+    "abilityDeck": [
+      "PISTOL"
+    ],
     "name": "Fran",
     "bounty": "0"
   },
@@ -264,7 +267,7 @@
       "MAX_HEALTH": 5000.0,
       "GOLD_BY_CLICK": 1,
       "image": "file:src/main/resources/assets/enemies/1-alvida.png",
-      "health": 5000.0,
+      "health": 3360.0,
       "defeated": false,
       "unlocked": true,
       "name": "ALVIDA",

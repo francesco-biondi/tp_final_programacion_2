@@ -42,6 +42,7 @@ import java.util.concurrent.TimeUnit;
                 autoAttack.scheduleAtFixedRate(() -> {
                     if (enemy.getHealth() > 0) {
                         enemy.setHealth(enemy.getHealth() - this.strength);
+                        GameManager.addGoldByDamage(this.strength);
                     } else {
                         stopUse();
                     }

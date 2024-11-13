@@ -4,6 +4,7 @@ import game.models.abilities.enums.AbilityNames;
 import game.models.characters.Enemy;
 import game.models.characters.Player;
 import game.models.saves.dependencies.SaveManager;
+import game.scenes.components.AbilityBar;
 import game.scenes.components.ShopPane;
 import game.scenes.battle.dependencies.CursorManager;
 import game.scenes.dependencies.*;
@@ -38,6 +39,9 @@ public class BattleController {
     private ProgressBar healthBar;
 
     @FXML
+    private AbilityBar abilityBar;
+
+    @FXML
     private ShopPane shopPane;
 
     @FXML
@@ -49,6 +53,7 @@ public class BattleController {
         configureScale();
         gold.textProperty().bind(player.goldProperty().asString());
         updateEnemy(enemy);
+        enemy.setImageView(enemyImage);
         GameManager.startAttackNakamas();
     }
 
@@ -70,9 +75,7 @@ public class BattleController {
 
     @FXML
     void hitEnemy(MouseEvent event) {
-        player.getAbility(AbilityNames.PUNCH).use(enemy);
-        addGoldByClick(player, enemy);
-        EffectManager.damageEnemyEffect(enemyImage, 2);
+        GameManager.useAbility(GameManager.getCurrentPlayer().getAbility(AbilityNames.PUNCH));
     }
 
     @FXML
@@ -103,11 +106,6 @@ public class BattleController {
         healthBar.progressProperty().bind(enemy.healthProperty().divide(enemy.MAX_HEALTH));
         enemyImage.setImage(new Image(enemy.getImage()));
         enemyName.setText(enemy.getName());
-    }
-
-    private void addGoldByClick(Player player, Enemy enemy){
-        int goldByClick = enemy.getGOLD_BY_CLICK();
-        player.increaseGold(goldByClick);
     }
 
 }

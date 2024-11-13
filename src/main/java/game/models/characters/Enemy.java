@@ -4,6 +4,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.scene.image.ImageView;
 
 public class Enemy extends Character{
 
@@ -14,6 +15,8 @@ public class Enemy extends Character{
     private SimpleDoubleProperty health;
     private SimpleBooleanProperty defeated;
     private SimpleBooleanProperty unlocked;
+
+    private transient ImageView imageView;
 
     public String getImage() {
         return image;
@@ -61,5 +64,13 @@ public class Enemy extends Character{
 
     public int getId() {
         return id;
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
     }
 }

@@ -1,8 +1,6 @@
 package game.scenes.components;
 
 import game.models.abilities.Ability;
-import game.models.abilities.AttackAbility;
-import game.models.abilities.BuffAbility;
 import game.models.abilities.enums.AbilityNames;
 import game.scenes.dependencies.GameManager;
 import game.services.SchedulerService;
@@ -74,11 +72,7 @@ public class AbilityBar extends HBox {
         WoodenButton button = (WoodenButton) event.getSource();
         Ability ability = GameManager.getCurrentPlayer().getAbility(AbilityNames.valueOf(button.getText().replace(" ", "_")));
 
-        if(ability instanceof AttackAbility) {
-            ability.use(GameManager.getCurrentEnemy());
-        } else if (ability instanceof BuffAbility) {
-            ability.use(GameManager.getCurrentPlayer());
-        }
+        GameManager.useAbility(ability);
 
         button.setDisable(true);
         SchedulerService.getScheduler().schedule(() -> {
@@ -129,5 +123,4 @@ public class AbilityBar extends HBox {
     private void updatePlayerAbilityDeck(){
         GameManager.getCurrentPlayer().setAbilityDeck(abilityDeck);
     }
-
 }

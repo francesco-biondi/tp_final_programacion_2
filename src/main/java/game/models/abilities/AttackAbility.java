@@ -3,6 +3,8 @@ package game.models.abilities;
 import game.models.characters.Character;
 import game.models.characters.Enemy;
 import game.models.exceptions.*;
+import game.scenes.dependencies.EffectManager;
+import game.scenes.dependencies.GameManager;
 
 public class AttackAbility extends Ability {
 
@@ -20,5 +22,11 @@ public class AttackAbility extends Ability {
         } else {
             throw new AbilityNotAvailableException("This ability is not available.");
         }
+    }
+
+    @Override
+    public void effect() {
+        super.effect();
+        EffectManager.damageEnemyEffect(GameManager.getCurrentEnemy().getImageView(), BASE_STRENGTH/5);
     }
 }
